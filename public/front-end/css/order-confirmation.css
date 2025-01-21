@@ -1,0 +1,112 @@
+@font-face {
+    font-family: 'Myriad Pro';
+    src: url('/fonts/MyriadPro-Regular.woff2') format('woff2'),
+        url('/fonts/MyriadPro-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Myriad Pro', sans-serif !important;
+}
+
+.order-confirmation {
+    text-align: center;
+}
+
+h1.head-first {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 30px;
+    color: #000;
+    margin-bottom: 30px;
+}
+
+p.head-second {
+
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+    color: #000;
+}
+
+p.head-three {
+
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+    color: #000;
+}
+
+button.view-order-confirmation {
+    background: #B48143;
+    border: 1px solid #000000;
+    border: none;
+    font-size: 16px;
+    line-height: 22px;
+    /* width: 100%; */
+    padding: 4px 10px;
+    border-radius: 5px;
+    color: #000;
+    margin-bottom: 20px;
+    margin-top: 40px;
+    width: 30%;
+    margin-right: 10px;
+
+
+
+}
+
+button.confirmation-shopping {
+
+    margin-top: 40px;
+
+    background: #217041;
+    border: 1px solid #000000;
+    border: none;
+    font-size: 16px;
+    line-height: 22px;
+    /* width: 100%; */
+    padding: 4px 10px;
+    border-radius: 5px;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+    width: 30%;
+    margin-left: 10px;
+}
+
+.image-order {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.image-order img {
+    width: 5%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures the image covers the container without distortion */
+}
+
+.image-order-sub {
+    position: absolute;
+    top: 50%;
+    /* Position at the vertical center */
+    left: 50%;
+    /* Position at the horizontal center */
+    transform: translate(-50%, -50%);
+    /* Center it */
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    /* Rounded corners for the overlay */
+    text-align: center;
+    font-size: 16px;
+}
+
+.image-order-sub img {
+    width: 50%;
+}
+
+.order-confirmation-main {
+    padding: 100px 0px;
+}

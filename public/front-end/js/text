@@ -1,0 +1,79 @@
+// const sliderMain = document.querySelector('.slider-main');
+// const slides = document.querySelectorAll('.slide-main');
+// const section = document.querySelector('#slow-scroll-section');
+
+// window.addEventListener('scroll', () => {
+//     const sectionTop = section.getBoundingClientRect().top;
+//     const sectionHeight = section.offsetHeight;
+//     const scrollPercentage = Math.abs(sectionTop) / sectionHeight;
+
+//     // Calculate which slide should be active based on scroll percentage
+//     const activeSlideIndex = Math.min(Math.floor(scrollPercentage * slides.length), slides.length - 1);
+
+//     slides.forEach((slide, index) => {
+//         const textContainer = slide.querySelector('.text-container');
+        
+//         if (index === activeSlideIndex) {
+//             // Remove blur for the active slide
+//             textContainer.style.filter = `blur(0px)`;
+//         } else {
+//             // Increase blur based on how far away the slide is from the active one
+//             const blurAmount = Math.min(10, Math.abs(index - activeSlideIndex) * 3); // Blur increases by 3px per slide
+//             textContainer.style.filter = `blur(${blurAmount}px)`;
+//         }
+//     });
+// });
+
+// let observer = new IntersectionObserver((entries) => {
+//     entries.forEach(entry => {
+//         if (entry.isIntersecting) {
+//             sliderMain.classList.add('slow-scroll'); // Slow scroll when section reaches the top
+//         } else {
+//             sliderMain.classList.remove('slow-scroll'); // Normal speed otherwise
+//         }
+//     });
+// }, { threshold: 1.0 });
+
+// observer.observe(section);
+
+
+
+// const sliderMain = document.querySelector('.slider-main');
+// const slides = document.querySelectorAll('.slide-main');
+
+
+
+// const section = document.querySelector('#slow-scroll-section');
+
+// window.addEventListener('scroll', () => {
+//     const sectionTop = section.getBoundingClientRect().top;
+//     const sectionHeight = section.offsetHeight;
+//     const scrollPercentage = Math.abs(sectionTop) / sectionHeight;
+
+//     // Calculate which slide should be active based on scroll percentage
+//     const activeSlideIndex = Math.min(Math.floor(scrollPercentage * slides.length), slides.length - 1);
+
+//     // Change the content of each slide dynamically
+//     // slides.forEach((slide, index) => {
+        
+//     //     if (index === activeSlideIndex) {
+//     //         slide.innerHTML = `<h1>New Content for Slide ${index + 1}</h1>`;
+//     //     }
+//     //      else {
+//     //         slide.innerHTML = `<h1>Slide ${index + 1}</h1>`;
+//     //     }
+//     // });
+// });
+
+
+// let observer = new IntersectionObserver((entries) => {
+//     entries.forEach(entry => {
+//         if (entry.isIntersecting) {
+//             sliderMain.classList.add('slow-scroll'); // Slow scroll when section reaches the top
+//         } else {
+//             sliderMain.classList.remove('slow-scroll'); // Normal speed otherwise
+//         }
+//     });
+// }, { threshold: 1.0 });
+
+// observer.observe(section);

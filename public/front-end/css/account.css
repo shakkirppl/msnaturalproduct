@@ -1,0 +1,115 @@
+@font-face {
+    font-family: 'Myriad Pro';
+    src: url('/fonts/MyriadPro-Regular.woff2') format('woff2'),
+        url('/fonts/MyriadPro-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Myriad Pro', sans-serif !important;
+}
+
+.login-form {
+    background-color: #fff;
+    /* box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.05); */
+    display: flex;
+    width: 30%;
+    margin: auto;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 50px auto;
+    border: 1px solid #000;
+}
+
+.login-head h1 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+button.login-submit {
+    border-radius: 10px;
+    background-color: #217041;
+    height: 100%;
+    padding: 10px 24px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    margin-top: 20px;
+}
+
+.form-control.login-input {
+    padding: 8px;
+    border: 1px solid #000;
+}
+
+.form-control.login-input:focus {
+    box-shadow: none;
+    border: 1px solid #000;
+}
+
+.login-head p {
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.form-control.login-input::placeholder {
+    font-size: 12px;
+}
+
+
+
+button.accounts-login {
+    border-radius: 30px;
+    background-color: #47DA69;
+
+    padding: 10px 24px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+}
+
+button.accounts-login {
+    border-radius: 30px;
+    background-color: #47DA69;
+
+    padding: 10px 24px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+}
+
+button.accounts-login {
+    border-radius: 10px;
+    background-color: #217041;
+
+    padding: 10px 24px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+}
+
+
+button.continue-guest {
+    border-radius: 10px;
+    background-color: #217041;
+    padding: 10px 24px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+}
+
+button.new-signup {
+    border-radius: 10px;
+    background-color: #B48143;
+    padding: 10px 24px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+}
+
+.account-head {
+    color: #000;
+    margin-bottom: 10px;
+}

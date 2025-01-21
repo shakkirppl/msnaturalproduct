@@ -1,0 +1,264 @@
+@font-face {
+  font-family: 'Myriad Pro';
+  src: url('/fonts/MyriadPro-Regular.woff2') format('woff2'),
+    url('/fonts/MyriadPro-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Myriad Pro Light';
+  src: url('/fonts/MyriadPro-Light.woff2') format('woff2'),
+    url('/fonts/MyriadPro-Light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Myriad Pro', sans-serif !important;
+}
+
+.quantity-input {
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 9px 24px;
+  border: 1px solid #000;
+}
+
+.cart-wrapper {
+  border-radius: 0;
+  /* box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1); */
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-container-view-cart {
+  background-color: #fff;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  width: 70%;
+  margin: auto;
+  flex-direction: column;
+  padding: 50px 40px;
+}
+
+.cart-title {
+  color: #020202;
+  align-self: start;
+  margin-left: 53px;
+  font: 400 20px 'Myriad Pro', sans-serif;
+}
+
+.divider {
+  width: 884px;
+  max-width: 100%;
+  height: 1px;
+  border: 1px solid #E4E2DE;
+}
+
+.cart-items {
+  /* width: 514px; */
+  max-width: 100%;
+  margin: 31px 0 50px 53px;
+}
+
+.item-grid {
+  gap: 20px;
+  padding-bottom: 20px;
+  /* display: flex; */
+}
+
+.product-image-column-view-cart {
+  display: flex;
+  flex-direction: column;
+  line-height: normal;
+  width: 21%;
+  margin-left: 0;
+}
+
+.product-images {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+.product-image-view-cart {
+  aspect-ratio: 0.78;
+  object-fit: contain;
+  object-position: center;
+  width: 80%;
+  border-radius: 8px;
+}
+
+.product-details-column {
+  display: flex;
+  flex-direction: column;
+  line-height: normal;
+  width: 84%;
+  margin-left: 20px;
+}
+
+.product-details-view-cart {
+  display: flex;
+  width: 74%;
+  flex-direction: column;
+  color: #736E6E;
+  font: 400 20px 'Myriad Pro', sans-serif;
+}
+
+.product-info {
+  display: flex;
+  gap: 22px 84px;
+}
+
+.product-name {
+  color: #000;
+  font-size: 24px;
+  flex-grow: 1;
+  width: 109px;
+}
+
+.product-size {
+  text-align: center;
+}
+
+.product-quantity {
+  text-align: center;
+}
+
+.product-actions {
+  display: flex;
+  margin-top: 20px;
+  gap: 20px;
+  font-size: 24px;
+  color: #000;
+  justify-content: space-between;
+}
+
+.price {
+  text-align: center;
+  align-self: start;
+}
+
+.price-original-view-cart {
+  color: #736E6E;
+  text-align: center;
+  align-self: start;
+  text-decoration: line-through;
+}
+
+.remove-button {
+  font-size: 16px;
+  text-align: center;
+  margin: auto 0;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: #000;
+}
+
+.subtotal-section {
+  /* align-self: center; */
+  display: flex;
+  /* width: 100%; */
+  /* max-width: 747px; */
+  /* gap: 20px; */
+  color: #000;
+  text-align: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 31px 20px 31px 53px;
+  font: 400 28px 'Myriad Pro', sans-serif;
+}
+
+.total-section {
+  /* align-self: center; */
+  display: flex;
+  /* width: 100%;
+  max-width: 743px; */
+  /* gap: 20px; */
+  margin: 31px 20px 10px 53px;
+  font: 400 28px 'Myriad Pro', sans-serif;
+  color: #000;
+  text-align: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* margin: 17px 0 0 15px; */
+}
+
+.total-label {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.total-amount {
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.shipping-notice {
+  color: #000;
+  align-self: start;
+  /* margin: 0px 20px 31px 53px; */
+  font: 400 14px 'Myriad Pro', sans-serif;
+}
+
+.cart-actions {
+  /* align-self: center; */
+  display: flex;
+  /* width: 100%;
+  max-width: 788px; */
+  gap: 20px;
+  color: #fff;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* margin: 31px 20px 10px 53px; */
+  font: 700 14px 'Myriad Pro', sans-serif;
+}
+
+.continue-shopping {
+  border-radius: 30px;
+  background-color: #47DA69;
+  height: 100%;
+  padding: 10px 24px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+}
+
+.checkout-button {
+  border-radius: 30px;
+  background-color: #217041;
+  height: 100%;
+  padding: 10px 24px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.cart-price-one h1 {
+  margin-bottom: 0px;
+}
+
+.sub-buttons {
+
+
+  display: flex;
+  width: 55%;
+  margin: auto;
+  flex-direction: column;
+  padding: 50px 0px;
+}

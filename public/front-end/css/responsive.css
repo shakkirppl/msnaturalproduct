@@ -1,0 +1,3564 @@
+@media (max-width: 360px) {
+    .header {
+        padding: 0px 20px;
+    }
+
+    .header-top {
+        gap: 10px;
+    }
+
+    /* .nav-link {
+    font-size: 12px;
+    } */
+    .logo {
+        width: 80px;
+    }
+
+    .sticky-header .nav-menu .nav-link {
+        padding: 8px 12px !important;
+        font-size: 9px;
+    }
+
+    .sticky-header .nav-menu .language-selector .sticky-nav .styled-select {
+        padding: 8px 10px;
+        font: 400 10px 'Myriad Pro', sans-serif;
+        border: none;
+        cursor: pointer;
+    }
+
+    .sticky-header .nav-menu .language-selector .sticky-nav .sticky-lang-btn .lang-btn {
+        padding: 8px 10px;
+        font: 400 10px 'Myriad Pro', sans-serif;
+    }
+
+    .sticky-header .logo {
+        width: 80px;
+        max-width: fit-content;
+    }
+
+    .nav-link {
+        padding: 10px 10px !important;
+        font-size: 10px !important;
+    }
+
+    .lang-btn {
+        font: 400 10px 'Myriad Pro', sans-serif;
+        padding: 3px 5px;
+    }
+
+    .styled-select {
+        font: 400 10px 'Myriad Pro', sans-serif;
+        padding: 3px 5px;
+    }
+
+    .announcement-text {
+        font-size: 10px;
+        padding: 5px 0px;
+    }
+
+    .social-icons {
+        gap: 8px;
+    }
+
+    .language-selector {
+        gap: 8px;
+    }
+
+    .social-icon {
+        width: 25px;
+    }
+
+    .sticky-header .nav-menu .social-icons {
+        gap: 6px;
+    }
+
+    .sticky-header .nav-menu {
+        gap: 10px;
+    }
+
+    .cart-no {
+        width: 12px;
+        height: 12px;
+        font-size: 8px;
+        padding: 4px;
+    }
+
+    .cart-no {
+        top: 2px;
+        right: 0px;
+    }
+
+    /* product */
+    .main-slider {
+        margin-bottom: 30px;
+    }
+
+    .ms-product-head h1 {
+        text-align: center;
+        font: bold 24px 'Myriad Pro', sans-serif;
+        /* margin: 60px 0px; */
+        margin-bottom: 20px;
+    }
+
+    .product-main-div {
+        padding: 0px 30px;
+    }
+
+    .product-image {
+        margin-top: -20px;
+        margin-bottom: -20px;
+        margin-left: -6px;
+        /* width: 130%; */
+    }
+
+    .product-container {
+        padding: 40px 0px;
+    }
+
+    .product-info-column {
+        width: 50%;
+    }
+
+    .product-image-column {
+        width: 50%;
+    }
+
+    .product-title {
+        font-size: 12px;
+        line-height: 18px;
+        margin-top: 10px;
+    }
+
+    .product-subtitle {
+        font-size: 12px;
+        line-height: 18px;
+        padding: 0px;
+        margin-top: 5px;
+    }
+
+    .price-container {
+        margin-top: 10px;
+        gap: 5px;
+    }
+
+    .price-bold {
+        font-size: 14px;
+    }
+
+    .price-original {
+        font-size: 16px;
+    }
+
+    .price-discounted {
+        font-size: 10px;
+    }
+
+    .buy-now-button {
+        margin-top: 10px;
+    }
+
+    .section-end-line {
+        margin: 30px auto;
+    }
+
+    .buy-now-button button {
+        font-size: 10px;
+    }
+
+    /* popup-cart */
+    .popup-content-cart {
+        width: 250px;
+    }
+
+    .popup-content-cart {
+        padding: 10px;
+    }
+
+    .popup-content-cart p {
+        margin-bottom: 5px;
+        font-size: 12px;
+    }
+
+    .close-popup-cart {
+        font-size: 10px;
+    }
+
+    /* cart-box */
+    .cart-box {
+        width: 200px;
+    }
+
+    .cart-box-contents h1 {
+        font-size: 16px;
+    }
+
+    button.remove {
+        font-size: 14px;
+    }
+
+    .cart-box-contents p {
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
+
+    .sub-total h1 {
+        font-size: 14px;
+    }
+
+    .sub-total-amount h1 {
+        font-size: 14px;
+    }
+
+    .cart-box-bottom p {
+        font-size: 12px;
+    }
+
+    button.check-out {
+        font-size: 14px;
+        padding: 0px;
+    }
+
+    .price-discounted {
+        margin-top: 0px;
+    }
+
+    /*combo  product */
+    .original-price-combo {
+        font-size: 12px;
+    }
+
+    .main-slider {
+        margin-bottom: 30px;
+    }
+
+    .ms-product-head h1 {
+        text-align: center;
+        font: bold 24px 'Myriad Pro', sans-serif;
+        /* margin: 60px 0px; */
+        margin-bottom: 20px;
+    }
+
+    .product-main-div {
+        padding: 0px 20px;
+    }
+
+    .product-image-combo {
+        margin-top: -20px;
+        margin-bottom: -20px;
+        margin-left: -6px;
+        /* width: 130%; */
+    }
+
+    .product-container-combo {
+        padding: 40px 0px;
+    }
+
+    .product-info-column {
+        width: 50%;
+    }
+
+    .product-image-column {
+        width: 50%;
+    }
+
+    .product-title-combo {
+        font-size: 12px;
+        line-height: 18px;
+        margin-top: 10px;
+        padding: 0px;
+    }
+
+    .product-subtitle-combo {
+        font-size: 12px;
+        line-height: 18px;
+        padding: 0px;
+        margin-top: 5px;
+    }
+
+    .price-container-combo {
+        margin-top: 10px;
+        gap: 5px;
+        flex-wrap: wrap;
+    }
+
+    .price-bold-combo {
+        font-size: 12px;
+    }
+
+    .price-original-combo {
+        font-size: 16px;
+    }
+
+    .price-discounted-combo {
+        font-size: 10px;
+    }
+
+    .buy-now-button {
+        margin-top: 10px;
+    }
+
+    .section-end-line {
+        margin: 30px auto;
+    }
+
+    .buy-now-button-combo button {
+        font-size: 10px;
+    }
+
+    .discounted-price-combo {
+        font-size: 12px;
+        line-height: 18px;
+        margin-top: 0px;
+    }
+
+    /* ms natural product */
+    .div-zoom-img {
+        width: 60%;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+    .div-zoom-container{
+        padding: 0px 20px;
+    }
+    .div-zoom-container h6 {
+        margin-bottom: 5px;
+    }
+
+    .div-zoom-container h1 {
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+
+    .div-zoom-container p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    /* visit us  */
+    .visit-us-img {
+        padding: 0px;
+    }
+
+    .visit-us-contents {
+        padding: 10px 0px;
+    }
+
+    .visit-us-logo img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .visit-us-contents {
+        gap: 40px;
+    }
+
+    .address {
+        font-size: 14px;
+    }
+
+    .phone-number {
+        font-size: 14px;
+    }
+
+    /* PRODUCT DETAIL PAGE */
+    .product-title-detail {
+        font: 400 24px 'Myriad Pro', sans-serif;
+    }
+
+    .product-main-div {
+        padding: 0px 20px;
+    }
+
+    .product-detail-section {
+        margin: 20px auto;
+    }
+
+    .product-container-detail {
+        padding: 20px 0px;
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+
+    .product-container-detail {
+        margin: 0px;
+    }
+
+    .info-column {
+        margin-left: 0px;
+    }
+
+    .description-container {
+        margin-top: 0px;
+    }
+
+    .product-info-detail {
+        padding: 20px;
+    }
+
+    .add-to-cart {
+        padding: 10px 90px;
+    }
+
+    .description-container {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .description-text {
+        font-size: 14px;
+        line-height: 20px;
+        margin-top: 20px;
+    }
+
+    .price-container-detail {
+        gap: 5px;
+        margin: 10px 0px;
+    }
+
+    .current-price p {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .original-price {
+        margin-top: 0px;
+    }
+
+    .original-price p {
+        margin-bottom: 10px;
+    }
+
+    .price-wrapper {
+        gap: 5px;
+    }
+
+    .mrp-text {
+        margin: 5px 0px;
+    }
+
+    .quantity-title {
+        margin-top: 10px;
+    }
+
+    .option-image {
+        width: 30px;
+    }
+
+    .savings-text {
+        text-align: start;
+        margin-top: 0px;
+    }
+
+    .option-card {
+        padding: 0px;
+    }
+
+    .option-price-current {
+        font-size: 10px;
+    }
+
+    .btn-whatsapp-pulse {
+        padding: 20px;
+    }
+
+    .btn-whatsapp-pulse i {
+        font-size: 20px;
+    }
+
+    
+    /* view-cart */
+    .guest-address-main {
+        width: 100%;
+        margin: 20px 0px;
+    }
+
+    .guest-address-main {
+        padding: 10px;
+    }
+
+    .cart-detail-main-padding {
+        padding: 20px;
+    }
+
+    .cart-detail-img img {
+        width: 100%;
+    }
+
+    .cart-title {
+
+        margin: 10px 0px;
+    }
+
+    .cart-details-payment-head-list {
+        padding: 10px;
+    }
+
+    .cart-product-details {
+
+        gap: 6px;
+
+        margin-left: 6px;
+    }
+
+    .cart-head-one h1 {
+        font-size: 14px;
+    }
+
+    .cart-order-product-details-price {
+        margin-left: 6px;
+    }
+
+    .cart-price-one h1 {
+        font-size: 16px;
+    }
+
+    .remove-button {
+        font-size: 16px;
+    }
+
+    .cart-actions {
+        justify-content: center;
+    }
+
+    .cart-details-payment-head h1 {
+        font-size: 16px;
+        margin-bottom: 0px;
+    }
+
+    .cart-details-payment-price p {
+        font-size: 16px;
+        margin-bottom: 0px;
+    }
+
+    .shipping-notice {
+        margin-top: 10px;
+    }
+
+    .continue-shopping {
+        font-size: 12px;
+    }
+
+    .checkout-button {
+        font-size: 12px;
+    }
+
+    /* checkout */
+    .cart-order-product-details-price {
+        gap: 8px;
+    }
+
+    button.remove-button {
+        padding: 0px;
+    }
+
+    .cart-details h1 {
+        padding: 10px 20px;
+    }
+
+    .sub-buttons {
+        width: 100%;
+        padding: 0px;
+
+    }
+
+    .cart-actions {
+        margin-bottom: 20px;
+    }
+
+    .login-form {
+        width: 100%;
+    }
+
+    .login-head h1 {
+        font-size: 24px;
+    }
+
+    /* guest checkout */
+    .form-checkout-form {
+        padding: 0px;
+        width: 100%;
+    }
+
+    .form-sub {
+        padding: 0px;
+    }
+
+
+    /* login checkout */
+    .user-account-main {
+        width: 100%;
+    }
+
+    /* address */
+    .address-main {
+        margin: 20px 0px;
+    }
+
+    .form-sub {
+        padding: 0px;
+    }
+
+    button.complete-order {
+        font-size: 10px;
+        margin-top: 20px;
+        padding: 0px 20px;
+    }
+
+    /* order confirmation */
+    .image-order img {
+        width: 20%;
+    }
+
+    h1.head-first {
+
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    p.head-second {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    button.view-order-confirmation {
+        width: 80%;
+        font-size: 12px;
+    }
+
+    button.confirmation-shopping {
+        width: 80%;
+        font-size: 12px;
+    }
+
+    /* blog */
+    .video-gallery-img {
+        margin: 10px;
+    }
+
+    /* review */
+    .name-displayed-by-name {
+        margin-bottom: 20px;
+    }
+
+    .review-address-main {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .review-bottom-para {
+        padding: 0px 20px;
+    }
+}
+
+@media (min-width: 361px) and (max-width: 480px) {
+    .header {
+        padding: 0px 20px;
+    }
+
+    .header-top {
+        gap: 10px;
+    }
+
+    /* .nav-link {
+    font-size: 12px;
+    } */
+    .logo {
+        width: 80px;
+    }
+
+    .sticky-header .nav-menu .nav-link {
+        padding: 8px 12px !important;
+        font-size: 9px;
+    }
+
+    .sticky-header .nav-menu .language-selector .sticky-nav .styled-select {
+        padding: 8px 10px;
+        font: 400 10px 'Myriad Pro', sans-serif;
+        border: none;
+        cursor: pointer;
+    }
+
+    .sticky-header .nav-menu .language-selector .sticky-nav .sticky-lang-btn .lang-btn {
+        padding: 8px 10px;
+        font: 400 10px 'Myriad Pro', sans-serif;
+    }
+
+    .sticky-header .logo {
+        width: 80px;
+        max-width: fit-content;
+    }
+
+    .nav-link {
+        padding: 10px 10px !important;
+        font-size: 10px !important;
+    }
+
+    .lang-btn {
+        font: 400 10px 'Myriad Pro', sans-serif;
+        padding: 6px 5px;
+    }
+
+    .styled-select {
+        font: 400 10px 'Myriad Pro', sans-serif;
+        padding: 6px 5px;
+    }
+
+    .announcement-text {
+        font-size: 10px;
+        padding: 5px 0px;
+    }
+
+    .social-icons {
+        gap: 8px;
+    }
+
+    .language-selector {
+        gap: 8px;
+    }
+
+    .social-icon {
+        width: 25px;
+    }
+
+    .sticky-header .nav-menu .social-icons {
+        gap: 6px;
+    }
+
+    .sticky-header .nav-menu {
+        gap: 10px;
+    }
+
+    .cart-no {
+        width: 12px;
+        height: 12px;
+        font-size: 8px;
+        padding: 4px;
+    }
+
+    .cart-no {
+        top: 2px;
+        right: 0px;
+    }
+
+    /* product */
+    .main-slider {
+        margin-bottom: 30px;
+    }
+
+    .ms-product-head h1 {
+        text-align: center;
+        font: bold 24px 'Myriad Pro', sans-serif;
+        /* margin: 60px 0px; */
+        margin-bottom: 20px;
+    }
+
+    .product-main-div {
+        padding: 0px 30px;
+    }
+
+    .product-image {
+        margin-top: -20px;
+        margin-bottom: -20px;
+        margin-left: -6px;
+        /* width: 130%; */
+    }
+
+    .product-container {
+        padding: 40px 0px;
+    }
+
+    .product-info-column {
+        width: 50%;
+    }
+
+    .product-image-column {
+        width: 50%;
+    }
+
+    .product-title {
+        font-size: 12px;
+        line-height: 18px;
+        margin-top: 10px;
+    }
+
+    .product-subtitle {
+        font-size: 12px;
+        line-height: 18px;
+        padding: 0px;
+        margin-top: 5px;
+    }
+
+    .price-container {
+        margin-top: 10px;
+        gap: 5px;
+    }
+
+    .price-bold {
+        font-size: 14px;
+    }
+
+    .price-original {
+        font-size: 16px;
+    }
+
+    .price-discounted {
+        font-size: 10px;
+    }
+
+    .buy-now-button {
+        margin-top: 10px;
+    }
+
+    .section-end-line {
+        margin: 30px auto;
+    }
+
+    .buy-now-button button {
+        font-size: 10px;
+    }
+
+    /* popup-cart */
+    .popup-content-cart {
+        width: 250px;
+    }
+
+    .popup-content-cart {
+        padding: 10px;
+    }
+
+    .popup-content-cart p {
+        margin-bottom: 5px;
+        font-size: 12px;
+    }
+
+    .close-popup-cart {
+        font-size: 10px;
+    }
+
+    /* cart-box */
+    .cart-box {
+        width: 200px;
+    }
+
+    .cart-box-contents h1 {
+        font-size: 16px;
+    }
+
+    button.remove {
+        font-size: 14px;
+    }
+
+    .cart-box-contents p {
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
+
+    .sub-total h1 {
+        font-size: 14px;
+    }
+
+    .sub-total-amount h1 {
+        font-size: 14px;
+    }
+
+    .cart-box-bottom p {
+        font-size: 12px;
+    }
+
+    button.check-out {
+        font-size: 14px;
+        padding: 0px;
+    }
+
+    .price-discounted {
+        margin-top: 0px;
+    }
+
+    /*combo  product */
+    .original-price-combo {
+        font-size: 12px;
+    }
+
+    .main-slider {
+        margin-bottom: 30px;
+    }
+
+    .ms-product-head h1 {
+        text-align: center;
+        font: bold 24px 'Myriad Pro', sans-serif;
+        /* margin: 60px 0px; */
+        margin-bottom: 20px;
+    }
+
+    .product-main-div {
+        padding: 0px 20px;
+    }
+
+    .product-image-combo {
+        margin-top: -20px;
+        margin-bottom: -20px;
+        margin-left: -6px;
+        /* width: 130%; */
+    }
+
+    .product-container-combo {
+        padding: 40px 0px;
+    }
+
+    .product-info-column {
+        width: 50%;
+    }
+
+    .product-image-column {
+        width: 50%;
+    }
+
+    .product-title-combo {
+        font-size: 12px;
+        line-height: 18px;
+        margin-top: 10px;
+        padding: 0px;
+    }
+
+    .product-subtitle-combo {
+        font-size: 12px;
+        line-height: 18px;
+        padding: 0px;
+        margin-top: 5px;
+    }
+
+    .price-container-combo {
+        margin-top: 10px;
+        gap: 5px;
+        flex-wrap: wrap;
+    }
+
+    .price-bold-combo {
+        font-size: 12px;
+    }
+
+    .price-original-combo {
+        font-size: 16px;
+    }
+
+    .price-discounted-combo {
+        font-size: 10px;
+    }
+
+    .buy-now-button {
+        margin-top: 10px;
+    }
+
+    .section-end-line {
+        margin: 30px auto;
+    }
+
+    .buy-now-button-combo button {
+        font-size: 10px;
+    }
+
+    .discounted-price-combo {
+        font-size: 12px;
+        line-height: 18px;
+        margin-top: 0px;
+    }
+
+    /* ms natural product */
+    .div-zoom-img {
+        width: 60%;
+        margin: auto;
+        margin-bottom: 20px;
+    } .div-zoom-container{
+        padding: 0px 20px;
+    }
+
+    .div-zoom-container h6 {
+        margin-bottom: 5px;
+    }
+
+    .div-zoom-container h1 {
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+
+    .div-zoom-container p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    /* visit us  */
+    .visit-us-img {
+        padding: 0px;
+    }
+
+    .visit-us-contents {
+        padding: 10px 0px;
+    }
+
+    .visit-us-logo img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .visit-us-contents {
+        gap: 40px;
+    }
+
+    .address {
+        font-size: 14px;
+    }
+
+    .phone-number {
+        font-size: 14px;
+    }
+
+    /* PRODUCT DETAIL PAGE */
+    .product-title-detail {
+        font: 400 24px 'Myriad Pro', sans-serif;
+    }
+
+    .product-main-div {
+        padding: 0px 20px;
+    }
+
+    .product-detail-section {
+        margin: 20px auto;
+    }
+
+    .product-container-detail {
+        padding: 20px 0px;
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+
+    .product-container-detail {
+        margin: 0px;
+    }
+
+    .info-column {
+        margin-left: 0px;
+    }
+
+    .description-container {
+        margin-top: 0px;
+    }
+
+    .product-info-detail {
+        padding: 20px;
+    }
+
+    .add-to-cart {
+        padding: 10px 90px;
+    }
+
+    .description-container {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .description-text {
+        font-size: 14px;
+        line-height: 20px;
+        margin-top: 20px;
+    }
+
+    .price-container-detail {
+        gap: 5px;
+        margin: 10px 0px;
+    }
+
+    .current-price p {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .original-price {
+        margin-top: 0px;
+    }
+
+    .original-price p {
+        margin-bottom: 10px;
+    }
+
+    .price-wrapper {
+        gap: 5px;
+    }
+
+    .mrp-text {
+        margin: 5px 0px;
+    }
+
+    .quantity-title {
+        margin-top: 10px;
+    }
+
+    .option-image {
+        width: 30px;
+    }
+
+    .savings-text {
+        text-align: start;
+        margin-top: 0px;
+    }
+
+    .option-card {
+        padding: 0px;
+    }
+
+    .option-price-current {
+        font-size: 10px;
+    }
+
+    .btn-whatsapp-pulse {
+        padding: 20px;
+    }
+
+    .btn-whatsapp-pulse i {
+        font-size: 20px;
+    }
+
+
+
+    /* view-cart */
+    .guest-address-main {
+        width: 100%;
+        margin: 20px 0px;
+    }
+
+    .guest-address-main {
+        padding: 10px;
+    }
+
+    .cart-detail-main-padding {
+        padding: 20px;
+    }
+
+    .cart-detail-img img {
+        width: 100%;
+    }
+
+    .cart-title {
+
+        margin: 10px 0px;
+    }
+
+    .cart-details-payment-head-list {
+        padding: 10px;
+    }
+
+    .cart-product-details {
+
+        gap: 6px;
+
+        margin-left: 6px;
+    }
+
+    .cart-head-one h1 {
+        font-size: 14px;
+    }
+
+    .cart-order-product-details-price {
+        margin-left: 6px;
+    }
+
+    .cart-price-one h1 {
+        font-size: 16px;
+    }
+
+    .remove-button {
+        font-size: 16px;
+    }
+
+    .cart-actions {
+        justify-content: center;
+    }
+
+    .cart-details-payment-head h1 {
+        font-size: 16px;
+        margin-bottom: 0px;
+    }
+
+    .cart-details-payment-price p {
+        font-size: 16px;
+        margin-bottom: 0px;
+    }
+
+    .shipping-notice {
+        margin-top: 10px;
+    }
+
+    .continue-shopping {
+        font-size: 12px;
+    }
+
+    .checkout-button {
+        font-size: 12px;
+    }
+
+    /* checkout */
+    .cart-order-product-details-price {
+        gap: 8px;
+    }
+
+    button.remove-button {
+        padding: 0px;
+    }
+
+    .cart-details h1 {
+        padding: 10px 20px;
+    }
+
+    .sub-buttons {
+        width: 100%;
+        padding: 0px;
+
+    }
+
+    .cart-actions {
+        margin-bottom: 20px;
+    }
+
+    .login-form {
+        width: 100%;
+    }
+
+    .login-head h1 {
+        font-size: 24px;
+    }
+
+    /* guest checkout */
+    .form-checkout-form {
+        padding: 0px;
+        width: 100%;
+    }
+
+    .form-sub {
+        padding: 0px;
+    }
+
+
+    /* login checkout */
+    .user-account-main {
+        width: 100%;
+    }
+
+    /* address */
+    .address-main {
+        margin: 20px 0px;
+    }
+
+    .form-sub {
+        padding: 0px;
+    }
+
+    button.complete-order {
+        font-size: 10px;
+        margin-top: 20px;
+        padding: 0px 20px;
+    }
+
+    /* order confirmation */
+    .image-order img {
+        width: 20%;
+    }
+
+    h1.head-first {
+
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    p.head-second {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    button.view-order-confirmation {
+        width: 80%;
+        font-size: 12px;
+    }
+
+    button.confirmation-shopping {
+        width: 80%;
+        font-size: 12px;
+    }
+
+    /* blog */
+    .video-gallery-img {
+        margin: 10px;
+    }
+
+    /* review */
+    .name-displayed-by-name {
+        margin-bottom: 20px;
+    }
+
+    .review-address-main {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .review-bottom-para {
+        padding: 0px 20px;
+    }
+
+
+    /* profile page */
+    .order-product-div{
+        padding: 20px;
+    }
+    .table tr th{
+        font-size: 8px;
+    }
+    .table tr td{
+        font-size: 8px;  
+    }
+    .dropdown-content-order{
+        width: auto;
+        font-size: 12px;
+        padding: 6px;
+    }
+    .order-product-details{
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .order-product-details-price{
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .head-one h1{
+        font-size: 16px;
+        margin-bottom: 4px;
+    }
+    .write-product-main{
+        text-align: center;
+    }
+    h1.return-head{
+        text-align: center;
+    }
+    .cancel-order-main{
+        text-align: center;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 576px) {
+    .header {
+        padding: 0px 20px;
+    }
+
+    .header-top {
+        gap: 10px;
+    }
+
+    /* .nav-link {
+    font-size: 12px;
+    } */
+    .logo {
+        width: 80px;
+    }
+
+    .sticky-header .nav-menu .nav-link {
+        padding: 8px 12px !important;
+        font-size: 9px;
+    }
+
+    .sticky-header .nav-menu .language-selector .sticky-nav .styled-select {
+        padding: 8px 10px;
+        font: 400 10px 'Myriad Pro', sans-serif;
+        border: none;
+        cursor: pointer;
+    }
+
+    .sticky-header .nav-menu .language-selector .sticky-nav .sticky-lang-btn .lang-btn {
+        padding: 8px 10px;
+        font: 400 10px 'Myriad Pro', sans-serif;
+    }
+
+    .sticky-header .logo {
+        width: 80px;
+        max-width: fit-content;
+    }
+
+    .nav-link {
+        padding: 10px 10px !important;
+        font-size: 10px !important;
+    }
+
+    .lang-btn {
+        font: 400 10px 'Myriad Pro', sans-serif;
+        padding: 3px 5px;
+    }
+
+    .styled-select {
+        font: 400 10px 'Myriad Pro', sans-serif;
+        padding: 3px 5px;
+    }
+
+    .announcement-text {
+        font-size: 10px;
+        padding: 5px 0px;
+    }
+
+    .social-icons {
+        gap: 8px;
+    }
+
+    .language-selector {
+        gap: 8px;
+    }
+
+    .social-icon {
+        width: 25px;
+    }
+
+    .sticky-header .nav-menu .social-icons {
+        gap: 6px;
+    }
+
+    .sticky-header .nav-menu {
+        gap: 10px;
+    }
+
+    .cart-no {
+        width: 12px;
+        height: 12px;
+        font-size: 8px;
+        padding: 4px;
+    }
+
+    .cart-no {
+        top: 2px;
+        right: 0px;
+    }
+
+    /* product */
+    .main-slider {
+        margin-bottom: 30px;
+    }
+
+    .ms-product-head h1 {
+        text-align: center;
+        font: bold 24px 'Myriad Pro', sans-serif;
+        /* margin: 60px 0px; */
+        margin-bottom: 20px;
+    }
+
+    .product-main-div {
+        padding: 0px 30px;
+    }
+
+    .product-image {
+        margin-top: -20px;
+        margin-bottom: -20px;
+        margin-left: -6px;
+        /* width: 130%; */
+    }
+
+    .product-container {
+        padding: 40px 0px;
+    }
+
+    .product-info-column {
+        width: 50%;
+    }
+
+    .product-image-column {
+        width: 50%;
+    }
+
+    .product-title {
+        font-size: 12px;
+        line-height: 18px;
+        margin-top: 10px;
+    }
+
+    .product-subtitle {
+        font-size: 12px;
+        line-height: 18px;
+        padding: 0px;
+        margin-top: 5px;
+    }
+
+    .price-container {
+        margin-top: 10px;
+        gap: 5px;
+    }
+
+    .price-bold {
+        font-size: 14px;
+    }
+
+    .price-original {
+        font-size: 16px;
+    }
+
+    .price-discounted {
+        font-size: 10px;
+    }
+
+    .buy-now-button {
+        margin-top: 10px;
+    }
+
+    .section-end-line {
+        margin: 30px auto;
+    }
+
+    .buy-now-button button {
+        font-size: 10px;
+    }
+
+    /* popup-cart */
+    .popup-content-cart {
+        width: 250px;
+    }
+
+    .popup-content-cart {
+        padding: 10px;
+    }
+
+    .popup-content-cart p {
+        margin-bottom: 5px;
+        font-size: 12px;
+    }
+
+    .close-popup-cart {
+        font-size: 10px;
+    }
+
+    /* cart-box */
+    .cart-box {
+        width: 200px;
+    }
+
+    .cart-box-contents h1 {
+        font-size: 16px;
+    }
+
+    button.remove {
+        font-size: 14px;
+    }
+
+    .cart-box-contents p {
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
+
+    .sub-total h1 {
+        font-size: 14px;
+    }
+
+    .sub-total-amount h1 {
+        font-size: 14px;
+    }
+
+    .cart-box-bottom p {
+        font-size: 12px;
+    }
+
+    button.check-out {
+        font-size: 14px;
+        padding: 0px;
+    }
+
+    .price-discounted {
+        margin-top: 0px;
+    }
+
+    /*combo  product */
+    .original-price-combo {
+        font-size: 12px;
+    }
+
+    .main-slider {
+        margin-bottom: 30px;
+    }
+
+    .ms-product-head h1 {
+        text-align: center;
+        font: bold 24px 'Myriad Pro', sans-serif;
+        /* margin: 60px 0px; */
+        margin-bottom: 20px;
+    }
+
+    .product-main-div {
+        padding: 0px 20px;
+    }
+
+    .product-image-combo {
+        margin-top: -20px;
+        margin-bottom: -20px;
+        margin-left: -6px;
+        /* width: 130%; */
+    }
+
+    .product-container-combo {
+        padding: 40px 0px;
+    }
+
+    .product-info-column {
+        width: 50%;
+    }
+
+    .product-image-column {
+        width: 50%;
+    }
+
+    .product-title-combo {
+        font-size: 12px;
+        line-height: 18px;
+        margin-top: 10px;
+        padding: 0px;
+    }
+
+    .product-subtitle-combo {
+        font-size: 12px;
+        line-height: 18px;
+        padding: 0px;
+        margin-top: 5px;
+    }
+
+    .price-container-combo {
+        margin-top: 10px;
+        gap: 5px;
+        flex-wrap: wrap;
+    }
+
+    .price-bold-combo {
+        font-size: 12px;
+    }
+
+    .price-original-combo {
+        font-size: 16px;
+    }
+
+    .price-discounted-combo {
+        font-size: 10px;
+    }
+
+    .buy-now-button {
+        margin-top: 10px;
+    }
+
+    .section-end-line {
+        margin: 30px auto;
+    }
+
+    .buy-now-button-combo button {
+        font-size: 10px;
+    }
+
+    .discounted-price-combo {
+        font-size: 12px;
+        line-height: 18px;
+        margin-top: 0px;
+    }
+
+    /* ms natural product */
+    .div-zoom-img {
+        width: 60%;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+    .div-zoom-container{
+        padding: 0px 20px;
+    }
+    .div-zoom-container h6 {
+        margin-bottom: 5px;
+    }
+
+    .div-zoom-container h1 {
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+
+    .div-zoom-container p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    /* visit us  */
+    .visit-us-img {
+        padding: 0px;
+    }
+
+    .visit-us-contents {
+        padding: 10px 0px;
+    }
+
+    .visit-us-logo img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .visit-us-contents {
+        gap: 40px;
+    }
+
+    .address {
+        font-size: 14px;
+    }
+
+    .phone-number {
+        font-size: 14px;
+    }
+
+    /* PRODUCT DETAIL PAGE */
+    .product-title-detail {
+        font: 400 24px 'Myriad Pro', sans-serif;
+    }
+
+    .product-main-div {
+        padding: 0px 20px;
+    }
+
+    .product-detail-section {
+        margin: 20px auto;
+    }
+
+    .product-container-detail {
+        padding: 20px 0px;
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+
+    .product-container-detail {
+        margin: 0px;
+    }
+
+    .info-column {
+        margin-left: 0px;
+    }
+
+    .description-container {
+        margin-top: 0px;
+    }
+
+    .product-info-detail {
+        padding: 20px;
+    }
+
+    .add-to-cart {
+        padding: 10px 90px;
+    }
+
+    .description-container {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .description-text {
+        font-size: 14px;
+        line-height: 20px;
+        margin-top: 20px;
+    }
+
+    .price-container-detail {
+        gap: 5px;
+        margin: 10px 0px;
+    }
+
+    .current-price p {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .original-price {
+        margin-top: 0px;
+    }
+
+    .original-price p {
+        margin-bottom: 10px;
+    }
+
+    .price-wrapper {
+        gap: 5px;
+    }
+
+    .mrp-text {
+        margin: 5px 0px;
+    }
+
+    .quantity-title {
+        margin-top: 10px;
+    }
+
+    .option-image {
+        width: 30px;
+    }
+
+    .savings-text {
+        text-align: start;
+        margin-top: 0px;
+    }
+
+    .option-card {
+        padding: 0px;
+    }
+
+    .option-price-current {
+        font-size: 10px;
+    }
+
+    .btn-whatsapp-pulse {
+        padding: 20px;
+    }
+
+    .btn-whatsapp-pulse i {
+        font-size: 20px;
+    }
+
+    
+    /* view-cart */
+    .guest-address-main {
+        width: 100%;
+        margin: 20px 0px;
+    }
+
+    .guest-address-main {
+        padding: 10px;
+    }
+
+    .cart-detail-main-padding {
+        padding: 20px;
+    }
+
+    .cart-detail-img img {
+        width: 100%;
+    }
+
+    .cart-title {
+
+        margin: 10px 0px;
+    }
+
+    .cart-details-payment-head-list {
+        padding: 10px;
+    }
+
+    .cart-product-details {
+
+        gap: 6px;
+
+        margin-left: 6px;
+    }
+
+    .cart-head-one h1 {
+        font-size: 14px;
+    }
+
+    .cart-order-product-details-price {
+        margin-left: 6px;
+    }
+
+    .cart-price-one h1 {
+        font-size: 16px;
+    }
+
+    .remove-button {
+        font-size: 16px;
+    }
+
+    .cart-actions {
+        justify-content: center;
+    }
+
+    .cart-details-payment-head h1 {
+        font-size: 16px;
+        margin-bottom: 0px;
+    }
+
+    .cart-details-payment-price p {
+        font-size: 16px;
+        margin-bottom: 0px;
+    }
+
+    .shipping-notice {
+        margin-top: 10px;
+    }
+
+    .continue-shopping {
+        font-size: 12px;
+    }
+
+    .checkout-button {
+        font-size: 12px;
+    }
+
+    /* checkout */
+    .cart-order-product-details-price {
+        gap: 8px;
+    }
+
+    button.remove-button {
+        padding: 0px;
+    }
+
+    .cart-details h1 {
+        padding: 10px 20px;
+    }
+
+    .sub-buttons {
+        width: 100%;
+        padding: 0px;
+
+    }
+
+    .cart-actions {
+        margin-bottom: 20px;
+    }
+
+    .login-form {
+        width: 100%;
+    }
+
+    .login-head h1 {
+        font-size: 24px;
+    }
+
+    /* guest checkout */
+    .form-checkout-form {
+        padding: 0px;
+        width: 100%;
+    }
+
+    .form-sub {
+        padding: 0px;
+    }
+
+
+    /* login checkout */
+    .user-account-main {
+        width: 100%;
+    }
+
+    /* address */
+    .address-main {
+        margin: 20px 0px;
+    }
+
+    .form-sub {
+        padding: 0px;
+    }
+
+    button.complete-order {
+        font-size: 10px;
+        margin-top: 20px;
+        padding: 0px 20px;
+    }
+
+    /* order confirmation */
+    .image-order img {
+        width: 20%;
+    }
+
+    h1.head-first {
+
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    p.head-second {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    button.view-order-confirmation {
+        width: 80%;
+        font-size: 12px;
+    }
+
+    button.confirmation-shopping {
+        width: 80%;
+        font-size: 12px;
+    }
+
+    /* blog */
+    .video-gallery-img {
+        margin: 10px;
+    }
+
+    /* review */
+    .name-displayed-by-name {
+        margin-bottom: 20px;
+    }
+
+    .review-address-main {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .review-bottom-para {
+        padding: 0px 20px;
+    }
+
+        /* profile page */
+        .order-product-div{
+            padding: 20px;
+        }
+        .table tr th{
+            font-size: 8px;
+        }
+        .table tr td{
+            font-size: 8px;  
+        }
+        .dropdown-content-order{
+            width: auto;
+            font-size: 12px;
+            padding: 6px;
+        }
+        .order-product-details{
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .order-product-details-price{
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .head-one h1{
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+        .write-product-main{
+            text-align: center;
+        }
+        h1.return-head{
+            text-align: center;
+        }
+        .cancel-order-main{
+            text-align: center;
+        }
+
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+    .header {
+        padding: 0px 20px;
+    }
+
+    .header-top {
+        gap: 10px;
+    }
+
+    /* .nav-link {
+    font-size: 12px;
+    } */
+    .logo {
+        width: 80px;
+    }
+
+    .sticky-header .nav-menu .nav-link {
+        padding: 8px 12px !important;
+        font-size: 9px;
+    }
+
+    .sticky-header .nav-menu .language-selector .sticky-nav .styled-select {
+        padding: 8px 10px;
+        font: 400 10px 'Myriad Pro', sans-serif;
+        border: none;
+        cursor: pointer;
+    }
+
+    .sticky-header .nav-menu .language-selector .sticky-nav .sticky-lang-btn .lang-btn {
+        padding: 8px 10px;
+        font: 400 10px 'Myriad Pro', sans-serif;
+    }
+
+    .sticky-header .logo {
+        width: 80px;
+        max-width: fit-content;
+    }
+
+    .nav-link {
+        padding: 10px 10px !important;
+        font-size: 10px !important;
+    }
+
+    .lang-btn {
+        font: 400 10px 'Myriad Pro', sans-serif;
+        padding: 3px 5px;
+    }
+
+    .styled-select {
+        font: 400 10px 'Myriad Pro', sans-serif;
+        padding: 3px 5px;
+    }
+
+    .announcement-text {
+        font-size: 10px;
+        padding: 5px 0px;
+    }
+
+    .social-icons {
+        gap: 8px;
+    }
+
+    .language-selector {
+        gap: 8px;
+    }
+
+    .social-icon {
+        width: 25px;
+    }
+
+    .sticky-header .nav-menu .social-icons {
+        gap: 6px;
+    }
+
+    .sticky-header .nav-menu {
+        gap: 10px;
+    }
+
+    .cart-no {
+        width: 12px;
+        height: 12px;
+        font-size: 8px;
+        padding: 4px;
+    }
+
+    .cart-no {
+        top: 2px;
+        right: 0px;
+    }
+
+    /* product */
+    .main-slider {
+        margin-bottom: 30px;
+    }
+
+    .ms-product-head h1 {
+        text-align: center;
+        font: bold 24px 'Myriad Pro', sans-serif;
+        /* margin: 60px 0px; */
+        margin-bottom: 20px;
+    }
+
+    .product-main-div {
+        padding: 0px 30px;
+    }
+
+    .product-image {
+        margin-top: -20px;
+        margin-bottom: -20px;
+        margin-left: -6px;
+        /* width: 130%; */
+    }
+
+    .product-container {
+        padding: 40px 0px;
+    }
+
+    .product-info-column {
+        width: 50%;
+    }
+
+    .product-image-column {
+        width: 50%;
+    }
+
+    .product-title {
+        font-size: 12px;
+        line-height: 18px;
+        margin-top: 10px;
+    }
+
+    .product-subtitle {
+        font-size: 12px;
+        line-height: 18px;
+        padding: 0px;
+        margin-top: 5px;
+    }
+
+    .price-container {
+        margin-top: 10px;
+        gap: 5px;
+    }
+
+    .price-bold {
+        font-size: 14px;
+    }
+
+    .price-original {
+        font-size: 16px;
+    }
+
+    .price-discounted {
+        font-size: 10px;
+    }
+
+    .buy-now-button {
+        margin-top: 10px;
+    }
+
+    .section-end-line {
+        margin: 30px auto;
+    }
+
+    .buy-now-button button {
+        font-size: 10px;
+    }
+
+    /* popup-cart */
+    .popup-content-cart {
+        width: 250px;
+    }
+
+    .popup-content-cart {
+        padding: 10px;
+    }
+
+    .popup-content-cart p {
+        margin-bottom: 5px;
+        font-size: 12px;
+    }
+
+    .close-popup-cart {
+        font-size: 10px;
+    }
+
+    /* cart-box */
+    .cart-box {
+        width: 200px;
+    }
+
+    .cart-box-contents h1 {
+        font-size: 16px;
+    }
+
+    button.remove {
+        font-size: 14px;
+    }
+
+    .cart-box-contents p {
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
+
+    .sub-total h1 {
+        font-size: 14px;
+    }
+
+    .sub-total-amount h1 {
+        font-size: 14px;
+    }
+
+    .cart-box-bottom p {
+        font-size: 12px;
+    }
+
+    button.check-out {
+        font-size: 14px;
+        padding: 0px;
+    }
+
+    .price-discounted {
+        margin-top: 0px;
+    }
+
+    /*combo  product */
+    .original-price-combo {
+        font-size: 12px;
+    }
+
+    .main-slider {
+        margin-bottom: 30px;
+    }
+
+    .ms-product-head h1 {
+        text-align: center;
+        font: bold 24px 'Myriad Pro', sans-serif;
+        /* margin: 60px 0px; */
+        margin-bottom: 20px;
+    }
+
+    .product-main-div {
+        padding: 0px 20px;
+    }
+
+    .product-image-combo {
+        margin-top: -20px;
+        margin-bottom: -20px;
+        margin-left: -6px;
+        /* width: 130%; */
+    }
+
+    .product-container-combo {
+        padding: 40px 0px;
+    }
+
+    .product-info-column {
+        width: 50%;
+    }
+
+    .product-image-column {
+        width: 50%;
+    }
+
+    .product-title-combo {
+        font-size: 12px;
+        line-height: 18px;
+        margin-top: 10px;
+        padding: 0px;
+    }
+
+    .product-subtitle-combo {
+        font-size: 12px;
+        line-height: 18px;
+        padding: 0px;
+        margin-top: 5px;
+    }
+
+    .price-container-combo {
+        margin-top: 10px;
+        gap: 5px;
+        flex-wrap: wrap;
+    }
+
+    .price-bold-combo {
+        font-size: 12px;
+    }
+
+    .price-original-combo {
+        font-size: 16px;
+    }
+
+    .price-discounted-combo {
+        font-size: 10px;
+    }
+
+    .buy-now-button {
+        margin-top: 10px;
+    }
+
+    .section-end-line {
+        margin: 30px auto;
+    }
+
+    .buy-now-button-combo button {
+        font-size: 10px;
+    }
+
+    .discounted-price-combo {
+        font-size: 12px;
+        line-height: 18px;
+        margin-top: 0px;
+    }
+
+    /* ms natural product */
+    .div-zoom-img {
+        width: 60%;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+    .div-zoom-container{
+        padding: 0px 20px;
+    }
+    .div-zoom-container h6 {
+        margin-bottom: 5px;
+    }
+
+    .div-zoom-container h1 {
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+
+    .div-zoom-container p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    /* visit us  */
+    .visit-us-img {
+        padding: 0px;
+    }
+
+    .visit-us-contents {
+        padding: 10px 0px;
+    }
+
+    .visit-us-logo img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .visit-us-contents {
+        gap: 40px;
+    }
+
+    .address {
+        font-size: 14px;
+    }
+
+    .phone-number {
+        font-size: 14px;
+    }
+
+    /* PRODUCT DETAIL PAGE */
+    .product-title-detail {
+        font: 400 24px 'Myriad Pro', sans-serif;
+    }
+
+    .product-main-div {
+        padding: 0px 20px;
+    }
+
+    .product-detail-section {
+        margin: 20px auto;
+    }
+
+    .product-container-detail {
+        padding: 20px 0px;
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+
+    .product-container-detail {
+        margin: 0px;
+    }
+
+    .info-column {
+        margin-left: 0px;
+    }
+
+    .description-container {
+        margin-top: 0px;
+    }
+
+    .product-info-detail {
+        padding: 20px;
+    }
+
+    .add-to-cart {
+        padding: 10px 90px;
+    }
+
+    .description-container {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .description-text {
+        font-size: 14px;
+        line-height: 20px;
+        margin-top: 20px;
+    }
+
+    .price-container-detail {
+        gap: 5px;
+        margin: 10px 0px;
+    }
+
+    .current-price p {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .original-price {
+        margin-top: 0px;
+    }
+
+    .original-price p {
+        margin-bottom: 10px;
+    }
+
+    .price-wrapper {
+        gap: 5px;
+    }
+
+    .mrp-text {
+        margin: 5px 0px;
+    }
+
+    .quantity-title {
+        margin-top: 10px;
+    }
+
+    .option-image {
+        width: 30px;
+    }
+
+    .savings-text {
+        text-align: start;
+        margin-top: 0px;
+    }
+
+    .option-card {
+        padding: 0px;
+    }
+
+    .option-price-current {
+        font-size: 10px;
+    }
+
+    .btn-whatsapp-pulse {
+        padding: 20px;
+    }
+
+    .btn-whatsapp-pulse i {
+        font-size: 20px;
+    }
+    
+    /* view-cart */
+    .guest-address-main {
+        width: 100%;
+        margin: 20px 0px;
+    }
+
+    .guest-address-main {
+        padding: 10px;
+    }
+
+    .cart-detail-main-padding {
+        padding: 20px;
+    }
+
+    .cart-detail-img img {
+        width: 100%;
+    }
+
+    .cart-title {
+
+        margin: 10px 0px;
+    }
+
+    .cart-details-payment-head-list {
+        padding: 10px;
+    }
+
+    .cart-product-details {
+
+        gap: 6px;
+
+        margin-left: 6px;
+    }
+
+    .cart-head-one h1 {
+        font-size: 14px;
+    }
+
+    .cart-order-product-details-price {
+        margin-left: 6px;
+    }
+
+    .cart-price-one h1 {
+        font-size: 16px;
+    }
+
+    .remove-button {
+        font-size: 16px;
+    }
+
+    .cart-actions {
+        justify-content: center;
+    }
+
+    .cart-details-payment-head h1 {
+        font-size: 16px;
+        margin-bottom: 0px;
+    }
+
+    .cart-details-payment-price p {
+        font-size: 16px;
+        margin-bottom: 0px;
+    }
+
+    .shipping-notice {
+        margin-top: 10px;
+    }
+
+    .continue-shopping {
+        font-size: 12px;
+    }
+
+    .checkout-button {
+        font-size: 12px;
+    }
+
+    /* checkout */
+    .cart-order-product-details-price {
+        gap: 8px;
+    }
+
+    button.remove-button {
+        padding: 0px;
+    }
+
+    .cart-details h1 {
+        padding: 10px 20px;
+    }
+
+    .sub-buttons {
+        width: 100%;
+        padding: 0px;
+
+    }
+
+    .cart-actions {
+        margin-bottom: 20px;
+    }
+
+    .login-form {
+        width: 100%;
+    }
+
+    .login-head h1 {
+        font-size: 24px;
+    }
+
+    /* guest checkout */
+    .form-checkout-form {
+        padding: 0px;
+        width: 100%;
+    }
+
+    .form-sub {
+        padding: 0px;
+    }
+
+
+    /* login checkout */
+    .user-account-main {
+        width: 100%;
+    }
+
+    /* address */
+    .address-main {
+        margin: 20px 0px;
+    }
+
+    .form-sub {
+        padding: 0px;
+    }
+
+    button.complete-order {
+        font-size: 10px;
+        margin-top: 20px;
+        padding: 0px 20px;
+    }
+
+    /* order confirmation */
+    .image-order img {
+        width: 20%;
+    }
+
+    h1.head-first {
+
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    p.head-second {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    button.view-order-confirmation {
+        width: 80%;
+        font-size: 12px;
+    }
+
+    button.confirmation-shopping {
+        width: 80%;
+        font-size: 12px;
+    }
+
+    /* blog */
+    .video-gallery-img {
+        margin: 10px;
+    }
+
+    /* review */
+    .name-displayed-by-name {
+        margin-bottom: 20px;
+    }
+
+    .review-address-main {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .review-bottom-para {
+        padding: 0px 20px;
+    }
+        /* profile page */
+        .order-product-div{
+            padding: 10px;
+        }
+        button.write-product-button{
+            width: 100%;
+        }
+        .table tr th{
+            font-size: 8px;
+        }
+        .table tr td{
+            font-size: 8px;  
+        }
+        .dropdown-content-order{
+            width: auto;
+            font-size: 12px;
+            padding: 6px;
+        }
+        .order-product-details{
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .order-product-details-price{
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .head-one h1{
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+        .write-product-main{
+            text-align: center;
+        }
+        h1.return-head{
+            text-align: center;
+        }
+        .cancel-order-main{
+            text-align: center;
+        }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+    .nav-link {
+        font-size: 12px;
+    }
+
+    .logo {
+        width: 120px;
+    }
+
+    .sticky-header .nav-menu .nav-link {
+        padding: 8px 12px !important;
+        font-size: 9px;
+    }
+
+    .sticky-header .nav-menu .language-selector .sticky-nav .styled-select {
+        padding: 8px 10px;
+        font: 400 10px 'Myriad Pro', sans-serif;
+        border: none;
+        cursor: pointer;
+    }
+
+    .sticky-header .nav-menu .language-selector .sticky-nav .sticky-lang-btn .lang-btn {
+        padding: 8px 10px;
+        font: 400 10px 'Myriad Pro', sans-serif;
+    }
+
+    .sticky-header .logo {
+        width: 80px;
+        max-width: fit-content;
+    }
+
+    .nav-link {
+        padding: 10px 20px !important;
+    }
+
+    .lang-btn {
+        font: 400 14px 'Myriad Pro', sans-serif;
+        padding: 6px 10px;
+    }
+
+    .styled-select {
+        font: 400 14px 'Myriad Pro', sans-serif;
+        padding: 6px 10px;
+    }
+
+    .announcement-text {
+        font-size: 14px;
+        padding: 0px;
+    }
+    .sticky-header .nav-menu .social-icons
+
+{
+    gap: 4px;
+}
+
+
+    /* home */
+    .ms-product-head h1{
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+    .product-main-div{
+        padding: 0px 20px;
+    }
+    .section-end-line{
+        margin: 20px auto;
+    }
+    .product-container{
+        padding: 20px 16px;
+    }
+    .price-container{
+        gap: 4px; margin-top: 2px;
+    }
+    .product-image{
+        margin-top: -20px;
+        margin-bottom: -20px;
+    }
+    .buy-now-button button{
+        padding: 4px 10px;
+    }
+
+    .product-title{
+        font-size: 20px;
+        margin-bottom: 0px;
+    }
+    .price-original{
+        font-size: 16px;
+    }
+    .price-discounted{
+        font-size: 14px;
+        margin-top: 0px;
+    }
+    .buy-now-button button{
+
+    }
+    .product-subtitle{
+        font-size: 12px;
+        padding: 2px 10px;
+    }
+
+    
+    .product-container-combo{
+        padding: 20px 16px;
+    }
+    .price-container-combo{
+        gap: 4px; margin-top: 2px;
+        flex-wrap: wrap;
+    }
+    .product-image-combo{
+        margin-top: -20px;
+        margin-bottom: -20px;
+    }
+    .buy-now-button-combo button{
+        padding: 4px 10px;
+    }
+    .original-price-combo{
+        font-size: 18px;
+    }
+    .product-title-combo{
+        font-size: 14px;
+        margin-bottom: 0px;
+        padding: 0px;
+    }
+    .price-original-combo{
+        font-size: 16px;
+    }
+    .price-discounted-combo{
+        font-size: 14px;
+        margin-top: 0px;
+    }
+    .buy-now-button-combo button{
+
+    }
+    .product-subtitle-combo{
+        font-size: 12px;
+        padding: 2px 10px;
+    }
+    .div-zoom-container{
+        padding: 2px 10px;
+    }
+    .div-zoom-container h1{
+        font-size: 24px;
+
+    }
+    .div-zoom-container p{
+        font-size: 16px;
+        line-height: 22px;
+        margin-bottom: 0px;
+        padding-right: 10px;
+     
+    }
+
+    .visit-us-contents{
+        gap: 10px;
+    }
+    .visit-us-logo img{
+        width: 30px;
+        height: 30px;
+    }
+    .address{
+        font-size: 14px;
+    }.phone-number{
+        font-size: 14px;
+    }
+
+    .footer{
+        padding: 20px 0px;
+        margin-top: 20px;
+    }
+    .newsletter-wrapper{
+        margin-top: 20px;
+    }
+    .newsletter-container{
+        padding-top: 20px;
+        flex-wrap: wrap;
+    }
+    .newsletter-title{
+        margin-top: 0px;
+        margin-bottom: 10px;
+    }
+    .cta-text{
+        margin-top: 20px;
+    }
+    .company-details{
+        margin-top: 20px;
+    }
+    .company-name{
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+    .contact-info{
+    margin-top: 20px;
+    padding:0px 10px;
+    }
+    .content-wrapper{
+        margin-right: 0px;
+    }
+    .content-grid{
+        flex-direction: row;
+        
+    }
+    .logo-footer{
+        margin-top: 20px;
+        width: 200px;
+        padding-bottom: 20px;
+    }
+    .description-section{
+        margin-top: 0px;
+    }
+    .hero-section{
+        padding: 20px 0px ;
+    }
+    .contact-info div i{
+        width: 20px;
+        font-size: 14px;
+        height: 20px;
+    }
+    .search-box{
+        width: 150px;
+        justify-content: start;
+    }
+    .search-input{
+        width: 150px;
+        font-size: 10px;
+    }
+    .email-address{
+        margin: 0px;
+    }
+    .company-description{
+        margin-top: 0px;
+        font-size: 14px;
+    }
+    ul.follow-us li{
+        width: 20px;padding: 0px 4px;
+        height: 20px;margin: 0px 4px;
+    }
+    ul.follow-us li i{
+        font-size: 10px;
+        padding: 0px 4px;
+        
+    }
+    .follow-us span{
+        font-size: 12px;
+    }
+    .search-button{
+        padding: 10px 4px;
+        font-size: 10px;
+    }
+    .company-info{
+        padding: 4px;
+    }
+    .footer-second{
+        width: fit-content;
+        padding: 4px;
+    }
+    .description-section{
+        padding: 4px;
+    }
+
+
+    /* product detail */
+
+    .product-title-detail{
+        font-size: 30px;
+    }
+    .description-container{
+        padding: 20px;
+        margin-top: 20px;
+    }
+    .description-text{
+        font-size: 16px;
+        line-height: 22px;
+    }
+    a.review-sub-head p{
+        text-align: start;
+    }
+    .review-para p{
+        text-align: start;
+    }
+    .guest-address-main{
+        width: 80%;
+        padding: 20px;
+    }
+    .continue-shopping{
+        font-size: 12px;
+    }
+    .checkout-button{
+        font-size: 12px;
+    }
+    .cart-title{
+        margin-right: 0px;
+    }
+    .sub-buttons{
+        width: 80%;
+    }
+    .login-form{
+        width: 50%;
+    }
+    button.login-submit{
+        font-size: 12px;
+    }
+    .review-address-main{
+        width: 80%;
+    }
+
+    .user-account-main{
+        width: 80%;
+    }
+    .order-product-div{
+        padding: 20px;
+    }
+    button.write-product-button{
+        width: 80%;
+    }
+}
+
+@media (min-width: 993px) and (max-width: 1200px) {
+    .logo {
+        width: 120px;
+    }
+
+    .announcement-text {
+        font-size: 14px;
+        padding: 0px;
+    }
+
+    .sticky-header .logo {
+        max-width: fit-content;
+    }
+
+    .nav-link {
+        padding: 10px 20px !important;
+    }
+
+    .header {
+        padding: 0px 30px;
+    }
+
+    .sticky-header .nav-menu .nav-link {
+        font-size: 10px;
+        padding: 10px 20px !important;
+    }
+
+    .sticky-header .logo {
+        width: 100px;
+    }
+
+    .sticky-header .nav-menu .language-selector .sticky-nav .styled-select {
+        padding: 8px 10px;
+        font: 400 10px 'Myriad Pro', sans-serif;
+        border: none;
+        cursor: pointer;
+    }
+
+    .sticky-header .nav-menu .language-selector .sticky-nav .sticky-lang-btn .lang-btn {
+        padding: 8px 10px;
+        font: 400 10px 'Myriad Pro', sans-serif;
+    }
+
+    
+    /* home */
+    .ms-product-head h1{
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+    .product-main-div{
+        padding: 0px 20px;
+    }
+    .section-end-line{
+        margin: 20px auto;
+    }
+    .product-container{
+        padding: 20px 16px;
+    }
+    .price-container{
+        gap: 4px; margin-top: 2px;
+    }
+    .product-image{
+        margin-top: -20px;
+        margin-bottom: -20px;
+    }
+    .buy-now-button button{
+        padding: 4px 10px;
+    }
+
+    .product-title{
+        font-size: 24px;
+        margin-bottom: 0px;
+    }
+    .price-original{
+        font-size: 20px;
+    }
+    .price-discounted{
+        font-size: 14px;
+        /* margin-top: 0px; */
+    }
+    .buy-now-button button{
+
+    }
+    .product-subtitle{
+        font-size: 14px;
+        padding: 2px 10px;
+    }
+
+    
+    .product-container-combo{
+        padding: 20px 16px;
+    }
+    .price-container-combo{
+        gap: 4px; margin-top: 2px;
+        flex-wrap: wrap;
+    }
+    .product-image-combo{
+        margin-top: -20px;
+        margin-bottom: -20px;
+    }
+    .buy-now-button-combo button{
+        padding: 4px 10px;
+    }
+    .original-price-combo{
+        font-size: 20px;
+    }
+    .product-title-combo{
+        font-size: 20px;
+        margin-bottom: 0px;
+        padding: 0px;
+    }
+    .price-original-combo{
+        font-size: 16px;
+    }
+    .price-discounted-combo{
+        font-size: 14px;
+        margin-top: 0px;
+    }
+    .buy-now-button-combo button{
+
+    }
+    .product-subtitle-combo{
+        font-size: 12px;
+        padding: 2px 10px;
+    }
+    .div-zoom-container{
+        padding: 2px 10px;
+    }
+    .div-zoom-container h1{
+        font-size: 24px;
+
+    }
+    .div-zoom-container p{
+        font-size: 16px;
+        line-height: 22px;
+        margin-bottom: 0px;
+        padding-right: 10px;
+     
+    }
+
+    .visit-us-contents{
+        gap: 10px;
+    }
+    .visit-us-logo img{
+        width: 30px;
+        height: 30px;
+    }
+    .address{
+        font-size: 14px;
+    }.phone-number{
+        font-size: 14px;
+    }
+
+    .footer{
+        padding: 20px 0px;
+        margin-top: 20px;
+    }
+    .newsletter-wrapper{
+        margin-top: 20px;
+    }
+    .newsletter-container{
+        padding-top: 20px;
+        flex-wrap: wrap;
+    }
+    .newsletter-title{
+        margin-top: 0px;
+        margin-bottom: 10px;
+    }
+    .cta-text{
+        margin-top: 20px;
+    }
+    .company-details{
+        margin-top: 20px;
+    }
+    .company-name{
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+    .contact-info{
+    margin-top: 20px;
+    padding:0px 10px;
+    }
+    .content-wrapper{
+        margin-right: 0px;
+    }
+    .content-grid{
+        flex-direction: row;
+        gap: 10px;
+    }
+    .logo-footer{
+        margin-top: 20px;
+        width:150px;
+        padding-bottom: 20px;
+    }
+    .description-section{
+        margin-top: 0px;
+    }
+    .hero-section{
+        padding: 20px 0px ;
+    }
+    .contact-info div i{
+        width: 20px;
+        font-size: 14px;
+        height: 20px;
+    }
+    .search-box{
+        width: 150px;
+        justify-content: start;
+    }
+    .search-input{
+        width: 150px;
+        font-size: 10px;
+    }
+    .email-address{
+        margin: 0px;
+    }
+    .company-description{
+        margin-top: 0px;
+        font-size: 14px;
+    }
+    ul.follow-us li{
+        width: 20px;padding: 0px 4px;
+        height: 20px;margin: 0px 4px;
+    }
+    ul.follow-us li i{
+        font-size: 10px;
+        padding: 0px 4px;
+        
+    }
+    .follow-us span{
+        font-size: 12px;
+    }
+    .search-button{
+        padding: 10px 4px;
+        font-size: 10px;
+    }
+    .company-info{
+        padding: 4px;
+    }
+    .footer-second{
+        /* width: fit-content; */
+        padding: 4px;
+    }
+    .description-section{
+        padding: 4px;
+    }
+
+     /* product detail */
+
+     .product-title-detail{
+        font-size: 30px;
+    }
+    .description-container{
+        padding: 20px;
+        margin-top: 20px;
+    }
+    .description-text{
+        font-size: 16px;
+        line-height: 22px;
+    }
+    a.review-sub-head p{
+        text-align: start;
+    }
+    .review-para p{
+        text-align: start;
+    }
+    .guest-address-main{
+        width: 80%;
+        padding: 20px;
+    }
+    .continue-shopping{
+        font-size: 12px;
+    }
+    .checkout-button{
+        font-size: 12px;
+    }
+    .cart-title{
+        margin-right: 0px;
+    }
+    .sub-buttons{
+        width: 80%;
+    }
+    .login-form{
+        width: 50%;
+    }
+    button.login-submit{
+        font-size: 12px;
+    }
+    
+    /* product detail */
+
+    .product-title-detail{
+        font-size: 30px;
+    }
+    .description-container{
+        padding: 20px;
+        margin-top: 20px;
+    }
+    .description-text{
+        font-size: 16px;
+        line-height: 22px;
+    }
+    a.review-sub-head p{
+        text-align: start;
+    }
+    .review-para p{
+        text-align: start;
+    }
+    .guest-address-main{
+        width: 80%;
+        padding: 20px;
+    }
+    .continue-shopping{
+        font-size: 12px;
+    }
+    .checkout-button{
+        font-size: 12px;
+    }
+    .cart-title{
+        margin-right: 0px;
+    }
+    .sub-buttons{
+        width: 80%;
+    }
+    .login-form{
+        width: 50%;
+    }
+    button.login-submit{
+        font-size: 12px;
+    }
+    .review-address-main{
+        width: 80%;
+    }
+
+    .user-account-main{
+        width: 80%;
+    }
+}
+
+@media (min-width: 1201px) and (max-width: 1400px) {
+    .sticky-header .logo {
+        max-width: fit-content;
+    }
+
+    .header {
+        padding: 0px 30px;
+    }
+
+    .sticky-header .nav-menu .nav-link {
+        font-size: 14px;
+        padding: 10px 24px !important;
+    }
+
+    .sticky-header .logo {
+        width: 100px;
+    }
+
+    .sticky-header .nav-menu .language-selector .sticky-nav .styled-select {
+        padding: 8px 10px;
+        font: 400 14px 'Myriad Pro', sans-serif;
+        border: none;
+        cursor: pointer;
+    }
+
+    .sticky-header .nav-menu .language-selector .sticky-nav .sticky-lang-btn .lang-btn {
+        padding: 8px 14px;
+        font: 400 14px 'Myriad Pro', sans-serif;
+    }
+}
+
+@media (min-width: 1401px) {}
+
+@media (min-width: 769px) {
+
+    .menu-box {
+        display: none;
+    }
+
+    .mobile-view {
+        display: none !important;
+    }
+
+    .desk-top-link {
+        display: block;
+        margin: auto;
+    }
+
+    .sticky-header .nav-menu .language-selector {
+        display: block;
+        margin: auto 0 auto auto;
+    }
+
+    .mobile-link {
+        display: none;
+    }
+
+    .sticky-header .mobile-link {
+        display: none;
+    }
+
+    .footer-mobile {
+        display: none;
+    }
+    .menu-container{
+        display: none;
+    }
+   
+}
+
+@media (max-width: 768px) {
+    .footer-desk {
+        display: none;
+    }
+
+    .sticky-header .mobile-link {
+        display: none;
+    }
+
+    .desktop-view {
+        display: none !important;
+    }
+
+    .desk-top-link {
+        display: none;
+    }
+
+    .sticky-header .nav-menu {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .sticky-header .nav-menu .language-selector {
+        display: block;
+        margin: auto 0 auto auto;
+    }
+    
+
+
+    .swiper-button-next,
+.swiper-button-prev {
+  background: #2d814efa;
+  color: #fff !important;
+  /* background-color: #60ae3d; */
+  font-size: 6px !important;
+  /* border-radius: 20px; */
+  width: 10px !important;
+  height: 20px !important;
+ 
+}
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 8px !important;
+}
+
+.swiper-button-next, .swiper-rtl .swiper-button-prev{
+  right: 0px !important;
+    left: auto !important;
+}
+.swiper-button-prev, .swiper-rtl .swiper-button-next{
+  left: 0px !important;
+  right: auto;
+}
+    /* .swiper-button-next:after, .swiper-button-prev:after{
+        font-size: 10px !important;
+    }
+    .swiper-button-next, .swiper-rtl .swiper-button-prev{
+        right: -6px !important;
+    }
+    .swiper-button-prev, .swiper-rtl .swiper-button-next{
+        left: -6px !important;
+    } */
+
+    /* 
+    .styled-select {
+    padding: 4px 2px;
+    font: 400 12px 'Myriad Pro', sans-serif;
+    } */
+    /* .logo {
+    width: 60px;
+    }
+    .lang-btn {
+    font: 400 12px 'Myriad Pro', sans-serif;
+    padding: 4px 10px;
+    }
+    .language-selector {
+    gap: 6px;
+    }
+    .social-icons {
+    gap: 6px;
+    } */
+    /* .nav-link {
+    padding: 4px 10px !important;
+    font-size: 12px !important;
+    }
+    .header {
+    padding: 10px 4px;
+    }
+    .social-icon {
+    width: 25px;
+    }
+    .nav-menu {
+    padding-top: 10px;
+    } */
+    .sticky-header .header-top {
+        display: none;
+    }
+
+    .desktop-view {
+        display: none;
+    }
+
+    .nav-menu {
+        border-top: none;
+    }
+
+   
+    /* 
+    .sticky-header .logo {
+    width: 80px;
+    }
+    .header-top {
+    gap: 10px;
+    } */
+}

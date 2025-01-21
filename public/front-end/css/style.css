@@ -1,0 +1,1454 @@
+@font-face {
+  font-family: "MyriadPro-Regular";
+  src: url("https://db.onlinewebfonts.com/t/3dd6e9888191722420f62dd54664bc94.eot");
+  src: url("https://db.onlinewebfonts.com/t/3dd6e9888191722420f62dd54664bc94.eot?#iefix") format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/3dd6e9888191722420f62dd54664bc94.woff2") format("woff2"),
+    url("https://db.onlinewebfonts.com/t/3dd6e9888191722420f62dd54664bc94.woff") format("woff"),
+    url("https://db.onlinewebfonts.com/t/3dd6e9888191722420f62dd54664bc94.ttf") format("truetype"),
+    url("https://db.onlinewebfonts.com/t/3dd6e9888191722420f62dd54664bc94.svg#MyriadPro-Regular") format("svg");
+}
+
+@font-face {
+  font-family: "MV Boli V1";
+  src: url("https://db.onlinewebfonts.com/t/a7e3822358f6dcb2f986a68cf24721b2.woff2") format("woff2"),
+    url("https://db.onlinewebfonts.com/t/a7e3822358f6dcb2f986a68cf24721b2.woff") format("woff");
+}
+
+body {
+  margin: 0;
+  background: #010F18;
+  padding: 0;
+}
+
+.row {
+  margin: 0px;
+}
+
+.header-links {
+  display: flex;
+  justify-content: center;
+}
+
+.header-links .nav-link {
+  color: #000;
+}
+
+.header-links .nav-item.active {
+  color: #000;
+  font-weight: 600;
+}
+
+.header-links ul li {
+  list-style-type: none;
+  padding: 0px 20px;
+}
+
+.banner {
+  position: relative;
+  padding-bottom: 100px;
+}
+
+.banner-img {
+  width: 100%;
+  height: 95vh;
+  object-fit: cover;
+}
+
+.navbar {
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: absolute; 
+  top: 10px;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.8); 
+  z-index: 1;  */
+}
+
+.nav-links {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+}
+
+.cta {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.main-header {
+  /* display: flex; */
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+}
+
+.bottom-header {
+  /* position: sticky; */
+  padding: 0px 40px;
+  background-color: #ffff;
+}
+
+.bottom-header-home {
+  background-color: transparent;
+}
+
+.bottom-first-head img {
+  width: 150px;
+}
+
+.bottom-header.sticky .logo img {
+  width: 50px;
+  /* Adjust to the desired size */
+  transition: width 0.3s ease;
+  /* Smooth transition */
+}
+
+.bottom-second-head a {
+  text-decoration: none;
+  padding: 0px 10px;
+}
+
+.bottom-second-head img {
+  width: 100px;
+}
+
+.top-second-head {
+  overflow: hidden;
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.top-second-head h1 {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "MyriadPro-Regular";
+
+  font-size: 10px;
+
+  line-height: 18px;
+  color: white;
+
+
+  white-space: nowrap;
+  animation: scrollText 16s linear infinite;
+  /* text-align: end; */
+}
+
+.bottom-second-head {
+  display: flex;
+  justify-content: end;
+  align-items: baseline;
+}
+
+ul.bottom-list {
+  padding-left: 0px;
+  margin-bottom: 0px;
+}
+
+.bottom-list {
+  display: flex;
+}
+
+.bottom-list li {
+  list-style-type: none;
+  padding-right: 5px;
+  position: relative;
+}
+
+span.cart-items {
+  position: absolute;
+  right: 3px;
+  top: -3px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fc874e;
+}
+
+.bottom-list li img {
+  width: 25px;
+}
+
+.top-header {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 10px 0px 4px 0px;
+}
+
+.top-second-head h1 {
+  font-size: 24px;
+  line-height: 30px;
+  margin-bottom: 0px;
+}
+
+.main-header-contents {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  width: 100%;
+}
+
+.main-header-contents h1 {
+  font-family: "MyriadPro-Regular";
+  color: white;
+  font-size: 80px;
+  text-align: center;
+  font-weight: bolder;
+}
+
+.center-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.second-banner {
+  background: #010F18;
+}
+
+.second-banner img {
+  width: 100%;
+  transform: rotate(180deg);
+}
+
+.sub-heading {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.sub-banner-img {
+  width: 9%;
+  height: auto;
+}
+
+.sub-heading img {
+  opacity: .3;
+}
+
+.heading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.heading h1 {
+  font-family: "MyriadPro-Regular";
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+}
+
+.product-box {
+  padding: 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-box-img img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.product-box-banner-img img {
+  width: 100%;
+}
+
+.product-box-banner-img {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.product-box-banner-img img {
+  width: 100%;
+  /* height: auto; */
+}
+
+.product-box-contents-details {
+  width: 100%;
+  /* position: absolute; */
+  /* top: 26%; */
+  /* left: 50%;
+  transform: translate(-50%, -50%); */
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.product-box-details-content-bottom {
+  width: 100%;
+  position: absolute;
+  /* bottom: 0px;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.product-box-details-content-bottom a {
+  text-decoration: none;
+}
+
+.product-box-contents-details h1 {
+  font-family: "MyriadPro-Regular";
+  margin-bottom: 16px;
+  font-size: 30px;
+  line-height: 36px;
+  margin-bottom: 20px;
+}
+
+p.list-details {
+  /* position: absolute; */
+  /* top: 130px; */
+  font-family: "MyriadPro-Regular";
+  color: #25B25E;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.list-button ul {
+  display: flex;
+  padding-left: 0px;
+  justify-content: center;
+}
+
+.list-button ul li {
+  font-family: "MyriadPro-Regular";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  list-style-type: none;
+  margin: 0px 20px;
+  background: #F2F2F2;
+  border: 1px solid #0DFF45;
+  color: #000;
+  padding: 0px 6px;
+}
+
+.list-button ul li.active {
+  background-color: #0dff45;
+  color: white;
+}
+
+.list-button ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+}
+
+.price-tag p {
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 400;
+  font-family: "MyriadPro-Regular";
+}
+
+p.price-display-original {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.product-box {}
+
+.buy-now-button {
+  position: relative;
+  opacity: 1;
+  transform: translateY(25px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.product-box:hover .buy-now-button {
+  /* opacity: 1;
+  transform: translateY(0);  */
+}
+
+.buy-now-button button {
+  background-color: #ff6600;
+  font-family: "MyriadPro-Regular";
+  font-size: 14px;
+  color: #fff;
+  padding: 2px 16px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buy-now-button button:hover {
+  background-color: #cc5200;
+}
+
+.buy-now-button {
+  text-align: end;
+}
+
+.buy-now-button button {
+  background: #93805F;
+  color: #fff;
+}
+
+.combo-pack-main {
+  padding: 0px 80px;
+}
+
+.combo-pack {
+  position: relative;
+}
+
+.combo-pack-left-img {
+  /* position: absolute;
+  bottom: 30px;
+  left: -123px; */
+}
+
+.combo-box img {}
+
+.combo-pack-box {
+  display: flex;
+  position: relative;
+  /* padding: 0px 40px;
+  margin-bottom: 20px; */
+  margin-bottom: 24px;
+}
+
+.combo-box-one,
+.combo-box-two {
+  flex: 1;
+  position: relative;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.combo-box-one img {
+  /* width: 100%;
+  height: auto; */
+}
+
+.combo-box-contents {
+  padding: 30px;
+  width: 100%;
+  position: absolute;
+  top: 32%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.combo-box-price-div {
+  width: 100%;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.combo-box-contents h1 {
+  font-family: "MyriadPro-Regular";
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  color: #000;
+}
+
+.combo-box-contents-bottom {
+  width: 100%;
+  position: absolute;
+  bottom: 5px;
+  color: white;
+  font-size: 18px;
+  background: #93805F;
+  border-radius: 0px 0px 0px 10px;
+}
+
+.combo-box-contents-bottom button {
+  border: none;
+  font-family: "MyriadPro-Regular";
+  color: #fff;
+  background: #93805F;
+  padding: 8px;
+}
+
+.combo-box-first {
+  position: relative;
+}
+
+.combo-box-first::before {
+  content: "";
+  position: absolute;
+  /* top: -20px; */
+  left: -86px;
+  width: 15%;
+  height: 100%;
+  background-image: url(./../images/comboproduct/l.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.combo-box-second {
+  position: relative;
+}
+
+.combo-box-second::before {
+  content: "";
+  position: absolute;
+  /* top: -20px; */
+  right: -86px;
+  width: 15%;
+  height: 100%;
+  background-image: url(./../images/comboproduct/r.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+a.combo-box-price {
+  background-color: #fff;
+  color: #000;
+  text-decoration: none;
+  font-family: "MyriadPro-Regular";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+  padding: 2px 12px;
+}
+
+.middle-line {
+  max-width: 0px 0px;
+  height: 3px;
+  width: 100%;
+  background-color: #93805F;
+  margin: 60px 0px;
+}
+
+.insta-head {
+  background: #FA0E6D;
+  width: fit-content;
+  padding: 4px 14px;
+  margin-bottom: 10px;
+}
+
+.insta-head h1 {
+  color: white;
+  margin-bottom: 0px;
+  font-family: "MyriadPro-Regular";
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.insta-img {
+  position: relative;
+}
+
+.insta-img img {
+  width: 100%;
+  height: auto;
+}
+
+.insta-gram-slider {
+  /* z-index: -1; */
+}
+
+.youtube-slider {
+  /* z-index: -1; */
+}
+
+.insta-gram-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.insta-gram-icon img {
+  width: 60px !important;
+}
+
+.youtube-head {
+  background: #FF0B0F;
+  width: fit-content;
+  padding: 4px 14px;
+  margin-bottom: 10px;
+}
+
+.youtube-head h1 {
+  color: white;
+  margin-bottom: 0px;
+  background: #FF0B0F;
+  color: white;
+  font-family: "MyriadPro-Regular";
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.youtube {
+  position: relative;
+}
+
+.youtube img {
+  width: 100%;
+  height: auto;
+}
+
+.youtube-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.youtube-icon img {
+  width: 60px !important;
+}
+
+.testimonial-slider {
+  position: relative;
+  /* z-index: -1; */
+}
+
+.testimonial-slider img {
+  width: 100%;
+  height: auto;
+}
+
+.testimonial-contents {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  width: 100%;
+  padding: 100px;
+}
+
+.testimonial-contents h1 {
+  text-align: center;
+  font-family: "MV Boli V1";
+  font-size: 40px;
+  margin-bottom: 50px;
+}
+
+.testi-img {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  background: antiquewhite;
+  border-radius: 50px;
+}
+
+.testi-img img {
+  border-radius: 50%;
+}
+
+.testiname h1 {
+  font-family: "MyriadPro-Regular";
+  font-size: 22px;
+  line-height: 28px;
+  margin: 20px 0px;
+}
+
+.footer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.footer img {
+  width: 100%;
+  height: auto;
+}
+
+.footer-contents {
+  width: 100%;
+  position: absolute;
+  top: -60px;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.ms-natuarl-product h1 {
+  font-family: "MyriadPro-Regular";
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 26px;
+  text-align: left;
+  color: #25B25E;
+  margin-bottom: 20px;
+}
+
+.ms-natuarl-product ul {
+  padding-left: 0px;
+}
+
+.ms-natuarl-product ul li {
+  font-family: "MyriadPro-Regular";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  list-style-type: none;
+  margin-bottom: 10px;
+}
+
+.ms-natuarl-product ul span {
+  /* margin-bottom: 20px; */
+}
+
+.ms-natuarl-product ul span i {
+  font-size: 12px;
+  padding: 5px;
+  background: #25B25E;
+  border-radius: 50px;
+}
+
+.footer-logo-img {
+  text-align: center;
+  padding: 60px 0px;
+}
+
+.footer-logo-img img {
+  width: 140px;
+}
+
+.footer-para {
+  padding-top: 40px;
+}
+
+.footer-para p {
+  font-family: "MyriadPro-Regular";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: start;
+  text-align: justify;
+}
+
+.search-inptut h1 {
+  font-family: "MyriadPro-Regular";
+  font-size: 24px;
+  /* font-weight: 600; */
+  line-height: 30px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.search-inptut p {
+  font-family: "MyriadPro-Regular";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+}
+
+.oil-desc-main {
+  position: relative;
+  margin: 200px 0px;
+}
+
+.oil-desc-main img {
+  width: 100%;
+  height: auto;
+}
+
+.oil-desc-img {
+  text-align: center;
+}
+
+.oil-desc {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  width: 100%;
+}
+
+.oil-desc-head h4 {
+  font-family: "MyriadPro-Regular";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px;
+  text-align: left;
+  color: #93805F;
+}
+
+.oil-desc-head h1 {
+  font-family: "MyriadPro-Regular";
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 54px;
+  text-align: left;
+  color: #fff;
+}
+
+.oil-desc-des p {
+  font-family: "MyriadPro-Regular";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  text-align: left;
+  color: #fff;
+}
+
+.top-first-head h1 {
+  color: #FF4444B2;
+  font-family: "Mr Dafoe", cursive;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 0px;
+}
+
+/* jquery */
+.sticky {
+  position: fixed;
+  top: 48px;
+  width: 100%;
+  z-index: 1000;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sticky .logo img {
+  width: 90px;
+  /* Reduced width when sticky */
+}
+
+/*  */
+.sliding-box {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background: #010f18;
+  box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto;
+  padding: 40px;
+}
+
+.sliding-box.active {
+  right: 0;
+}
+
+.sliding-box-head p {
+  color: white;
+}
+
+.sliding-box {
+  display: none;
+}
+
+.sliding-box.active {
+  display: block;
+}
+
+.sliding-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.close-icon {
+  width: 30px;
+  /* border: 1px solid white; */
+  padding: 2px 10px;
+  border-radius: 30px;
+  height: 30px;
+  text-align: center;
+}
+
+.toggle-box {
+  cursor: pointer;
+}
+
+.cart-sliding-box {
+  padding: 60px 20px;
+  position: fixed;
+  top: 0px;
+  right: -300px;
+  width: 300px;
+  height: auto;
+  /* background: #010f18;
+  box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease; */
+  z-index: 1000;
+  overflow-y: auto;
+  /* padding: 40px; */
+  background-color: #fff;
+  /* border: 1px solid #ccc; */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease;
+}
+
+.cart-sliding-head h1 {
+  font-family: "MyriadPro-Regular";
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: start;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  text-transform: uppercase;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.cart-sliding-head h1::after {
+  content: '';
+  /* No text content, just an element */
+  position: absolute;
+  bottom: 0;
+  /* Place the underline at the bottom of the h1 */
+  left: 0;
+  width: 30%;
+  /* Make the underline span the full width of the h1 */
+  height: 2px;
+  /* Thickness of the underline */
+  background-color: #000;
+  /* Color of the underline */
+}
+
+.cart-sliding-box.active {
+  right: 0;
+  /* Slide into view */
+}
+
+.cart-close-icon {
+  background: #FC874E;
+  color: white;
+  border: none;
+  /* padding: 10px 15px; */
+  cursor: pointer;
+  width: max-content;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin-bottom: 10px;
+  padding: 4px;
+}
+
+.cart-close-icon i {
+  color: black;
+}
+
+.cart-content-box {
+  display: flex;
+  justify-content: space-around;
+}
+
+.cart-content-img img {
+  width: 100%;
+  border: 1px solid #0DFF45
+}
+
+.cart-content-img {
+  width: 30%;
+}
+
+.cart-content-deatails {
+  width: 65%;
+  padding: 0px 10px;
+}
+
+.cart-content-deatails h1 {
+  font-family: "MyriadPro-Regular";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: start;
+  margin-bottom: 0px;
+}
+
+.cart-content-deatails p {
+  font-family: "MyriadPro-Regular";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  margin-bottom: 6px;
+  text-align: start;
+  color: #5A5858;
+}
+
+.cart-bottom-para p {
+  font-family: "MyriadPro-Regular";
+  font-size: 12px;
+  line-height: 18px;
+  margin-bottom: 50px;
+}
+
+.cart-proceed-checkout {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.cart-proceed-checkout a {
+  font-size: 14px;
+  line-height: 20px;
+  padding: 6px 14px;
+  background-color: #000;
+  color: white;
+  font-family: "MyriadPro-Regular";
+  border-radius: 30px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.cart-view {
+  text-align: center;
+}
+
+.cart-view a {
+  font-size: 14px;
+  line-height: 20px;
+  padding: 6px 48px;
+  background: #726B59;
+  text-transform: uppercase;
+  color: white;
+  font-family: "MyriadPro-Regular";
+  border-radius: 30px;
+  text-decoration: none;
+}
+
+.total h6 {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.total-payment p {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.cart-product-quantity {
+  display: flex;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.cart-product-quantity button {
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  background-color: #f5f5f5;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.cart-product-quantity button:focus {
+  outline: none;
+}
+
+.cart-product-quantity button:hover {
+  background-color: #e0e0e0;
+}
+
+.cart-product-quantity input {
+  width: 50px;
+  height: 40px;
+  text-align: center;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-left: none;
+  border-right: none;
+}
+
+.cart-total-payment {
+  display: flex;
+  justify-content: space-between;
+}
+
+p.cart-price-div {
+  font-family: "MyriadPro-Regular";
+}
+
+.list-menu ul {
+  padding-left: 0px;
+}
+
+.list-menu ul li {
+  list-style-type: none;
+  color: white;
+}
+
+.close-icon i {
+  color: white;
+  font-size: 30px;
+}
+
+.close-icon i {
+  color: white;
+}
+
+.owl-carousel .owl-nav .owl-next {
+  position: absolute;
+  top: 50%;
+  right: -40px;
+  /* transform: translate(-50%, -50%);   */
+}
+
+.owl-carousel .owl-nav .owl-prev {
+  position: absolute;
+  top: 50%;
+  left: -40px;
+  /* transform: translate(-50%, -50%);   */
+}
+
+/* .owl-carousel .owl-nav button.owl-next{
+  position: absolute;
+  top: 50%;                
+  right: 0%;               
+  transform: translate(-50%, -50%);  
+  display: flex;
+  justify-content: space-between;
+  width: 100px; 
+  }
+  .owl-carousel .owl-nav button.owl-prev{
+  position: absolute;
+  top: 50%;                
+  left: 0%;               
+  transform: translate(-50%, -50%);  
+  display: flex;
+  justify-content: space-between;
+  width: 100px; 
+  }
+  .owl-nav button {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  }
+  .owl-nav button img {
+  width: 20px;
+  } */
+.owl-nav button img {
+  width: 30px;
+}
+
+.follow-us {
+  display: flex;
+  padding-left: 0px;
+  align-items: baseline;
+}
+
+.follow-us span {
+  font-family: "MyriadPro-Regular";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  text-align: left;
+}
+
+ul.follow-us li {
+  list-style-type: none;
+}
+
+ul.follow-us li i {
+  font-size: 10px;
+  color: white;
+  background-color: #93805F;
+  padding: 5px;
+  border-radius: 30px;
+  margin: 8px;
+  width: 20px;
+  height: 20px;
+}
+
+.footer-para-div {
+  background-color: white;
+  text-align: center;
+  /* padding: 10px; */
+}
+
+.footer-para-div p {
+  margin-bottom: 0px;
+  padding: 10px;
+}
+
+.button {
+  font-family: "MyriadPro-Regular";
+  font-size: 16px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  color: #000;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-on {
+  color: #fff;
+}
+
+.btn-off {
+  color: #fff;
+}
+
+.styled-dropdown {
+  font-family: "MyriadPro-Regular";
+  margin-right: 10px;
+  display: flex;
+  /* width: 100%; */
+  /* max-width: 300px; */
+  padding: 5px 12px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  background-color: #c24244;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.3s ease;
+  /* padding: 5px;*/
+}
+
+.styled-dropdown:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.styled-dropdown::after {
+  content: "▼";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* product detail img */
+img.product-deatail-img {
+  width: 100%;
+  transform: rotate(180deg);
+  margin-top: 100px;
+}
+
+.combo-main {
+  padding: 50px 0px;
+}
+
+.owl-carousel .owl-dots.disabled,
+.owl-carousel .owl-nav.disabled {
+  display: block;
+}
+
+.insta-main {
+  padding: 60px 0px;
+}
+
+.youtube-main {
+  padding: 0px 0px 60px 0px;
+}
+
+.testimonial-slider .owl-nav button img {
+  width: 50px;
+}
+
+.testimonial-slider .owl-nav button img {
+  width: 50px;
+}
+
+.footer-main {
+  padding: 60px 0px 0px 0px;
+}
+
+/* Container for the search input and button */
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+/* Rounded search input */
+.search-input {
+  padding: 4px 20px;
+  border: 2px solid #b48d90;
+  /* Border color */
+  border-radius: 25px 0 0 25px;
+  /* Rounded on the left */
+  outline: none;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+  background: #b48d90;
+}
+
+/* Search input hover and focus effects */
+.search-input:hover,
+.search-input:focus {
+  border-color: #888;
+  /* Change border color on hover/focus */
+}
+
+/* Rounded search button */
+.search-button {
+  padding: 6px 20px;
+  background: #217041;
+  color: #fff;
+  border: none;
+  border-radius: 0 25px 25px 0;
+  /* Rounded on the right */
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.search-button:hover {
+  background: #25B25E;
+}
+
+.insta-img {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.background-img {
+  position: relative;
+}
+
+.background-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.insta-icon-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-size: 48px;
+  opacity: 0.8;
+  z-index: 10;
+}
+
+.insta-icon-overlay a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.insta-icon-overlay i {
+  font-size: 48px;
+  color: #FA0E6D;
+  transition: transform 0.3s ease;
+}
+
+.insta-img:hover .insta-icon-overlay i {
+  transform: scale(1.2);
+  /* Slightly enlarge icon on hover */
+}
+
+blockquote {
+  display: block;
+  /* Show the Instagram embed */
+  position: absolute;
+}
+
+@media (max-width: 767px) {
+  .insta-icon-overlay {
+    font-size: 36px;
+    /* Adjust icon size for mobile */
+  }
+}
+
+
+@media (min-width: 1200px) and (max-width: 1400px) {
+
+  /* … */
+  .product-box {
+    padding: 25px;
+  }
+
+  .combo-box-second::before {
+    right: -68px;
+  }
+
+  .combo-box-first::before {
+    left: -68px;
+  }
+
+  .combo-box-contents h1 {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .combo-box-price-div {
+    top: 68%;
+  }
+}
+
+
+h1.related-product {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+p.price-display-detail {
+  font-size: 30px !important;
+  line-height: 36px !important;
+}

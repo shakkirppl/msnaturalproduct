@@ -1,0 +1,154 @@
+.review-address-main {
+    background-color: #fff;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    width: 70%;
+    margin: auto;
+    flex-direction: column;
+    padding: 50px 40px;
+}
+
+.star-rating-review {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.star-rating-review .star {
+    width: 25px;
+    color: #b79616;
+    margin-bottom: 20px;
+}
+
+.review-head {
+    text-align: center;
+}
+
+.review-head h1 {
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.star-rating-review-upload {
+    text-align: center;
+}
+
+.star-rating-review-upload img {
+    width: 25px;
+}
+
+.form-control.review-title {
+    border-radius: 50px;
+    font-size: 14px;
+    padding: 10px 20px;
+}
+
+.review-title-div {
+    padding: 0px 50px;
+    margin: 30px 0px;
+}
+
+.review-comments {
+    /* padding: 0px 50px; */
+    margin-bottom: 40px;
+}
+
+.review-comments p {
+    font-size: 14px;
+}
+
+.review-comments textarea {
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.file-upload {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.file-upload:hover {
+    border-color: #007bff;
+}
+
+.file-upload input[type="file"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.file-upload .plus-sign {
+    font-size: 36px;
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+.file-upload:hover .plus-sign {
+    color: #007bff;
+}
+
+
+.picture-video-optional {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+
+button.cancel-review {
+    border-radius: 30px;
+    background-color: #fff;
+    height: 100%;
+    font-size: 14px;
+    padding: 3px 16px;
+    border: 1px solid #000;
+    cursor: pointer;
+    color: #000;
+    margin-right: 10px;
+}
+
+button.submit-review {
+    border-radius: 30px;
+    background-color: #fff;
+    height: 100%;
+
+
+    font-size: 14px;
+    padding: 3px 16px;
+    border: 1px solid #000;
+    cursor: pointer;
+    color: #000;
+    margin-left: 10px;
+}
+
+.name-displayed-by-name {
+    margin-bottom: 40px;
+}
+
+.name-displayed-by-name h1 {
+    font-size: 14px;
+}
+
+.review-bottom-para {
+    padding: 0px 60px;
+}
+
+.review-bottom-para p {
+    font-size: 14px;
+    color: #333;
+}
+
+.review-buttons {
+    margin-top: 20px;
+}
