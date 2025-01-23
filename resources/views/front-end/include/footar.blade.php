@@ -130,7 +130,7 @@
                                        <span>Follow US : </span>
                                        <li><i class="fab fa-facebook-f"></i></li>
                                        <li><i class="fab fa-pinterest-p"></i></li>
-                                       <li><i class="fab fa-instagram"></i></li>
+                                       <li> <a href="https://www.instagram.com/ms_natural_products/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></li>
                                        <li><i class="fab fa-twitter"></i></li>
                                        <li><i class="fas fa-globe"></i></li>
                                     </ul>
@@ -165,7 +165,11 @@
                <ul class="follow-us-mobile">
                   <li><i class="fab fa-facebook-f"></i></li>
                   <li><i class="fab fa-pinterest-p"></i></li>
-                  <li><i class="fab fa-instagram"></i></li>
+                  <li>
+  <a href="https://www.instagram.com/ms_natural_products/" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-instagram" aria-hidden="true"></i>
+  </a>
+</li>
                   <li><i class="fab fa-twitter"></i></li>
                   <li><i class="fas fa-globe"></i></li>
                </ul>
@@ -239,8 +243,8 @@
       </div>
    </div>
 </section>
-<a href="" class="btn-whatsapp-pulse">
-<i class="fab fa-whatsapp" aria-hidden="true"></i>
+<a href="https://wa.me/919048731831" class="btn-whatsapp-pulse" target="_blank">
+  <i class="fab fa-whatsapp" aria-hidden="true"></i>
 </a>
 <!--  -->
 <!-- end footer -->
