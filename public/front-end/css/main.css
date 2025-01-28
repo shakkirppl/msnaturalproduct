@@ -2007,3 +2007,15 @@ ul.follow-us-mobile {
 .info-box-profile a {
  color: #217041;
 }
+ul.follow-us li a{
+  color:white;
+}
+.gallery-img img{
+  width:80%;
+}
+.gallery-img{
+  text-align:center;
+}
+h1.gallery-head{
+  margin-top:40px;
+}

@@ -84,8 +84,18 @@ Dry skin , Dehydrated skin, Premature aging',
 'Description'=>'Description',
 'Reviews'=>'Reviews',
 
-
-
-
-
+// new
+'HOME'=>'HOME',
+'HAIR'=>'HAIR',
+'SKIN'=>'SKIN',
+'FACE'=>'FACE',
+'NEW_LAUNCH'=>'NEW LAUNCH',
+'ABOUT_US'=>'ABOUT US',
+'BLOG'=>'BLOG',
+'Total_Payable'=>'Total Payable',
+'Check_Out'=>'CHECKOUT',
+'SUBSCRIBE'=>'SUBSCRIBE',
+'Visit_Us'=>'Visit Us',
+'India'=>'India',
+'Kondotty_Malappuram_Kerala'=>'Kondotty, Malappuram Kerala'
 ];

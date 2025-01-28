@@ -39,24 +39,7 @@
                      <img src="{{URL::to('/')}}/front-end/images/banner/mobile-banner.png" class="hero-image w-100 mobile-view" alt="">
                   </div>
                </div>
-               <!-- 
-                  <div class="swiper-slide">
-                     <div class="swiper-slide">
-                        <img src="{{URL::to('/')}}/front-end/images/banner/Banner.png" class="hero-image w-100" alt="">
-                     </div>
-                  </div>
-                  
-                  <div class="swiper-slide">
-                     <div class="swiper-slide">
-                        <img src="{{URL::to('/')}}/front-end/images/banner/Banner.png" class="hero-image w-100" alt="">
-                     </div>
-                  </div>
-                  
-                  <div class="swiper-slide">
-                     <div class="swiper-slide">
-                        <img src="{{URL::to('/')}}/front-end/images/banner/Banner.png" class="hero-image w-100" alt="">
-                     </div>
-                  </div> -->
+             
             </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
@@ -71,7 +54,7 @@
                <div class="col-md-12">
                   <div class="ms-product-head" data-aos="fade-down" data-aos-anchor-placement="top-bottom"
                      data-aos-duration="1500">
-                     <h1>Product</h1>
+                     <h1>{{ __('main.Product') }}</h1>
                   </div>
                </div>
             </div>
@@ -138,7 +121,7 @@
                <div class="col-md-12">
                   <div class="ms-product-head" data-aos="fade-down" data-aos-anchor-placement="top-bottom"
                      data-aos-duration="1500">
-                     <h1>Combo Packs</h1>
+                     <h1>{{ __('main.Combo_Pack') }}</h1>
                   </div>
                </div>
             </div>
@@ -377,7 +360,7 @@
                <div class="col-md-12">
                   <div class="ms-product-head" data-aos="fade-down" data-aos-anchor-placement="top-bottom"
                      data-aos-duration="1500">
-                     <h1>Visit Us</h1>
+                     <h1>{{ __('main.Visit_Us ') }}</h1>
                   </div>
                </div>
             </div>
@@ -394,11 +377,11 @@
                         <div class="contact-container">
                            <div class="location-wrapper">
                               <img loading="lazy" src="{{URL::to('/')}}/front-end/images/visitus/v31_196.png" class="icon" alt="Location pin icon" />
-                              <div class="country-name">India</div>
+                              <div class="country-name">{{ __('main.India ') }}</div>
                            </div>
                            <div class="address">
-                              <div> Kondotty, Malappuram Kerala</div>
-                              <div>India</div>
+                              <div> {{ __('Kondotty_Malappuram_Kerala') }}</div>
+                              <div>{{ __('main.India ') }}</div>
                               <div> PIN : 673638</div>
                            </div>
                            <div class="phone-wrapper">

@@ -19,7 +19,7 @@
                      @if($language=='ar')
                      <a href="{{url('lang/change/en')}}"  class="lang-btn" >ENG</a>
                      @else
-                     <a href="{{url('lang/change/ar')}}" class="lang-btn">AR</a>
+                     <a href="{{url('lang/change/ar')}}" class="lang-btn">{{ __('main.Arabic') }}</a>
                      @endif
                   </div>
                   <div class="dropdown">
@@ -44,13 +44,13 @@
                      <img src="{{URL::to('/')}}/front-end/images/header/profile.png" alt="Company Logo" class="social-icon profile-icon" />
                      <div class="info-box-profile hidden-profile">
                      @if(Auth::user())
-                     <div class="account-drop"><a href="{{url('account')}}" >Account</a></div>   
+                     <div class="account-drop"><a href="{{url('account')}}" >{{ __('main.Account') }}</a></div>   
                      <div class="account-drop">
-    <a href="{{ route('logout') }}">Logout</a>
+    <a href="{{ route('logout') }}">{{ __('Logout') }}</a>
 </div>
                      @else
-                     <div class="account-drop"><a href="{{url('user-login')}}" >Login</a></div>   
-                     <div class="account-drop"><a href="{{url('user-register')}}" >Signup</a></div>   
+                     <div class="account-drop"><a href="{{url('user-login')}}" >{{ __('main.Login') }}</a></div>   
+                     <div class="account-drop"><a href="{{url('user-register')}}" >{{ __('main.Signup') }}</a></div>   
                      @endif
                      </div>
                   </div>
@@ -72,22 +72,22 @@
                </div>
                <div class="desk-top-link">
                   <div class="desktop-sub-link">
-                     <a href="{{url('/')}}" class="nav-link active">HOME</a>
-                     <a href="{{url('product-view/hair-care-oil')}}" class="nav-link">HAIR</a>
-                     <a href="{{url('product-view/skin-care-oil')}}" class="nav-link">SKIN</a>
-                     <a href="{{url('product-view/face-pack-powder')}}" class="nav-link">FACE</a>
-                     <a href="{{url('product-view/hair-care-oil')}}" class="nav-link ">NEW LAUNCH</a>
-                     <a href="{{url('about-us')}}" class="nav-link ">ABOUT US</a>
-                     <a href="{{url('blog')}}" class="nav-link">BLOG</a>
+                     <a href="{{url('/')}}" class="nav-link active">{{ __('main.HOME') }}</a>
+                     <a href="{{url('product-view/hair-care-oil')}}" class="nav-link">{{ __('main.HAIR') }}</a>
+                     <a href="{{url('product-view/skin-care-oil')}}" class="nav-link">{{ __('main.SKIN') }}</a>
+                     <a href="{{url('product-view/face-pack-powder')}}" class="nav-link">{{ __('main.FACE') }}</a>
+                     <a href="{{url('product-view/hair-care-oil')}}" class="nav-link ">{{ __('main.NEW_LAUNCH') }}</a>
+                     <a href="{{url('about-us')}}" class="nav-link ">{{ __('main.ABOUT_US') }}</a>
+                     <a href="{{url('blog')}}" class="nav-link">{{ __('main.BLOG') }}</a>
                   </div>
                </div>
                <div class="mobile-link">
                   <div class="desktop-sub-link">
-                     <a href="{{url('/')}}" class="nav-link active">HOME</a>
-                     <a href="{{url('product-view/hair-care-oil')}}" class="nav-link">HAIR</a>
-                     <a href="{{url('product-view/skin-care-oil')}}" class="nav-link">SKIN</a>
-                     <a href="{{url('product-view/face-pack-powder')}}" class="nav-link">FACE</a>
-                     <a href="{{url('product-view/hair-care-oil')}}" class="nav-link ">NEW LAUNCH</a>
+                     <a href="{{url('/')}}" class="nav-link active">{{ __('main.HOME') }}</a>
+                     <a href="{{url('product-view/hair-care-oil')}}" class="nav-link">{{ __('main.HAIR') }}</a>
+                     <a href="{{url('product-view/skin-care-oil')}}" class="nav-link">{{ __('main.SKIN') }}</a>
+                     <a href="{{url('product-view/face-pack-powder')}}" class="nav-link">{{ __('main.FACE') }}</a>
+                     <a href="{{url('product-view/hair-care-oil')}}" class="nav-link ">{{ __('main.NEW LAUNCH') }}</a>
                   </div>
                </div>
                <div class="language-selector">
@@ -96,7 +96,7 @@
                         @if($language=='ar')
                         <a href="{{url('lang/change/en')}}"  class="lang-btn" >ENG</a>
                         @else
-                        <a href="{{url('lang/change/ar')}}" class="lang-btn">AR</a>
+                        <a href="{{url('lang/change/ar')}}" class="lang-btn">{{ __('main.AR') }}</a>
                         @endif
                      </div>
                      <div class="dropdown">
@@ -118,13 +118,13 @@
                      <img src="{{URL::to('/')}}/front-end/images/header/profile.png" alt="Company Logo" class="social-icon profile-icon" />
                      <div class="info-box-profile hidden-profile">
                       @if(Auth::user())
-                     <div class="account-drop"><a href="{{url('account')}}" >Account</a></div> 
+                     <div class="account-drop"><a href="{{url('account')}}" >{{ __('main.Account') }}</a></div> 
                       <div class="account-drop">
     <a href="{{ route('logout') }}">Logout</a>
 </div>
                      @else
-                     <div class="account-drop"><a href="{{url('user-login')}}" >Login</a></div>   
-                     <div class="account-drop"><a href="{{url('user-register')}}" >Signup</a></div>   
+                     <div class="account-drop"><a href="{{url('user-login')}}" >{{ __('main.Login') }}</a></div>   
+                     <div class="account-drop"><a href="{{url('user-register')}}" >{{ __('main.Signup') }}</a></div>   
                      @endif 
                      </div>
                     
@@ -152,7 +152,7 @@
    <div class="top-cart-box"></div>
    <div class="cart-box-head">
       <div>
-         <h1>Cart</h1>
+         <h1>{{ __('main.Cart') }}</h1>
       </div>
       <div>
          <button class="close-btn-cart-box" id="close-btn-cart-box">&times;</button>
@@ -174,7 +174,7 @@
                <div class="cart-box-count">
                   <div class="remove">
                      <button class="remove">
-                        <a href="{{ route('cart.remove', ['id' => $item->id]) }}" onclick="return confirm('Are you sure you want to remove this item?')" class="remove-button" aria-label="Remove item">Remove</a>
+                        <a href="{{ route('cart.remove', ['id' => $item->id]) }}" onclick="return confirm('Are you sure you want to remove this item?')" class="remove-button" aria-label="Remove item">{{ __('main.Remove') }}</a>
                      </button>
                   </div>
                </div>
@@ -187,7 +187,7 @@
    <!-- Static Content -->
    <div class="cart-box-bottom">
       <div class="sub-total">
-         <h1>Total Payable</h1>
+         <h1>{{ __('main.Total_Payable') }}</h1>
       </div>
       <div class="sub-total-amount">
          <h1>{{$currency}} {{Cart::getTotal()}}</h1>
@@ -195,13 +195,13 @@
       </div>
    </div>
    <div class="cart-box-bottom">
-      <p style="margin-bottom: 0px;">Shipping, Taxes, and Discounts Will be calculated at the checkout</p>
+      <p style="margin-bottom: 0px;">{{ __('main.cart_shipp_amount') }}</p>
    </div>
    <div class="p-1">
-      <a href="{{url('checkout')}}"><button class="check-out">Check Out</button></a>
+      <a href="{{url('checkout')}}"><button class="check-out">{{ __('main.Check_Out') }}</button></a>
    </div>
    <div class="p-1">
-      <a href="{{url('view-cart')}}"><button class="check-out">View Cart</button></a>
+      <a href="{{url('view-cart')}}"><button class="check-out">{{ __('main.View_Cart') }}</button></a>
    </div>
 </div>
 
@@ -222,13 +222,13 @@
    <!--   </div>-->
    <!--</div>-->
    <div>
-      <a href="{{url('/')}}" class="nav-link active">HOME</a>
-      <a href="{{url('product-view/hair-care-oil')}}" class="nav-link">HAIR</a>
-      <a href="{{url('product-view/skin-care-oil')}}" class="nav-link">SKIN</a>
-      <a href="{{url('product-view/face-pack-powder')}}" class="nav-link">FACE</a>
-      <a href="{{url('product-view/hair-care-oil')}}" class="nav-link ">NEW LAUNCH</a>
-      <a href="{{url('about-us')}}" class="nav-link ">ABOUT US</a>
-      <a href="{{url('blog')}}" class="nav-link">BLOG</a>
+      <a href="{{url('/')}}" class="nav-link active">{{ __('main.HOME') }}</a>
+      <a href="{{url('product-view/hair-care-oil')}}" class="nav-link">{{ __('main.HAIR') }}</a>
+      <a href="{{url('product-view/skin-care-oil')}}" class="nav-link">{{ __('main.SKIN') }}</a>
+      <a href="{{url('product-view/face-pack-powder')}}" class="nav-link">{{ __('main.FACE') }}</a>
+      <a href="{{url('product-view/hair-care-oil')}}" class="nav-link ">{{ __('main.NEW LAUNCH') }}</a>
+      <a href="{{url('about-us')}}" class="nav-link ">{{ __('main.ABOUT US') }}</a>
+      <a href="{{url('blog')}}" class="nav-link">{{ __('main.BLOG') }}</a>
    </div>
 </div>
 <script>

@@ -72,6 +72,32 @@
             </dov>
          </div>
       </section>
+      <div class="about-head">
+                        <h1 class="gallery-head">Gallery</h1>
+                     </div>
+                     <div class="about-head-para">
+                    
+                        <div class="about-img">
+                           <div class="row">
+                              <!-- <div class="col-md-4">
+                                 <img  src="https://test.myfezto.com/front-end/images/about-us/1.png" alt="Cart Icon" class="w-100"
+                                  />
+                                 </div> -->
+                              <div class="col-md-4 gallery-img">
+                                 <img src="https://test.myfezto.com/front-end/images/about-us/2.png" alt="Cart Icon">
+                              </div>
+                              <div class="col-md-4 gallery-img">
+                                 <img src="https://test.myfezto.com/front-end/images/about-us/3.png" alt="Cart Icon">
+                              </div>
+                              <div class="col-md-4 gallery-img">
+                                 <img src="https://test.myfezto.com/front-end/images/about-us/2.png" alt="Cart Icon">
+                              </div>
+                              <div class="col-md-4 gallery-img">
+                                 <img src="https://test.myfezto.com/front-end/images/about-us/3.png" alt="Cart Icon">
+                              </div>
+                           </div>
+                        </div>
+                        </div>
       <!-- start footer -->
       @include('front-end.include.footar')
       <!--  -->
