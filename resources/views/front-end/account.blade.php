@@ -33,7 +33,7 @@
                   <div class="guest-address-main">
                      <div class="row">
                         <div class="cart-details">
-                           <h1>My Cart({{$cartItems->count()}})</h1>
+                           <h1>{{ __('main.My_Cart') }}({{$cartItems->count()}})</h1>
                         </div>
                      </div>
                      <hr>
@@ -51,7 +51,7 @@
                                     <h1>{{$item->name}}</h1>
                                  </div>
                                  <div class="cart-head-three">
-                                    <h1>{{$item->quantity}} Piece</h1>
+                                    <h1>{{$item->quantity}} {{ __('main.Piece') }}</h1>
                                  </div>
                               </div>
                               <div class="cart-order-product-details-price">
@@ -62,7 +62,7 @@
                                     <h1>{{$item->attributes->currency}} {{$item->attributes->original_price}}</h1>
                                  </div>
                                  <div class="cart-remove-button">
-                                    <button class="remove-button">Remove</button>
+                                    <button class="remove-button">{{ __('main.Remove') }}</button>
                                  </div>
                               </div>
                            </div>
@@ -74,7 +74,7 @@
                         <div class="row">
                            <div class="col-md-6 col-6">
                               <div class="cart-details-payment-head">
-                                 <h1>Sub Total</h1>
+                                 <h1>{{ __('main.Sub_Total') }}</h1>
                               </div>
                            </div>
                            <div class="col-md-6 col-6">
@@ -86,7 +86,7 @@
                         <div class="row">
                            <div class="col-md-6 col-6">
                               <div class="cart-details-payment-head">
-                                 <h1>Big Discount</h1>
+                                 <h1>{{ __('main.Big_Discount') }}</h1>
                               </div>
                            </div>
                            <div class="col-md-6 col-6">
@@ -101,7 +101,7 @@
                         <div class="row">
                            <div class="col-md-6 col-6">
                               <div class="cart-details-payment-head">
-                                 <h1 style="font-weight: 600;">Total Payble</h1>
+                                 <h1 style="font-weight: 600;">{{ __('main.Total_Payble') }}</h1>
                               </div>
                            </div>
                            <div class="col-md-6 col-6">
@@ -120,21 +120,21 @@
                            <div class="cart-actions">
                               <a href="{{url('user-login')}}">
                                  <div class="cart-options-head">
-                                    <p class="account-head">Have An Account ?</p>
+                                    <p class="account-head">{{ __('main.Have_An_Account') }} ?</p>
                                  </div>
-                                 <button class="accounts-login">Login</button>
+                                 <button class="accounts-login">{{ __('main.Login') }}</button>
                               </a>
                               <a href="{{url('user-register')}}">
                                  <div class="cart-options-head">
-                                    <p class="account-head">New to MS ?</p>
+                                    <p class="account-head">{{ __('main.New_to_MS') }} ?</p>
                                  </div>
-                                 <button class="new-signup">Sign UP</button>
+                                 <button class="new-signup">{{ __('main.Sign_UP') }}</button>
                               </a>
                               <a href="{{url('guest-checkout')}}">
                                  <div class="cart-options-head">
-                                    <p class="account-head">As a guest ?</p>
+                                    <p class="account-head">{{ __('main.As_a_guest') }} ?</p>
                                  </div>
-                                 <button class="continue-guest">Continue As Guest</button>
+                                 <button class="continue-guest">{{ __('main.Continue_As_Guest') }}</button>
                               </a>
                            </div>
                         </div>

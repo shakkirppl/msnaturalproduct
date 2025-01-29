@@ -79,7 +79,7 @@
                                        <div class="rating-text">4.7 (39 Reviews)</div>
                                        </div> -->
                                     @if($product->short_description!=Null)
-                                    <h2 class="benefits-title">Made to solve</h2>
+                                    <h2 class="benefits-title">{{ __('main.Made_to_solve') }}</h2>
                                     <div class="benefits-text">
                                        {{ $product->short_description!=Null }}
                                     </div>
@@ -95,11 +95,11 @@
                                           </div>
                                           @endif
                                        </div>
-                                       <div class="savings-text" >You'll save<span id="offer-price-display">  {{$currency}}{{$offer}}</span></div>
+                                       <div class="savings-text" >{{ __('main.You_ll_save') }}<span id="offer-price-display">  {{$currency}}{{$offer}}</span></div>
                                     </div>
-                                    <p class="mrp-text">( MRP Inclusive of Taxes )</p>
+                                    <p class="mrp-text">({{ __('main.MRP_Inclusive_of_Taxes') }})</p>
                                     @if(count($units) > 1)
-                                    <h3 class="quantity-title">Quantity</h3>
+                                    <h3 class="quantity-title">{{ __('main.Quantity') }}</h3>
                                     <div class="quantity-options">
                                        <div class="options-grid">
                                           @foreach($units as $index => $unit)
@@ -137,8 +137,8 @@
                                           </div> -->
                                        <div class="popup-cart" id="popup-cart" style="display: none;">
                                           <div class="popup-content-cart">
-                                             <p id="popup-message">Item added to cart!</p>
-                                             <button class="close-popup-cart" id="close-popup-cart">Close</button>
+                                             <p id="popup-message">{{ __('main.Item_added_to_cart') }}!</p>
+                                             <button class="close-popup-cart" id="close-popup-cart">{{ __('main.Close') }}</button>
                                           </div>
                                        </div>
                                        <!-- <div class="popup-cart" id="popup-cart" style="display: none;">
@@ -183,7 +183,7 @@
                   <div class="description-container">
                      <div class="description-box">
                         <h2 class="description-title" data-aos="fade-down" data-aos-anchor-placement="top-bottom"
-                           data-aos-duration="1500">Customer Reviews</h2>
+                           data-aos-duration="1500">{{ __('main.Customer_Reviews') }}</h2>
                      </div>
                      <div class="row">
                         <div class="col-md-4">
@@ -199,9 +199,9 @@
                                  <span>4.67 of 5</span>
                               </div>
                               <div class="review-para">
-                                 <p>Based On 39 Reviews</p>
+                                 <p>{{ __('main.Based_On') }} {{ __('main.Reviews') }}</p>
                                  <a href="" class="review-sub-head">
-                                    <p>Based on Real Customer's Reviews</p>
+                                    <p>{{ __('main.Based_On_real_customers') }} </p>
                                  </a>
                               </div>
                               <span class="review-line"></span>
@@ -242,7 +242,7 @@
                         <div class="col-md-4">
                            <a href="{{url('product-review/'.$product->id)}}">
                               <div class="review-slider-writecomment">
-                                 <button class="write-review">Write a review</button>
+                                 <button class="write-review">{{ __('main.Write_a_review') }}</button>
                               </div>
                            </a>
                            <span></span>
@@ -315,7 +315,7 @@
                               </h1>
                            </div>
                            <div class="verified-number">
-                              <button class="verified-icon-number">verified</button>
+                              <button class="verified-icon-number">{{ __('main.verified') }}</button>
                            </div>
                         </div>
                         <div class="review-sub-para">
@@ -334,7 +334,7 @@
                <div class="col-md-12">
                   <a href="{{ route('product.reviews', $product->product_slug) }}">
                      <div class="load-more-main">
-                        <button class="load-more-button-product">Load More</button>
+                        <button class="load-more-button-product">{{ __('main.Load_More') }}</button>
                      </div>
                   </a>
                </div>
@@ -358,7 +358,7 @@
                <div class="col-md-12">
                   <div class="ms-product-head" data-aos="fade-down" data-aos-anchor-placement="top-bottom"
                      data-aos-duration="1500">
-                     <h1>Related Products</h1>
+                     <h1>{{ __('main.Related_Products') }}</h1>
                   </div>
                </div>
             </div>

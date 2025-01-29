@@ -31,19 +31,10 @@
             <div class="row">
                <div class="col-md-12 col-12">
                   <div class="adress-name">
-                     <h1>Welcome Back,<span class="user-name">{{Auth::user()->name}}</span> </h1> 
+                     <h1>{{ __('main.Welcome_Back') }},<span class="user-name">{{Auth::user()->name}}</span> </h1> 
                   </div>
                </div>
-               <!-- <div class="col-md-6 col-6">
-                  <form action="{{ route('sign-out') }}" method="POST" style="display: inline;">
-                     @csrf
-                     <button type="submit"  style="border: none; background: none; padding: 0; width: 100%; text-align: left;">
-                        <div class="logout">
-                           <h1>Logout</h1>
-                        </div>
-                     </button>
-                  </form>
-               </div> -->
+              
             </div>
             <div class="row">
                <div class=" col-sm-3 col-md-3 col-lg-2">
@@ -57,8 +48,8 @@
                               <img src="{{URL::to('/')}}/front-end/images/address/Rectangle 143.png" alt="">
                            </div>
                            <div class="address-order">
-                              <h1>Orders</h1>
-                              <p> View your Orders</p>
+                              <h1>{{ __('main.Orders') }}</h1>
+                              <p> {{ __('main.View_your_Orders') }}</p>
                            </div>
                         </div>
                      </button>
@@ -70,25 +61,12 @@
                               <img src="{{URL::to('/')}}/front-end/images/address/Rectangle 144.png" alt="">
                            </div>
                            <div class="address-order">
-                              <h1>Address</h1>
-                              <p>manage Address</p>
+                              <h1>{{ __('main.Address') }}</h1>
+                              <p>{{ __('main.manage_Address') }}</p>
                            </div>
                         </div>
                      </button>
-                     <!--<button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill"-->
-                     <!--   type="button" role="tab" -->
-                     <!--   >-->
-                     <!-- <div class="address-order-main">-->
-                     <!-- <div class="address-img">-->
-                     <!--      <i style="font-size: 24px;-->
-                     <!--               color: #706f6f; padding: 0px 0px 0px 4px;" class="fa fa-sign-out" aria-hidden="true"></i>-->
-                     <!--      </div>-->
-                     <!--      <div class="address-order">-->
-                     <!--     <h1>Logout</h1>-->
-                     <!--      </div>-->
-                         
-                     <!--   </div>-->
-                     <!--</button>-->
+                   
                   </div>
                </div>
                <div class="col-sm-9 col-md-9 col-lg-9">
@@ -112,20 +90,19 @@
                                                          <th class="table-head"
                                                             style=" background-color: #FDE7C1;"
                                                             scope="col">
-                                                            Order placed
+                                                            {{ __('main.Order_placed') }}
                                                          </th>
                                                          <th style=" background-color: #FDE7C1;"
                                                             scope="col">
-                                                            TOTAL
+                                                            {{ __('main.TOTAL') }}
                                                          </th>
                                                          <th style=" background-color: #FDE7C1;"
                                                             scope="col">
-                                                            SHIP
-                                                            TO
+                                                            {{ __('main.SHIP_TO') }}
                                                          </th>
                                                          <th style=" background-color: #FDE7C1;"
                                                             scope="col" colspan="2">
-                                                            ORDER {{$order->order_no}}
+                                                            {{ __('main.ORDER') }} {{$order->order_no}}
                                                          </th>
                                                       </tr>
                                                       <tr>
@@ -151,25 +128,18 @@
                                                          </td>
                                                          <td
                                                             style=" background-color: #FDE7C1;color:#14564F;">
-                                                            VIEW ORDER DETAILS
+                                                            {{ __('main.VIEW_ORDER_DETAILS') }}
                                                          </td>
                                                          <td
                                                             style=" background-color: #FDE7C1;color:#14564F;">
-                                                            INVOICE
+                                                            {{ __('main.INVOICE') }}
                                                          </td>
                                                    </thead>
                                                 </table>
                                              </div>
                                           </div>
                                        </div>
-                                       <div class="row">
-                                          <div class="col-md-12">
-                                             <div class="delivered-date">
-                                                <h1>Delivered On Date <span> .../.../....</span>
-                                                </h1>
-                                             </div>
-                                          </div>
-                                       </div>
+                                
                                        <div class="order-product-div">
                                           @foreach ($order->orderdetails as $detail)
                                           <div class="row mb-3">
@@ -191,7 +161,7 @@
                                                             <h1>{{$detail->currency}} {{$detail->price}}</h1>
                                                          </div>
                                                          <div class="head-three">
-                                                            <h1>{{$detail->quantity}} Piece</h1>
+                                                            <h1>{{$detail->quantity}} {{ __('main.Piece') }}</h1>
                                                          </div>
                                                       </div>
                                                       <div class="order-product-details-price">
@@ -214,8 +184,7 @@
                                                       </div> -->
                                                    <a href="{{url('product-review/'.$detail->product_id)}}">
                                                       <div class="write-product-main">
-                                                         <button class="write-product-button"> Write Product
-                                                         Review</button>
+                                                         <button class="write-product-button"> {{ __('main.Write_Product_Review') }}</button>
                                                       </div>
                                                    </a>
                                                 </div>
@@ -233,15 +202,14 @@
                                        <div class="order-submission">
                                           <div class="row">
                                              <div class="col-md-8 col-12">
-                                                <h1 class="return-head"> Cancel eligible Only Before
-                                                   Shipping
+                                                <h1 class="return-head"> {{ __('main.Cancel_eligible_Only_Before_Shipping') }}
                                                 </h1>
                                              </div>
                                              <div class="col-md-4 col-12">
                                                 @if($order->delivery_status=='Delivered')
                                                 <a href="{{url('re-order/'.$order->id)}}">
                                                    <div class="col-md-12">
-                                                      <button class="reorder-button">Reorder</button>
+                                                      <button class="reorder-button">{{ __('main.Reorder') }}</button>
                                                    </div>
                                                 </a>
                                                 @endif
@@ -249,14 +217,14 @@
                                                 <a href="{{url('cancel-order/'.$order->id)}}" onclick="return confirmCancel(event, this.href)">
                                                    <div class="col-md-12">
                                                       <div class="cancel-order-main">
-                                                         <button class="cancel-order">Cancel Order</button>
+                                                         <button class="cancel-order">{{ __('main.Cancel_Order') }}</button>
                                                       </div>
                                                    </div>
                                                 </a>
                                                 @else
                                                 <div class="col-md-12">
                                                    <div class="cancel-order-main">
-                                                      <label  class="reorder" style="color:red;">Canceled</label>
+                                                      <label  class="reorder" style="color:red;">{{ __('main.Canceled') }}</label>
                                                    </div>
                                                 </div>
                                                 @endif
@@ -269,186 +237,7 @@
                            </div>
                         </div>
                         @endforeach
-                        <!-- order end -->
-                        <!-- <div class="order-main ">
-                           <div class="row order-main ">
-                               <div class="col-md-12">
-                                   <div class="order-address-details">
-                                       <div class="your-order-details">
-                                           <div class="table-main p-3"
-                                               style=" background-color: #FDE7C1; border-radius: 10px;">
-                                               <div class="row">
-                                                   <div class="col-md-12">
-                                                       <table class="table">
-                                                           <thead>
-                                                               <tr>
-                                                                   <th class="table-head"
-                                                                       style=" background-color: #FDE7C1;"
-                                                                       scope="col">
-                                                                       Order placed
-                                                                   </th>
-                                                                   <th style=" background-color: #FDE7C1;"
-                                                                       scope="col">
-                                                                       TOTAL
-                                                                   </th>
-                                                                   <th style=" background-color: #FDE7C1;"
-                                                                       scope="col">
-                                                                       SHIP
-                                                                       TO
-                                                                   </th>
-                                                                   <th style=" background-color: #FDE7C1;"
-                                                                       scope="col" colspan="2">
-                                                                       ORDER
-                                                                   </th>
-                                                               </tr>
-                                                               <tr>
-                                                                   <th scope="row"
-                                                                       style=" background-color: #FDE7C1;">
-                                                                       20
-                                                                       OCTOBER 2024
-                                                                   </th>
-                                                                   <td style=" background-color: #FDE7C1;">
-                                                                       ₹519.00
-                                                                   </td>
-                                                                   <td style=" background-color: #FDE7C1;">
-                                                                       <div class="dropdown-container-order">
-                                                                           <div class="dropdown-box-order"
-                                                                               style="color:#14564F;">
-                                                                               MAHAMOOD KHAN N M
-                                                                           </div>
-                                                                           <div class="dropdown-content-order">
-                                                                               <p></p>
-                                                                               <p></p>
-                                                                               <p> </p>
-                                                                           </div>
-                                                                       </div>
-                                                                   </td>
-                                                                   <td
-                                                                       style=" background-color: #FDE7C1;color:#14564F;">
-                                                                       VIEW ORDER DETAILS
-                                                                   </td>
-                                                                   <td
-                                                                       style=" background-color: #FDE7C1;color:#14564F;">
-                                                                       INVOICE
-                                                                   </td>
-                                                           </thead>
-                                                       </table>
-                                                   </div>
-                                               </div>
-                                           </div>
-                                           <div class="row">
-                                               <div class="col-md-12">
-                                                   <div class="delivered-date">
-                                                       <h1>Delivered On Date <span> .../.../....</span>
-                                                       </h1>
-                                                   </div>
-                                               </div>
-                                           </div>
-                                           <div class="order-product-div">
-                                               <div class="row mb-3">
-                                                   <div class="col-md-8">
-                                                       <div class="row mb-2">
-                                                           <div class="col-md-2">
-                                                               <div class="order-detail-img">
-                                                                   <img src="{{URL::to('/')}}/front-end/images/product-detail/Rectangle 131.png"
-                                                                       alt="">
-                                                               </div>
-                                                           </div>
-                                                           <div class="col-md-10">
-                                                               <div class="order-product-details">
-                                                                   <div class="head-one">
-                                                                       <h1>Hair Care Oil</h1>
-                                                                   </div>
-                                                                   <div class="head-two">
-                                                                       <h1>250 ml</h1>
-                                                                   </div>
-                                                                   <div class="head-three">
-                                                                       <h1>1 Piece</h1>
-                                                                   </div>
-                                                               </div>
-                                                               <div class="order-product-details-price">
-                                                                   <div class="price-one">
-                                                                       <h1>₹ 509</h1>
-                                                                   </div>
-                                                                   <div class="price-two">
-                                                                       <h1>₹ 509</h1>
-                                                                   </div>
-                                                               </div>
-                                                           </div>
-                                                       </div>
-                                                       <div class="row mb-2">
-                                                           <div class="col-md-2">
-                                                               <div class="order-detail-img">
-                                                                   <img src="images/product-detail/Rectangle 131.png"
-                                                                       alt="">
-                                                               </div>
-                                                           </div>
-                                                           <div class="col-md-10">
-                                                               <div class="order-product-details">
-                                                                   <div class="head-one">
-                                                                       <h1>Hair Care Oil</h1>
-                                                                   </div>
-                                                                   <div class="head-two">
-                                                                       <h1>250 ml</h1>
-                                                                   </div>
-                                                                   <div class="head-three">
-                                                                       <h1>1 Piece</h1>
-                                                                   </div>
-                                                               </div>
-                                                               <div class="order-product-details-price">
-                                                                   <div class="price-one">
-                                                                       <h1>₹ 509</h1>
-                                                                   </div>
-                                                                   <div class="price-two">
-                                                                       <h1>₹ 509</h1>
-                                                                   </div>
-                                                               </div>
-                                                           </div>
-                                                       </div>
-                                                   </div>
-                                                   <div class="col-md-4">
-                                                       <div class="order-buttons">
-                                                           <div class="return-item-main">
-                                                               <button class="return-item-button">Return
-                                                                   Item</button>
-                                                           </div>
-                                                           <div class="write-product-main">
-                                                               <button class="write-product-button"> Write Product
-                                                                   Review</button>
-                                                           </div>
-                                                           <div class="reorder-main">
-                                                               <button class="reorder-button">Reorder</button>
-                                                           </div>
-                                                       </div>
-                                                   </div>
-                                               </div>
-                                           </div>
-                                           <div class="row">
-                                               <div class="col-md-12">
-                                                   <div class="horizonatl-line-address">
-                                                       <hr>
-                                                   </div>
-                                               </div>
-                                           </div>
-                                           <div class="order-submission">
-                                               <div class="row">
-                                                   <div class="col-md-8">
-                                                       <h1 class="return-head"> Return eligible Only Before
-                                                           Shipping
-                                                       </h1>
-                                                   </div>
-                                                   <div class="col-md-4">
-                                                       <div class="cancel-order-main">
-                                                           <button class="cancel-order">Cancel Order</button>
-                                                       </div>
-                                                   </div>
-                                               </div>
-                                           </div>
-                                       </div>
-                                   </div>
-                               </div>
-                           </div>
-                           </div> -->
+                       
                      </div>
                      <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
                         aria-labelledby="v-pills-profile-tab" tabindex="0">
@@ -462,7 +251,7 @@
                                           <a style="color:#56595F;" href="{{url('address.new')}}">
                                              <div class="address-box">
                                                 <span class="plus-sign">+</span>
-                                                <div class="add-address">Add Address</div>
+                                                <div class="add-address">{{ __('main.Add_Address') }}</div>
                                              </div>
                                           </a>
                                        </div>
@@ -471,7 +260,7 @@
                                           <a style="color:#56595F;" href="">
                                              <div class="address-box-default">
                                                 @if($address->deafult==1)
-                                                <h1>Default:</h1>
+                                                <h1>{{ __('main.Default') }}:</h1>
                                                 @endif
                                                 <hr style="margin: 0px;">
                                                 <div class="address-default">
@@ -485,10 +274,10 @@
                                                 <div class="row">
                                                    <div class="col-md-12">
                                                       <div class="address-list-button"> 
-                                          <a href="{{ url('address.edit', $address->id) }}"><button>Edit</button></a><span>|</span>
-                                          <a href="{{ url('address.remove', $address->id) }}"><button>Remove</button></a>
+                                          <a href="{{ url('address.edit', $address->id) }}"><button>{{ __('main.Edit') }}</button></a><span>|</span>
+                                          <a href="{{ url('address.remove', $address->id) }}"><button>{{ __('main.Remove') }}</button></a>
                                           @if($address->deafult==0)
-                                          <a href="{{ url('address.set.default', $address->id) }}"><button>Set as Default</button></a>
+                                          <a href="{{ url('address.set.default', $address->id) }}"><button>{{ __('main.Set_as_Default') }}</button></a>
                                           @endif
                                           </div>
                                           </div>

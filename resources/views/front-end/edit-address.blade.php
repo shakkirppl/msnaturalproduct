@@ -30,7 +30,7 @@
             <div class="row">
                <div class="col-md-12 col-12">
                   <div class="adress-name">
-                     <h1>Welcome Back,<span class="user-name">{{Auth::user()->name}}</span> </h1>
+                     <h1>{{ __('main.Welcome_Back') }},<span class="user-name">{{Auth::user()->name}}</span> </h1>
                   </div>
                </div>
                <!-- <div class="col-md-6 col-6">
@@ -57,8 +57,8 @@
                               <img src="images/address/Rectangle 144.png" alt="">
                            </div>
                            <div class="address-order">
-                              <h1>Address</h1>
-                              <p>manage Address</p>
+                              <h1>{{ __('main.Address') }}</h1>
+                              <p>{{ __('main.manage_Address') }}</p>
                            </div>
                         </div>
                      </button>
@@ -85,7 +85,7 @@
                                         <div class="row">
                                            <div class="col-md-12">
                                               <div class="mb-3">
-                                             <label for="" class="form-ms-label">Country/Region</label><br>
+                                             <label for="" class="form-ms-label">{{ __('main.Country_Region') }}</label><br>
                                              <select class="form-select form-select-ms" name="country_id" id="country_id" aria-label="Default select example">
                                                    @foreach($countries as $country)
                                                    <option value="{{$country->id}}">{{$country->country_name}}</option>
@@ -98,7 +98,7 @@
                                         <div class="row ">
                                            <div class="col-md-12">
                                               <div class="mb-3"> 
-                                                 <label for="" class="form-ms-label">First Name</label>
+                                                 <label for="" class="form-ms-label">{{ __('main.First_Name') }}</label>
 
                                                  <input type="text" name="first_name" class="form-control form-control-ms" id=""
                                                     aria-describedby="emailHelp" value="{{$customerAddress->first_name}}" required >
@@ -111,7 +111,7 @@
                                            <div class="col-md-12">
                                               <div class="mb-3">
                                                 
-                                                    <label for="" class="form-ms-label">Last Name</label>
+                                                    <label for="" class="form-ms-label">{{ __('main.Last_Name') }}</label>
                                                  <input type="text" name="last_name" class="form-control  form-control-ms" id=""
                                                     aria-describedby="emailHelp"  value="{{$customerAddress->last_name}}" required>
                                               </div>
@@ -120,7 +120,7 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="mb-3">
-                                                    <label for="" class="form-ms-label"> Mobile number</label>
+                                                    <label for="" class="form-ms-label">{{ __('main.Mobile_number') }} </label>
                                                    <input type="number" name="phone_number" class="form-control form-control-ms" id=""
                                                       aria-describedby="emailHelp"  value="{{$customerAddress->phone_number}}" required>
                                                       <label for="">May be used to assist delivery</label>
@@ -131,7 +131,7 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="mb-3"> 
-                                                     <label for="" class="form-ms-label">Pincode</label>
+                                                     <label for="" class="form-ms-label">{{ __('main.Pincode') }}</label>
 
                                                     <input type="number" class="form-control form-control-ms" name="pincode"  value="{{$customerAddress->pincode}}" required >
                                                  </div>
@@ -140,7 +140,7 @@
                                         <div class="row">
                                            <div class="col-md-12">
                                               <div class="mb-3">
-                                                <label for="" class="form-ms-label">Address</label>
+                                                <label for="" class="form-ms-label">{{ __('main.Address') }}</label>
                                                  <input type="text" name="address" class="form-control form-control-ms" id=""
                                                     aria-describedby="emailHelp"  value="{{$customerAddress->address}}" required>
                                               </div>
@@ -150,7 +150,7 @@
                                         <div class="row">
                                            <div class="col-md-12">
                                               <div class="mb-3">
-                                                <label for=""  class="form-ms-label">Landmark</label>
+                                                <label for=""  class="form-ms-label">{{ __('main.Landmark') }}</label>
                                                  <input type="text" name="landmark" class="form-control form-control-ms" id=""
                                                     aria-describedby="emailHelp"  value="{{$customerAddress->landmark}}" required>
                                               </div>
@@ -160,13 +160,13 @@
                                         <div class="row">
                                             <div class="col-md-6 pe-2">
                                                 <div class="mb-3">
-                                                    <label for=""  class="form-ms-label">Town/City</label>
+                                                    <label for=""  class="form-ms-label">{{ __('main.Town_City') }}</label>
                                                      <input type="text" name="city" class="form-control form-control-ms" id=""
                                                         aria-describedby="emailHelp"  value="{{$customerAddress->city}}" required>
                                                   </div>
                                              </div>
                                             <div class="col-md-6">
-                                                <label for=""  class="form-ms-label">State</label>
+                                                <label for=""  class="form-ms-label">{{ __('main.State') }}</label>
                                                 <select class="form-select form-control-ms" name="state_id" id="state_id" aria-label="Default select example" required>
                                                 <option>Select</option>
                                                 @foreach($billingStates as $states)
@@ -185,7 +185,7 @@
                                         <div class="row">
                                            <div class="col-md-12">
                                               <button  type="submit"class="complete-order">
-                                              UPDATE ADDRESS
+                                              {{ __('main.UPDATE_ADDRESS') }} 
                                               </button>
                                            </div>
                                         </div>

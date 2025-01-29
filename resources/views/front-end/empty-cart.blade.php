@@ -43,11 +43,11 @@
                            
                             </div>
                          </div>
-                         <h1 class="head-first">Your MS Naturals Cart is empty.</h1>
-                         <p class="head-second">Your shopping cart is waiting. Give it purpose – fill it with
+                         <h1 class="head-first">{{ __('main.Your_MS_Naturals_Cart_is_empty') }}.</h1>
+                         <p class="head-second">{{ __('main.Your_shopping_cart_is_waiting') }}
                             
                             <br>
-                            Hair Care , Skin Care ,  and Facepack.</p>
+                            {{ __('main.Hair_Care_Skin_Care_and_Facepack') }}.</p>
                          
                       </div>
                    </div>
@@ -55,7 +55,7 @@
                       <div class="row">
                    
                          <div class="col-md-12 text-center">
-                            <a href=""><button class="confirmation-shopping w-auto">Continue Shopping</button></a>
+                            <a href=""><button class="confirmation-shopping w-auto">{{ __('main.Continue_Shopping') }}</button></a>
                          </div>
                       </div>
                    </div>

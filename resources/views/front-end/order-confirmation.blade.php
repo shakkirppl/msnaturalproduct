@@ -39,18 +39,18 @@
                                     <img src="{{URL::to('/')}}/front-end/images/order/tick.png" alt="Sample Image">
                                  </div>
                               </div>
-                              <h1 class="head-first">Thank You For Your Purchase</h1>
-                              <p class="head-second">We'have Received Your Order Will Ship In 5-7 Business Days</p>
-                              <p class="head-three">Your Order Number Is: <span style="font-weight: 600;"> {{$order->order_no}}</span></p>
+                              <h1 class="head-first">{{ __('main.Thank_You_For_Your_Purchase') }}</h1>
+                              <p class="head-second">{{ __('main.We_have_Received') }}</p>
+                              <p class="head-three">{{ __('main.Your_Order_Number_Is') }}: <span style="font-weight: 600;"> {{$order->order_no}}</span></p>
                            </div>
                         </div>
                         <div class="col-md-12">
                            <div class="row">
                               <div class="col-lg-6 col-md-6 col-sm-6 col-6 text-end">
-                                 <a href="{{url('your-orders')}}"><button class="view-order-confirmation">View Order</button></a>
+                                 <a href="{{url('your-orders')}}"><button class="view-order-confirmation">{{ __('main.View_Order') }}</button></a>
                               </div>
                               <div class="col-lg-6 col-md-6 col-sm-6 col-6 text-start">
-                                 <a href="{{url('/')}}"><button class="confirmation-shopping">Continue Shopping</button></a>
+                                 <a href="{{url('/')}}"><button class="confirmation-shopping">{{ __('main.Continue_Shopping') }}</button></a>
                               </div>
                            </div>
                         </div>

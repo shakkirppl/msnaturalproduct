@@ -71,37 +71,7 @@
                            </div>
                         </div>
                         @endforeach
-                        <!-- <div class="row mb-2">
-                           <div class="col-md-2">
-                              <div class="cart-detail-img">
-                                 <img src="images/product-detail/Rectangle 131.png" alt="">
-                              </div>
-                           </div>
-                           <div class="col-md-10">
-                              <div class="cart-product-details">
-                                 <div class="cart-head-one">
-                                    <h1>Hair Care Oil</h1>
-                                 </div>
-                                 <div class="cart-head-two">
-                                    <h1>250 ml</h1>
-                                 </div>
-                                 <div class="cart-head-three">
-                                    <h1>1 Piece</h1>
-                                 </div>
-                              </div>
-                              <div class="cart-order-product-details-price">
-                                 <div class="cart-price-one">
-                                    <h1>₹ 509</h1>
-                                 </div>
-                                 <div class="cart-price-two">
-                                    <h1>₹ 509</h1>
-                                 </div>
-                                 <div class="cart-remove-button">
-                                    <button class="remove-button">Remove</button>
-                                 </div>
-                              </div>
-                           </div>
-                           </div> -->
+                     
                      </div>
                      <hr>
                      <div class="cart-details-payment-head-list">
@@ -120,7 +90,7 @@
                         <div class="row">
                            <div class="col-md-6 col-6">
                               <div class="cart-details-payment-head">
-                                 <h1>Big Discount</h1>
+                                 <h1>{{ __('main.Big_Discount') }}</h1>
                               </div>
                            </div>
                            <div class="col-md-6 col-6">
@@ -135,7 +105,7 @@
                         <div class="row">
                            <div class="col-md-6 col-6">
                               <div class="cart-details-payment-head">
-                                 <h1 style="font-weight: 600;">Total Payble</h1>
+                                 <h1 style="font-weight: 600;">{{ __('main.Total_Payble') }}</h1>
                               </div>
                            </div>
                            <div class="col-md-6 col-6">

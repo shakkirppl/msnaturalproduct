@@ -54,7 +54,7 @@
          <div class="row">
             <div class="col-md-12">
                <div class="your-order-head mb-2">
-                  <h1>Address</h1>
+                  <h1>{{ __('main.Address') }}</h1>
                </div>
             </div>
          </div>
@@ -70,7 +70,7 @@
                         <div class="your-order-head mb-2">
                            <div class="row">
                               <div class="col-md-12">
-                                 <h1 class="address-head">Update Shipping Addresses</h1>
+                                 <h1 class="address-head">{{ __('main.Update_Shipping_Addresses') }}</h1>
                               </div>
                            </div>
                         </div>
@@ -148,10 +148,10 @@
                      
                         <div class="row">
                            <div class="col-md-6">
-                              <button type="submit"  class="edit">Save</button>
+                              <button type="submit"  class="edit">{{ __('main.Save') }}</button>
                            </div>
                            <div class="col-md-6 text-end">
-                              <button type="button" class="cancel">Clear</button>
+                              <button type="button" class="cancel">{{ __('main.Clear') }}</button>
                            </div>
                         </div>
                     

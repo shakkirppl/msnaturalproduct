@@ -32,7 +32,7 @@
                   <div class="guest-address-main">
                      <div class="row">
                         <div class="cart-details">
-                           <h1>My Cart({{$cartItems->count()}})</h1>
+                           <h1>{{ __('main.My_Cart') }} ({{$cartItems->count()}})</h1>
                         </div>
                      </div>
                      <hr>
@@ -50,7 +50,7 @@
                                     <h1>{{$item->name}}</h1>
                                  </div>
                                  <div class="cart-head-three">
-                                    <h1>{{$item->quantity}} Piece</h1>
+                                    <h1>{{$item->quantity}} {{ __('main.Piece') }}</h1>
                                  </div>
                               </div>
                               <div class="cart-order-product-details-price">
@@ -61,7 +61,7 @@
                                     <h1>{{$item->attributes->currency}} {{$item->attributes->original_price}}</h1>
                                  </div>
                                  <div class="cart-remove-button">
-                                    <button class="remove-button">Remove</button>
+                                    <button class="remove-button">{{ __('main.Remove') }}</button>
                                  </div>
                               </div>
                            </div>
@@ -73,7 +73,7 @@
                         <div class="row">
                            <div class="col-md-6 col-6">
                               <div class="cart-details-payment-head">
-                                 <h1>Sub Total</h1>
+                                 <h1>{{ __('main.Sub_Total') }}</h1>
                               </div>
                            </div>
                            <div class="col-md-6 col-6">
@@ -85,7 +85,7 @@
                         <div class="row">
                            <div class="col-md-6 col-6">
                               <div class="cart-details-payment-head">
-                                 <h1>Big Discount</h1>
+                                 <h1>{{ __('main.Big_Discount') }}</h1>
                               </div>
                            </div>
                            <div class="col-md-6 col-6">
@@ -97,7 +97,7 @@
                         <div class="row">
                            <div class="col-md-6 col-6">
                               <div class="cart-details-payment-head">
-                                 <h1>Shipping Charge</h1>
+                                 <h1>{{ __('main.Shipping_Charge') }}</h1>
                               </div>
                            </div>
                            <div class="col-md-6 col-6">
@@ -112,7 +112,7 @@
                         <div class="row">
                            <div class="col-md-6 col-6">
                               <div class="cart-details-payment-head">
-                                 <h1 style="font-weight: 600;">Total Payble</h1>
+                                 <h1 style="font-weight: 600;">{{ __('main.Total_Payble') }}</h1>
                               </div>
                            </div>
                            <div class="col-md-6 col-6">
@@ -138,8 +138,8 @@
                   <div class="row mt-3">
                      <div class="col-md-12">
                         <div class="delivery-head">
-                           <h1 class="shipping-name"> Shipping method</h1>
-                           <p>All transactions are secure and encrypted.</p>
+                           <h1 class="shipping-name">{{ __('main.Shipping_method') }} </h1>
+                           <p>{{ __('main.All_transactions') }}</p>
                         </div>
                      </div>
                   </div>
@@ -148,17 +148,17 @@
                         <div class="mb-3 form-check  custom-checkbox-cash-on-delivery">
                            <input type="checkbox" name="cash_on_delivery" class="form-check-input"
                               id="exampleCheck1" checked>
-                           <label class="form-check-label" for="exampleCheck1">Cash on Delivery (COD)</label>
+                           <label class="form-check-label" for="exampleCheck1">{{ __('main.Cash_on_Delivery') }}</label>
                         </div>
-                        <div class="mb-3 form-check  custom-checkbox-cash-on-delivery">
+                        <!-- <div class="mb-3 form-check  custom-checkbox-cash-on-delivery">
                            <input type="checkbox" name="stripe" class="form-check-input" id="exampleCheck1"
                               >
                            <label class="form-check-label" for="exampleCheck1">Stripe</label>
-                        </div>
+                        </div> -->
                         <div class="row mt-3">
                            <div class="col-md-12">
                               <div class="delivery-head">
-                                 <h1 class="shipping-name billing-address-">Billing Address</h1>
+                                 <h1 class="shipping-name billing-address-">{{ __('main.Billing_Address') }}</h1>
                               </div>
                            </div>
                         </div>
@@ -189,7 +189,7 @@
                               <button type="button" class="user-account-plus">
                               <span class="plus-sign-checkout">+</span>
                               <br>
-                              <span class="plus-sign-address">Add Address</span>
+                              <span class="plus-sign-address">{{ __('main.Add_Address') }}</span>
                               </button>
                               </a>
                            </div>
@@ -200,7 +200,7 @@
                                  <div class="form-check custom-radio">
                                     <input class="form-check-input" name="billing_option" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked onclick="toggleBillingForm()" value="same">
                                     <label class="form-check-label" for="flexRadioDefault1">
-                                    Same as shipping address
+                                    {{ __('main.Same_as_shipping_address') }}
                                     </label>
                                  </div>
                               </div>
@@ -208,7 +208,7 @@
                                  <div class="form-check custom-radio">
                                     <input class="form-check-input" name="billing_option" type="radio" name="flexRadioDefault" id="flexRadioDefault2" onclick="toggleBillingForm()" value="different">
                                     <label class="form-check-label" for="flexRadioDefault2">
-                                    Use a different billing address
+                                    {{ __('main.Use_a_different_billing_address') }}
                                     </label>
                                  </div>
                               </div>
@@ -218,14 +218,14 @@
                                     <div class="row">
                                        <div class="col-md-12">
                                           <div class="delivery-head">
-                                             <h1 class="shipping-name billing-address-">Billing Address</h1>
+                                             <h1 class="shipping-name billing-address-">{{ __('main.Billing_Address') }}</h1>
                                           </div>
                                        </div>
                                     </div>
                                     <div class="row">
                                        <div class="col-md-12">
                                           <div class="mb-3">
-                                             <label for="" class="form-ms-label">Town/City</label>
+                                             <label for="" class="form-ms-label">{{ __('main.Town_City') }}</label>
                                              <select class="form-select  form-control-ms" name="billing_country_id" id="billing_country_id" aria-label="Default select example">
                                                 @foreach($countries as $country)
                                                 @if($storeId==$country->id)
@@ -241,7 +241,7 @@
                                     <div class="row ">
                                        <div class="col-md-12">
                                           <div class="mb-3">
-                                             <label for="" class="form-ms-label">First Name</label>
+                                             <label for="" class="form-ms-label">{{ __('main.First_Name') }}</label>
                                              <input type="text" name="billing_first_name" class="form-control  form-control-ms"
                                                 id="exampleInputEmail1" aria-describedby="emailHelp"
                                                 >
@@ -249,7 +249,7 @@
                                        </div>
                                        <div class="col-md-12">
                                           <div class="mb-3">
-                                             <label for="" class="form-ms-label">Last Name</label>
+                                             <label for="" class="form-ms-label">{{ __('main.Last_Name') }}</label>
                                              <input type="text" name="billing_last_name" class="form-control  form-control-ms"
                                                 id="exampleInputEmail1" aria-describedby="emailHelp"
                                                 placeholder="Last Name ">
@@ -259,7 +259,7 @@
                                     <div class="row">
                                        <div class="col-md-12">
                                           <div class="mb-3">
-                                             <label for="" class="form-ms-label">Address</label> 
+                                             <label for="" class="form-ms-label">{{ __('main.Address') }}</label> 
                                              <input type="text" name="billing_address" class="form-control form-control-ms"
                                                 id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Address">
                                           </div>
@@ -268,7 +268,7 @@
                                     <div class="row">
                                        <div class="col-md-12">
                                           <div class="mb-3">
-                                             <label for="" class="form-ms-label">Pincode</label> 
+                                             <label for="" class="form-ms-label">{{ __('main.Pincode') }}</label> 
                                              <input type="number" name="billing_postcode" class="form-control  form-control-ms"
                                                 id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Pincode" >
                                           </div>
@@ -277,13 +277,13 @@
                                     <div class="row">
                                        <div class="col-md-4">
                                           <div class="mb-3">
-                                             <label for="" class="form-ms-label">City</label> 
+                                             <label for="" class="form-ms-label">{{ __('main.City') }}</label> 
                                              <input type="text" name="billing_city" class="form-control  form-control-ms"
                                                 id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="city" >
                                           </div>
                                        </div>
                                        <div class="col-md-4  pe-2 ps-2">
-                                          <label for="" class="form-ms-label">State</label> 
+                                          <label for="" class="form-ms-label">{{ __('main.State') }}</label> 
                                           <select class="form-select  form-control-ms" name="billing_state" id="billing_state" aria-label="Default select example" >
                                              <option >Select</option>
                                              @foreach($billingStates as $state)
@@ -293,7 +293,7 @@
                                        </div>
                                        <div class="col-md-4">
                                           <div class="mb-3">
-                                             <label for="" class="form-ms-label">Pincode</label> 
+                                             <label for="" class="form-ms-label">{{ __('main.Pincode') }}</label> 
                                              <input type="number" class="form-control form-control-ms" id="billing_post_code"
                                                 name="billing_post_code" min="1" max="" >
                                           </div>
@@ -306,7 +306,7 @@
                         <div class="row">
                            <div class="col-md-12">
                               <button type="submit" class=" checkout-add-address">
-                              COMPLETE ORDER
+                              {{ __('main.COMPLETE_ORDER') }} 
                               </button>
                            </div>
                         </div>

@@ -58,8 +58,8 @@
                      <div class="row">
                         <div class="col-md-12">
                            <div class="review-head">
-                              <h1> Write a review</h1>
-                              <p>Rating</p>
+                              <h1> {{ __('main.Write_a_review') }}</h1>
+                              <p>{{ __('main.Rating') }}</p>
                               <div class="star-rating" id="star-rating">
     <span class="star" data-value="1">★</span>
     <span class="star" data-value="2">★</span>
@@ -73,10 +73,10 @@
                                  <input type="email" class="form-control review-title" id="email" name="titile" placeholder="Give Your Review Title" required>
                                  </div> -->
                               <div class="review-comments">
-                                 <p>Review</p>
+                                 <p>{{ __('main.Review') }}</p>
                                  <textarea name="review" rows="4" class="w-100" placeholder="Write Your Comments Here"></textarea>
                               </div>
-                              <p>Picture (Optional)</p>
+                              <p>{{ __('main.Picture') }} ({{ __('main.Optional') }})</p>
                               <div class="picture-video-optional">
                                  <div class="file-upload">
                                     <span class="plus-sign">+</span>
@@ -84,17 +84,16 @@
                                  </div>
                               </div>
                               <div class="name-displayed-by-name">
-                                 <h6>Name (displayed publicly like <span></span>)</h6>
+                                 <h6>{{ __('main.Name') }} ({{ __('main.displayed_publicly_like') }} <span></span>)</h6>
                                  <input type="text" class="form-control review-title" id="name" name="name" placeholder="Enter your name (public)" required>
                               </div>
                               <div class="review-bottom-para">
-                                 <p>How we use your data:We'll only contact you about the review you left,and only if necessary.By submitting  your review,
-                                    you agree to judge.me's <a href="">terms</a>, <a href=""> pirvacy</a> and <a href="">content</a> policies 
+                                 <p>{{ __('main.Review_description') }} <a href="">{{ __('main.terms') }}</a>, <a href=""> {{ __('main.pirvacy') }}</a> {{ __('main.and') }} <a href="">{{ __('main.content') }}</a>{{ __('main.policies') }}  
                                  </p>
                               </div>
                               <div class="review-buttons">
-                                 <button class="cancel-review">Cancel Review</button>
-                                 <button type="submit" class="submit-review">Submit Review</button>
+                                 <button class="cancel-review">{{ __('main.Cancel_Review') }}</button>
+                                 <button type="submit" class="submit-review">{{ __('main.Submit_Review') }}</button>
                               </div>
                            </div>
                         </div>

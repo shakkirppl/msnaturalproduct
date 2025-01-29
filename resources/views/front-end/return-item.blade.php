@@ -33,7 +33,7 @@
       </section>
       <div class="container">
          <div class="return-item">
-            <h1>Choose items to return</h1>
+            <h1>{{ __('main.Choose_items_to_return') }}</h1>
          </div>
       </div>
       <div class="container">
@@ -60,7 +60,7 @@
                   </div>
                   <div class="col-md-6 m-auto">
                      <div class="return-review">
-                        <h1>Why are you returning this?</h1>
+                        <h1>{{ __('main.Why_are_you_returning_this') }}?</h1>
                      </div>
                      <select class="form-select custom-select" name="reason_id" aria-label="Default select example">
                         @foreach($returnReason as $reason)
@@ -68,7 +68,7 @@
                         @endforeach
                      </select>
                      <button class="continue" type="submit" button>
-                     Continue
+                     {{ __('main.Continue') }}
                      </button>
                   </div>
                </div>
