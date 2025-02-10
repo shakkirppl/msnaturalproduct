@@ -55,7 +55,7 @@ Dry skin , Dehydrated skin, Premature aging',
 'contact'=>'Contact',
 'Email_me_with_news_and_offers'=>'Email me with news and offers',
 'Delivery'=>'Delivery',
-'Country_Region'=>'Country_Region',
+'Country_Region'=>'Country Region',
 'Splash'=>'Splash',
 'site_to'=>'www.msnaturalproducts.com Now Changed to www.msnaturalproduct.com',
 'Arabic'=>'Arabic',
@@ -187,4 +187,7 @@ Dry skin , Dehydrated skin, Premature aging',
 'Edit'=>'Edit',
 'Reorder'=>'Reorder',
 'Cancel_eligible_Only_Before_Shipping'=>'Cancel eligible Only Before Shipping',
+// new
+'Close'=>'Close',
+'First_Name'=>'First Name'
 ];

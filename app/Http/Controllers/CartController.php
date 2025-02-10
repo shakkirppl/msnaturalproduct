@@ -142,7 +142,7 @@ if (!$store) {
 }
     $storeId = $store->id ?? 1;
     $currency = $store->currency ?? 'INR';
-    $cartItems = Cart::getContent();
+     $cartItems = Cart::getContent();
     $totalShippingCharge=0;
     $originalPrice=0;
     $offerPrice=0;
@@ -155,6 +155,9 @@ if (!$store) {
     }, 0);
     $language = app()->getLocale() == 'ar' ? 'ar' : 'en';
     $countries=Countries::get();
+    $cartItems = Cart::getContent();
+
+
     if (Cart::isEmpty()) 
     {
         return view('front-end.empty-cart',compact('cartItems','storeId','currency','language','countries','totalShippingCharge','originalPrice','offerPrice'));

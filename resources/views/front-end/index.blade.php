@@ -360,7 +360,7 @@
                <div class="col-md-12">
                   <div class="ms-product-head" data-aos="fade-down" data-aos-anchor-placement="top-bottom"
                      data-aos-duration="1500">
-                     <h1>{{ __('main.Visit_Us ') }}</h1>
+                     <h1>{{ __('main.Visit_Us') }}</h1>
                   </div>
                </div>
             </div>

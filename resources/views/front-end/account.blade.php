@@ -128,7 +128,7 @@
                                  <div class="cart-options-head">
                                     <p class="account-head">{{ __('main.New_to_MS') }} ?</p>
                                  </div>
-                                 <button class="new-signup">{{ __('main.Sign_UP') }}</button>
+                                 <button class="new-signup">{{ __('main.Signup') }}</button>
                               </a>
                               <a href="{{url('guest-checkout')}}">
                                  <div class="cart-options-head">
