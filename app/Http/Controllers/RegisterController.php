@@ -294,10 +294,12 @@ class RegisterController extends Controller
         //   return $request->all();
         $request->validate([
             'first_name' => ['required', 'string', 'max:255'],
-            'id' => ['required', 'integer']
+            'id' => ['required', 'integer'],
+            'country_id' => ['required', 'integer'],
+            'state_id' => ['required', 'integer'],
         ]);
         try {
-       
+        
         DB::transaction(function () use ($request) {
             $customer= CustomerAddress::find($request->id);
             $customer->first_name=$request->first_name;
@@ -305,14 +307,13 @@ class RegisterController extends Controller
             $customer->address=$request->address;
             $customer->landmark=$request->landmark;
             $customer->city=$request->city;
-            $customer->state=$request->state;
+            $customer->state=$request->state_id;
             $customer->pincode=$request->pincode;
             $customer->phone_number=$request->phone_number;
             $customer->country_id=$request->country_id;
-            $customer->store_id=$request->store_id;
             $customer->save();
     }); 
-        return redirect('customer-address');
+        return redirect('your-profile');
         } catch (\Exception $e) {
             return $e->getMessage();
           }

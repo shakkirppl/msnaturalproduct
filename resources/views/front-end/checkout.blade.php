@@ -269,7 +269,7 @@
                               <div class="row mt-4">
                                  <div class="col-md-12">
                                     <div class="delivery-head">
-                                       <h1 class="shipping-name">{{ __('main.Billing_address') }} </h1>
+                                       <h1 class="shipping-name">{{ __('main.Billing_Address') }} </h1>
                                     </div>
                                  </div>
                               </div>
@@ -475,7 +475,7 @@
                               </div>
                               <div class="col-md-6 col-6">
                                  <div class="cart-details-payment-price">
-                                    <p>+{{$totalShippingCharge}}</p>
+                                    <p id="total_shipping">+{{$totalShippingCharge}}</p>
                                  </div>
                               </div>
                            </div>
@@ -560,6 +560,8 @@
                
                         let totalPayable = cartTotal + response.totalShippingCharge;
                          $('#shippingCharge').text('+' + response.totalShippingCharge);
+                         $('#total_shipping').text('+' + response.totalShippingCharge);
+                         
                          $('#total_pay').text(totalPayable); // Update total pay
                          
                      },

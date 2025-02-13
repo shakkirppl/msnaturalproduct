@@ -43,7 +43,7 @@
                            
                             </div>
                          </div>
-                         <h1 class="head-first">{{ __('main.Your_MS_Naturals_Cart_is_empty') }}.</h1>
+                         <h1 class="head-first">{{ __('main.your_cart_is_empty') }}.</h1>
                          <p class="head-second">{{ __('main.Your_shopping_cart_is_waiting') }}
                             
                             <br>

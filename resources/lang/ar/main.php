@@ -35,6 +35,7 @@
     '500ml_Combo'=>'زيت رعاية الشعر 500 ملتر + زيت رعاية الشعر 500 ملتر كومبو',
     '1_L_Combo'=>'زيت رعاية الشعر لتر واحد + زيت رعاية الشعر لتر واحد كومبو',
     'Video_Gallery'=>'معرض الفيديوهات',
+    'Gallery'=>'معرض',
     'Instagram'=>'الانستاغرام',
     'Youtube'=>'اليوتوب',
     'What_People_Say'=>'ماذا يقول الناس',
@@ -100,6 +101,7 @@
 'Big_Discount'=>'خصم كبير',
 'Total_Payble'=>'المجموع يستحق الدفع',
 'Have_An_Account'=>'لديك حساب',
+'Account'=>'حساب',
 'New_to_MS'=>'جديد لــ أم أس',
 'As_a_guest'=>'كضيف',
 'Continue_As_Guest'=>'استمرار كضيف',
@@ -177,7 +179,10 @@
 'Save'=>'الحفظ',
 'Update_Shipping_Addresses'=>'تحديث العنوان الشحني',
 'Set_as_Default'=>'تعيين كافتراض',
+'Default'=>'تقصير',
 'Edit'=>'تعديل',
 'Reorder'=>'إعادة الطلب',
 'Cancel_eligible_Only_Before_Shipping'=>'الإلغاء صالح قبل الشحن فقط',
+'your_cart_is_empty'=>'سلة التسوق الخاصة بك فارغة
+'
     ];

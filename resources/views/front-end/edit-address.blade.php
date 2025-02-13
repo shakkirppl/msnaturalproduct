@@ -58,7 +58,7 @@
                            </div>
                            <div class="address-order">
                               <h1>{{ __('main.Address') }}</h1>
-                              <p>{{ __('main.manage_Address') }}</p>
+                              <p>{{ __('main.Manage_Address') }}</p>
                            </div>
                         </div>
                      </button>
@@ -82,15 +82,19 @@
                                     
                                        
                                     @csrf
+                                     <input type="hidden" name="id" value="{{$customerAddress->id}}">
                                         <div class="row">
                                            <div class="col-md-12">
                                               <div class="mb-3">
                                              <label for="" class="form-ms-label">{{ __('main.Country_Region') }}</label><br>
                                              <select class="form-select form-select-ms" name="country_id" id="country_id" aria-label="Default select example">
-                                                   @foreach($countries as $country)
-                                                   <option value="{{$country->id}}">{{$country->country_name}}</option>
-                                                   @endforeach
-                                                </select>
+    <option value="" disabled selected>Select a Country</option> <!-- Optional placeholder -->
+    @foreach($countries as $country)
+        <option value="{{ $country->id }}" {{ isset($customerAddress->country_id) && $country->id == $customerAddress->country_id ? 'selected' : '' }}>
+            {{ $country->country_name }}
+        </option>
+    @endforeach
+</select>
                                             
                                               </div>
                                            </div>
@@ -98,7 +102,7 @@
                                         <div class="row ">
                                            <div class="col-md-12">
                                               <div class="mb-3"> 
-                                                 <label for="" class="form-ms-label">{{ __('main.First_Name') }}</label>
+                                                 <label for="" class="form-ms-label">{{ __('main.First_name') }}</label>
 
                                                  <input type="text" name="first_name" class="form-control form-control-ms" id=""
                                                     aria-describedby="emailHelp" value="{{$customerAddress->first_name}}" required >
@@ -111,7 +115,7 @@
                                            <div class="col-md-12">
                                               <div class="mb-3">
                                                 
-                                                    <label for="" class="form-ms-label">{{ __('main.Last_Name') }}</label>
+                                                    <label for="" class="form-ms-label">{{ __('main.Last_name') }}</label>
                                                  <input type="text" name="last_name" class="form-control  form-control-ms" id=""
                                                     aria-describedby="emailHelp"  value="{{$customerAddress->last_name}}" required>
                                               </div>
@@ -167,11 +171,12 @@
                                              </div>
                                             <div class="col-md-6">
                                                 <label for=""  class="form-ms-label">{{ __('main.State') }}</label>
-                                                <select class="form-select form-control-ms" name="state_id" id="state_id" aria-label="Default select example" required>
-                                                <option>Select</option>
-                                                @foreach($billingStates as $states)
-                                                <option value="{{$states->id}}">{{$states->state_name}}</option>
-                                                @endforeach
+                                 <select class="form-select form-control-ms" name="state_id" id="state_id" aria-label="Default select example" required>
+                                                @foreach($billingStates as $state)
+                                        <option value="{{ $state->id }}" {{ $state->id == $customerAddress->state ? 'selected' : '' }}>
+                                 {{ $state->state_name }}
+                                 </option>
+                                 @endforeach
                                              </select>
                                            
                                          </div>

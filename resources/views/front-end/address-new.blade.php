@@ -301,7 +301,7 @@
                                        <div class="row">
                                           <div class="col-md-12">
                                              <div class="mb-3">
-                                                <label for="" class="form-ms-label">{{ __('main.Flat_House') }}</label>
+                                                <label for="" class="form-ms-label">{{ __('main.Flat_House_no') }}</label>
                                                 <input type="text" name="address" class="form-control form-control-ms" id=""
                                                    aria-describedby="emailHelp"   required>
                                              </div>

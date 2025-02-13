@@ -241,7 +241,7 @@
                                     <div class="row ">
                                        <div class="col-md-12">
                                           <div class="mb-3">
-                                             <label for="" class="form-ms-label">{{ __('main.First_Name') }}</label>
+                                             <label for="" class="form-ms-label">{{ __('main.First_name') }}</label>
                                              <input type="text" name="billing_first_name" class="form-control  form-control-ms"
                                                 id="exampleInputEmail1" aria-describedby="emailHelp"
                                                 >
@@ -249,7 +249,7 @@
                                        </div>
                                        <div class="col-md-12">
                                           <div class="mb-3">
-                                             <label for="" class="form-ms-label">{{ __('main.Last_Name') }}</label>
+                                             <label for="" class="form-ms-label">{{ __('main.Last_name') }}</label>
                                              <input type="text" name="billing_last_name" class="form-control  form-control-ms"
                                                 id="exampleInputEmail1" aria-describedby="emailHelp"
                                                 placeholder="Last Name ">
@@ -277,7 +277,7 @@
                                     <div class="row">
                                        <div class="col-md-4">
                                           <div class="mb-3">
-                                             <label for="" class="form-ms-label">{{ __('main.City') }}</label> 
+                                             <label for="" class="form-ms-label">{{ __('main.Town_City') }}</label> 
                                              <input type="text" name="billing_city" class="form-control  form-control-ms"
                                                 id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="city" >
                                           </div>

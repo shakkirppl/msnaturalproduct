@@ -73,7 +73,7 @@
          </div>
       </section>
       <div class="about-head">
-                        <h1 class="gallery-head">Gallery</h1>
+                        <h1 class="gallery-head">{{ __('main.Gallery') }}</h1>
                      </div>
                      <div class="about-head-para">
                     

@@ -279,7 +279,7 @@ InvoiceNumber::updateinvoiceNumber('orders',$storeId);
     {
        
 
-      return $request->all();
+    //   return $request->all();
     $cartItems = Cart::getContent();
     $quantity = $cartItems->count();
    
@@ -370,7 +370,7 @@ InvoiceNumber::updateinvoiceNumber('orders',$storeId);
     'phone_number' => $validatedData['phone'],
     'billing_option' => $validatedData['billing_option'],
     'shipping'=>$request->special_instructions,
-    'email' => $validatedData['email'],
+    'email' => $validatedData['email'] ?? null,
     'billing_first_name' => $validatedData['billing_option'] === 'different' ? $validatedData['billing_first_name'] : $validatedData['first_name'],
     'billing_second_name' => $validatedData['billing_option'] === 'different' ? $validatedData['billing_last_name'] : $validatedData['last_name'],
     'billing_address' => $validatedData['billing_option'] === 'different' ? $validatedData['billing_address'] : $validatedData['address'],

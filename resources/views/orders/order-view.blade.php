@@ -60,13 +60,13 @@
           <li><strong>City:</strong> {{$orders->city}}</li>
           <li><strong>Postcode:</strong> {{$orders->pincode}}</li>
           <li><strong>Country:</strong> {{$orders->country->country_name}}</li>
-          <li><strong>Payment Type:</strong>
+          <!-- <li><strong>Payment Type:</strong>
             @if($orders->payment_type == 0)
               Cash on Delivery
             @else
               Stripe
             @endif
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>
@@ -118,8 +118,12 @@
                         </tr>
                       </thead>
                       <tbody>
-                  
-               
+                        @foreach($orders->orderdetails as $details)
+                  <tr>
+                    <td>{{$details->product->product_name}}</td>
+                    <td>{{$details->quantity}}<td>
+                </tr>
+               @endforeach
                       </tbody>
                     </table>
                   </div>

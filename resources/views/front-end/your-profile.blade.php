@@ -62,7 +62,7 @@
                            </div>
                            <div class="address-order">
                               <h1>{{ __('main.Address') }}</h1>
-                              <p>{{ __('main.manage_Address') }}</p>
+                              <p>{{ __('main.Manage_Address') }}</p>
                            </div>
                         </div>
                      </button>
@@ -102,7 +102,7 @@
                                                          </th>
                                                          <th style=" background-color: #FDE7C1;"
                                                             scope="col" colspan="2">
-                                                            {{ __('main.ORDER') }} {{$order->order_no}}
+                                                            {{$order->order_no}}
                                                          </th>
                                                       </tr>
                                                       <tr>
