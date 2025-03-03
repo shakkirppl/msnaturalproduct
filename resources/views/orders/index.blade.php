@@ -30,20 +30,16 @@
                   </p>
                   <div class="table-responsive">
               
-                  <table class="table">
+                  <table class="table" id="value-table">
         <thead>
             <tr>
                 <th>Status</th>
                  <th>Date</th>
+                 <th>OrderID</th>
                 <th>Name</th>
                 <th>Phone</th>
                 <th>Store</th>
                 <th>Total amount</th>
-               
-                {{-- <th>State</th>
-                <th>Shipping Charge</th> --}}
-                <!-- <th>In Stock</th>
-                <th>Availability Date</th> -->
                 <th>Actions</th>
             </tr>
         </thead>
@@ -53,6 +49,7 @@
                 <tr>
                     <td>{{ $order->delivery_status}}</td>
                     <td>{{ \Carbon\Carbon::parse($order->date)->format('d-m-Y') }}</td>
+                    <td>{{ $order->order_no}}</td>
                     <td>{{ $order->first_name }} {{$order->last_name}}</td>
                     <td>{{ $order->phone_number }}</td>
                     <td>{{ $order->store->store_name }}</td>

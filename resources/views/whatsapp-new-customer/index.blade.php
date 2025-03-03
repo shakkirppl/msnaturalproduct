@@ -1,6 +1,14 @@
 @extends('layouts.layout')
 
 @section('content')
+<style>
+.large-button {
+    font-size: 40px !important;  /* Force the font size */
+    padding: 12px 20px !important; /* Increase padding */
+    display: inline-block !important;
+}
+
+    </style>
 <div class="main-panel">
     <div class="content-wrapper">
         <div class="col-lg-12 grid-margin stretch-card">
@@ -9,9 +17,10 @@
                     <div class="row">
                         <div class="col-6 col-md-6 col-sm-6 col-xs-12">
                             <h4 class="card-title">WhatsApp Customers</h4>
+                            <a href="{{ route('whatsapp-customer.add_customer') }}"  class="newicon large-button"><i class="mdi mdi-new-box"></i></a>
                         </div>
                         <div class="col-6 col-md-6 col-sm-6 col-xs-12 heading" style="text-align:end;">
-                            <a href="{{ route('whatsapp-customer.add_customer') }}" class="newicon"><i class="mdi mdi-new-box"></i></a>
+                           
                         </div>
                     </div>
 

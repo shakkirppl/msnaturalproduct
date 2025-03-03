@@ -19,7 +19,8 @@ class VisitReportController extends Controller
         $visits = Visitors::select('ip', \DB::raw('count(*) as total'))
                        ->groupBy('ip')
                        ->orderByDesc('total')
-                       ->paginate(10); // Most visit details
+                       ->get();
+                    //    ->paginate(10); // Most visit details
         return view('visit-reports.most_visit', compact('visits'));
     }
 
@@ -29,7 +30,8 @@ class VisitReportController extends Controller
         $visits = Visitors::select('countryName', \DB::raw('count(*) as total'))
                        ->groupBy('countryName')
                        ->orderByDesc('total')
-                       ->paginate(10); // Visits by country
+                       ->get();
+                    //    ->paginate(10); // Visits by country
         return view('visit-reports.visit_by_country', compact('visits'));
     }
 
@@ -39,7 +41,8 @@ class VisitReportController extends Controller
          $visits = Visitors::select(\DB::raw('DATE(created_at) as visit_date'), \DB::raw('count(*) as total'))
                        ->groupBy('visit_date')
                        ->orderByDesc('visit_date')
-                       ->paginate(10); // Day visit details
+                       ->get();
+                    //    ->paginate(10); // Day visit details
         return view('visit-reports.day_visit', compact('visits'));
     }
 
@@ -51,8 +54,8 @@ class VisitReportController extends Controller
         if ($request->has('from_date') && $request->has('to_date')) {
             $query->whereBetween('created_at', [$request->from_date, $request->to_date]);
         }
-
-        $visits = $query->paginate(10); // Date-wise visit details
+        $visits = $query->get();
+        // $visits = $query->paginate(10); // Date-wise visit details
         return view('visit-reports.date_wise_visit', compact('visits'));
     }
 }

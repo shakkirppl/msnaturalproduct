@@ -213,11 +213,19 @@ class ReportController extends Controller
      // Most repurchased customers
      public function mostRepurchasedCustomers()
      {
-         $customers = Order::select('customer_id', DB::raw('COUNT(*) as purchase_count'))
-             ->groupBy('customer_id')
-             ->orderBy('purchase_count', 'desc')
-             ->with('customer')
-             ->get();
+        $customers = Order::join('customers', 'orders.customer_id', '=', 'customers.user_id')
+    ->select(
+        'orders.customer_id',
+        'customers.first_name',
+        'customers.last_name',
+        'customers.phone_number',
+        DB::raw('COUNT(orders.id) as purchase_count')
+    )
+    ->whereNotNull('orders.customer_id')
+    ->groupBy('orders.customer_id', 'customers.first_name', 'customers.last_name', 'customers.phone_number')
+    ->orderByDesc('purchase_count')
+    ->get();
+
  
          return view('reports.most-repurchased-customers', compact('customers'));
      }

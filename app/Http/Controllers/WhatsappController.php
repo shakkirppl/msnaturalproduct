@@ -231,6 +231,7 @@ public function storeCustomer(Request $request)
     // Validate the incoming request data
     $request->validate([
         'customer_name' => 'required|string|max:255',
+        'phone_number' => 'required|string|max:255',
         'country_id' => 'required|integer',
         'state' => 'nullable|string|max:255',
         'city' => 'nullable|string|max:255',
@@ -244,6 +245,7 @@ public function storeCustomer(Request $request)
         $customer->user_id = auth()->id(); // Authenticated user ID
         $customer->store_id = auth()->user()->store_id; // Authenticated user's store ID
         $customer->customer_name = $request->customer_name;
+        $customer->phone_number=$request->phone_number;
         $customer->country_id = $request->country_id;
         $customer->state = $request->state;
         $customer->city = $request->city;

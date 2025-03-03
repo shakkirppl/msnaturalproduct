@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Add New Customer</h4>
-                    <div class="col-6 col-md-6 col-sm-6 col-xs-12 heading" style="text-align:end;">
+                    <div class="col-6 col-md-12 col-sm-6 col-xs-12 heading" style="text-align:end;">
                             <a href="{{ url('whatsapp-order/list') }}" class="backicon">
                                 <i class="mdi mdi-backburger"></i>
                             </a>
@@ -34,12 +34,18 @@
                                 <input type="text" name="customer_name" class="form-control" placeholder="Enter customer name" required>
                             </div>
                         </div>
-
+                  <!-- Phone Number -->
+                  <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Phone Number:</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="phone_number" class="form-control" placeholder="Enter Phone Number" required>
+                            </div>
+                        </div>
                         <!-- Country Dropdown -->
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Country:</label>
                             <div class="col-sm-10">
-                                <select name="country_id" class="form-control" required>
+                                <select name="country_id" id="country_id" class="form-control" required>
                                     <option value="">Select Country</option>
                                     @foreach($countries as $country)
                                         <option value="{{ $country->id }}">{{ $country->country_name }}</option>
@@ -52,7 +58,7 @@
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">State:</label>
                             <div class="col-sm-10">
-                                <select name="state" class="form-control" id="state">
+                                <select name="state" id="state" class="form-control" id="state">
                                     <option value="">Select State</option>
                                     @foreach($states as $state)
                                         <option value="{{ $state->id }}">{{ $state->state_name }}</option>
@@ -73,7 +79,9 @@
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Address:</label>
                             <div class="col-sm-10">
-                                <input type="text" name="address" class="form-control" placeholder="Enter address">
+                               
+                            <textarea name="address" class="form-control"></textarea>
+
                             </div>
                         </div>
 
@@ -122,27 +130,34 @@ $(document).ready(function () {
 
     // Handle country change event to fetch states dynamically
     $('select[name="country_id"]').on('change', function () {
-        var countryId = $(this).val();
-        if (countryId) {
-            $.ajax({
-                url: '/get-states/' + countryId,
-                type: "GET",
-                dataType: "json",
-                success: function (data) {
-                    $('select[name="state"]').empty();
-                    $('select[name="state"]').append('<option value="">Select State</option>');
-                    $.each(data, function (key, value) {
-                        $('select[name="state"]').append('<option value="' + value.id + '">' + value.state_name + '</option>');
-                    });
-                    // Reinitialize Select2 after updating the dropdown
-                    $('select[name="state"]').trigger('change');
-                }
-            });
-        } else {
-            $('select[name="state"]').empty();
-            $('select[name="state"]').trigger('change');
-        }
-    });
+    var countryId = $(this).val();
+    if (countryId) {
+        $.ajax({
+            url: "{{ url('/get-states') }}/" + countryId,
+            type: "GET",
+            dataType: "json",
+            success: function (data) {
+                var stateDropdown = $('select[name="state"]');
+                stateDropdown.empty();
+                stateDropdown.append('<option value="">Select State</option>');
+
+                // Loop through states and append them
+                $.each(data.states, function (key, value) {
+                    stateDropdown.append('<option value="' + value.id + '">' + value.state_name + '</option>');
+                });
+
+                // Reinitialize Select2 after updating the dropdown (if using Select2)
+                stateDropdown.trigger('change');
+            },
+            error: function (xhr, status, error) {
+                console.error("Error fetching states:", error);
+            }
+        });
+    } else {
+        $('select[name="state"]').empty().trigger('change');
+    }
+});
+
 });
 </script>
 @endsection

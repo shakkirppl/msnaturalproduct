@@ -12,13 +12,15 @@
                             <thead>
                                 <tr>
                                     <th>Customer Name</th>
+                                    <th>Phone Number</th>
                                     <th>Purchase Count</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($customers as $customer)
                                     <tr>
-                                        <td>{{ $customer->customer->first_name . ' ' . $customer->customer->last_name }}</td>
+                                    <td>{{ $customer->first_name}} {{ $customer->last_name}}</td>
+                                    <td>{{ $customer->phone_number}}</td>
                                         <td>{{ $customer->purchase_count }}</td>
                                     </tr>
                                 @endforeach

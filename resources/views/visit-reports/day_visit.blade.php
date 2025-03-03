@@ -23,7 +23,7 @@
                 
                   </p>
                    <!-- Total Visitors -->
-                   <table class="table">
+                   <table class="table" id="value-table">
     <thead>
         <tr>
             <th>Date</th>
@@ -39,7 +39,7 @@
         @endforeach
     </tbody>
 </table>
-{{ $visits->links() }}
+
                 </div>
               </div>
             </div>

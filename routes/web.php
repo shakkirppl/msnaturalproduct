@@ -209,6 +209,8 @@ Route::get('pending-orders', [OrderController::class, 'show_pending_orders']);
 Route::get('accepted-orders', [OrderController::class, 'show_accepted_orders']);
 Route::get('packed-orders', [OrderController::class, 'show_packed_orders']);
 Route::get('delivered-orders', [OrderController::class, 'show_delivered_orders']);
+Route::get('orders/tracking', [OrderController::class, 'orders_tracking'])->name('orders.tracking');
+
 
 Route::get('canceled-order', [OrderController::class, 'canceled_order']);
 Route::get('return-items-pending', [OrderController::class, 'return_items_pending']);

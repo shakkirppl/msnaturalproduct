@@ -81,10 +81,10 @@ class Order extends Model
     
 
     // You can also define other relationships like the user who placed the order:
-    // public function user()
-    // {
-    //     return $this->belongsTo(User::class); // Assuming you have a User model
-    // }
+    public function user()
+    {
+        return $this->belongsTo(User::class,'customer_id'); // Assuming you have a User model
+    }
 
 
 

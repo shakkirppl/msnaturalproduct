@@ -339,7 +339,31 @@ class OrderController extends Controller
         return $e->getMessage();
       }  
     }
-
+    public function orders_tracking(Request $request)
+    {
+        $query = Order::query();
+    
+        // Apply filters if present in the request
+        if ($request->filled('delivery_status')) {
+            $query->where('delivery_status', $request->delivery_status);
+        }
+        if ($request->filled('order_no')) {
+            $query->where('order_no', 'LIKE', '%' . $request->order_no . '%');
+        }
+        if ($request->filled('first_name')) {
+            $query->where('first_name', 'LIKE', '%' . $request->first_name . '%');
+        }
+        if ($request->filled('phone_number')) {
+            $query->where('phone_number', 'LIKE', '%' . $request->phone_number . '%');
+        }
+        if ($request->filled('date')) {
+            $query->whereDate('date', $request->date);
+        }
+    
+        $orders = $query->with('store')->paginate(10);
+    
+        return view('orders.order-tracking', compact('orders'));
+    }
     public function return_items_pending(Request $request)
     {
         try {

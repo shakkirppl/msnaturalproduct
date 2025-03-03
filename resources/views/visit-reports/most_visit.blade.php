@@ -35,7 +35,7 @@
         @endforeach
     </tbody>
 </table>
-{{ $visits->links() }}
+
                 </div>
               </div>
             </div>

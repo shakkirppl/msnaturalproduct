@@ -109,6 +109,7 @@
             </a>
             <div class="collapse" id="orders">
               <ul class="nav flex-column sub-menu">
+              <li class="nav-item"> <a class="nav-link" href="{{URL::to('orders/tracking')}}">Order Tracking</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{URL::to('pending-orders')}}">Pending Orders</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{URL::to('accepted-orders')}}">Accepted Orders</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{URL::to('packed-orders')}}">Packed Orders</a></li>
@@ -197,7 +198,8 @@
               <ul class="nav flex-column sub-menu">
        
               <li class="nav-item"> <a class="nav-link" href="{{URL::to('whatsapp-order/list')}}"> Whatsapp Orders</a></li>
-              <li class="nav-item"> <a class="nav-link" href="{{URL::to('whatsapp-customers')}}">  Customers</a></li>
+              <li class="nav-item"> <a class="nav-link" href="{{URL::to('whatsapp-customer/add_customer')}}"> New Customer</a></li>
+              <li class="nav-item"> <a class="nav-link" href="{{URL::to('whatsapp-customers')}}">  Customers List</a></li>
               </ul>
             </div>
             
@@ -211,7 +213,7 @@
             </a>
             <div class="collapse" id="visit_report">
               <ul class="nav flex-column sub-menu">
-              <li class="nav-item"> <a class="nav-link" href="{{URL::to('last-visit')}}">Last Visit </a></li>
+              <!-- <li class="nav-item"> <a class="nav-link" href="{{URL::to('last-visit')}}">Last Visit </a></li> -->
               <li class="nav-item"> <a class="nav-link" href="{{URL::to('visit-analytics')}}">Visit Analytics </a></li>
               <li class="nav-item"> <a class="nav-link" href="{{URL::to('visit-by-country')}}">Visit By Country </a></li>
               <li class="nav-item"> <a class="nav-link" href="{{URL::to('most-visit')}}">Most Visit </a></li>
