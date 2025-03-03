@@ -116,15 +116,13 @@ public function store(Request $request)
         $request->validate([
             'customer_id' => 'required|integer',
             'in_date' => 'required|date',
-            'whatsapp_no' => 'required|string',
+            // 'whatsapp_no' => 'required|string',
             'total' => 'required|numeric',
             'grand_total' => 'required|numeric',
             'shipping_charge' => 'required|numeric',
             'invoice_no' => 'required|string',
             'product_id' => 'required|array|min:1',
             'product_id.*' => 'integer|exists:products,id',
-            'product_size_id' => 'required|array',
-            'product_size_id.*' => 'nullable|integer|exists:product_sizes,id',
             'quantity' => 'required|array',
             'quantity.*' => 'integer|min:1',
             'price' => 'required|array',
@@ -136,7 +134,7 @@ public function store(Request $request)
         $order->in_date = $request->in_date;
         $order->invoice_no = $request->invoice_no;
         $order->customer_id = $request->customer_id;
-        $order->whatsapp_no = $request->whatsapp_no;
+        $order->whatsapp_no = $request->whatsapp_no ?? null;
         $order->shipping_charge = $request->shipping_charge;
         $order->total = $request->total;
         $order->grand_total = $request->grand_total;
@@ -146,7 +144,7 @@ public function store(Request $request)
         // Iterate over products
         foreach ($request->product_id as $index => $productId) {
             // Ensure all fields align
-            $productSizeId = $request->product_size_id[$index] ?? null;
+            $productSizeId =0;
             $quantity = $request->quantity[$index];
             $price = $request->price[$index];
 

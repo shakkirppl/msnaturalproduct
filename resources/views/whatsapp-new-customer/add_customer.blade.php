@@ -60,9 +60,7 @@
                             <div class="col-sm-10">
                                 <select name="state" id="state" class="form-control" id="state">
                                     <option value="">Select State</option>
-                                    @foreach($states as $state)
-                                        <option value="{{ $state->id }}">{{ $state->state_name }}</option>
-                                    @endforeach
+                                  
                                 </select>
                             </div>
                         </div>

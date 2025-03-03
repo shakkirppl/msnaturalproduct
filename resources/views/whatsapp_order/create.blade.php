@@ -16,7 +16,7 @@
                             </a>
                        </div>
                     </div>
-                    <!-- 
+                    
                     @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
@@ -25,81 +25,68 @@
                             @endforeach
                         </ul>
                     </div><br />
-                    @endif -->
+                    @endif
                     <form class="form-sample" action="{{ route('whatsapp.store') }}" method="post">
                         {{ csrf_field() }}
+
                         <div class="row">
-                            <div class="col-md-6">
-                            <div class="form-group row align-items-center">
-                                <label class="col-sm-2 col-form-label required">Customer Name:</label>
-                                     <div class="col-sm-8 d-flex">
-                                             <select class="form-control" name="customer_id" id="customer_id" style="border: none;">
+                        <div class="col-lg-12 grid-margin stretch-card">
+                        <div class="col-4 col-md-4 col-sm-6 col-xs-12" >
+                                 <label>Customer</label>
+                            <select class="form-control" name="customer_id" id="customer_id" style="border: none;">
                                                     <option value="0">Select Customer</option>
                                                       @foreach($whatsapp_customers as $customer)
                                                        <option value="{{ $customer->id }}">{{ $customer->customer_name }}</option>
                                                       @endforeach
                                                </select>
-                                               <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#addCustomerModal" style="text-decoration: none; color: blue; margin-left: 10px; align-self:center;">
+                                               <!-- <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#addCustomerModal" style="text-decoration: none; color: blue; margin-left: 10px; align-self:center;">
                                                   <i class="fas fa-plus" style="cursor: pointer;"></i>
-                                               </a>
-                             </div>
-                           </div>
+                                               </a> -->
                         </div>
-                            <div class="col-md-6">
-                                <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label required">Date:</label>
-                                    <div class="col-sm-9">
-                                        <input type="date" name="in_date" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label required">Phone No:</label>
-                                    <div class="col-sm-9">
-                                        <input type="number" class="form-control" placeholder="Phone Number" name="whatsapp_no" required="" value="" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label required">Total Amount:</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="total" required="true" value="0.00" readonly />
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="col-4 col-md-4 col-sm-6 col-xs-12" >
+                        <label>Customer</label>
+                        <input type="date" name="in_date" class="form-control">
                         </div>
 
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label required">Shipping Charge:</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="shipping_charge" required="true" value="0.00" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label required">Grand Total</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="grand_total" value="" readonly />
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="col-4 col-md-4 col-sm-6 col-xs-12" >
+                        <label>Phone No</label>
+                        <input type="number" class="form-control" placeholder="Phone Number" name="whatsapp_no"  />
                         </div>
 
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label required">Order No:</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="invoice_no" value="{{ $invoice_no }}" readonly />
-                                    </div>
-                                </div>
-                            </div>
                         </div>
+<!-- second row -->
+<div class="col-lg-12 grid-margin stretch-card">
+<div class="col-4 col-md-3 col-sm-6 col-xs-12" >
+<label>Total Amount</label>
+<input type="text" class="form-control" name="total" required="true" value="0.00" readonly />
+</div>
+
+<div class="col-4 col-md-3 col-sm-6 col-xs-12" >
+<label>Shipping Charge</label>
+<input type="text" class="form-control" name="shipping_charge" required="true" value="0.00" />
+</div>
+
+<div class="col-4 col-md-3 col-sm-6 col-xs-12" >
+<label>Grand Total</label>
+<input type="text" class="form-control" name="grand_total" value="" readonly />
+</div>
+
+<div class="col-4 col-md-3 col-sm-6 col-xs-12" >
+<label>Order No</label>
+<input type="text" class="form-control" name="invoice_no" value="{{ $invoice_no }}" readonly />
+</div>
+
+</div>
+
+
+                        </div>
+
+                        
+                      
+
+               
+
+                
 
                         <div class="row">
                             <div class="col-md-12">
@@ -107,7 +94,7 @@
                                     <thead>
                                         <tr>
                                             <th>Product</th>
-                                            <th>Unit</th>
+                                            <!-- <th>Unit</th> -->
                                             <th>Quantity</th>
                                             <th>Price</th>
                                             <th>Action</th>
@@ -123,14 +110,14 @@
                                                     @endforeach
                                                 </select>
                                             </td>
-                                            <td>
+                                            <!-- <td>
                                                 <select class="form-control product_size_id" name="product_size_id[]">
                                                     <option value="">Select Unit</option>
                                                     @foreach($productsizes as $size)
                                                         <option value="{{ $size->id }}">{{ $size->size }}</option>
                                                     @endforeach
                                                 </select>
-                                            </td>
+                                            </td> -->
                                             <td>
                                                 <input type="text" class="form-control" name="quantity[]" value="1" style="border:none;">
                                             </td>
@@ -185,9 +172,7 @@
                             <label for="state" class="form-label" >State</label>
                             <select name="state" class="form-control" id="state">
                                     <option value="">Select State</option>
-                                    @foreach($states as $state)
-                                        <option value="{{ $state->id }}">{{ $state->state_name }}</option>
-                                    @endforeach
+                                   
                                 </select>
                         </div>
                     <div class="mb-3">
@@ -404,14 +389,7 @@ function fetchPrice(productId, sizeId, row) {
                         @endforeach
                     </select>
                 </td>
-                <td>
-                    <select class="form-control product_size_id" name="product_size_id[]">
-                        <option value="">Select Unit</option>
-                        @foreach($productsizes as $size)
-                        <option value="{{ $size->id }}">{{ $size->size }}</option>
-                        @endforeach
-                    </select>
-                </td>
+               
                 <td>
                     <input type="text" class="form-control" name="quantity[]" value="1" style="border:none;">
                 </td>
@@ -449,6 +427,36 @@ function fetchPrice(productId, sizeId, row) {
         setCurrentDate();
 
         // Other existing scripts here...
+    // Handle country change event to fetch states dynamically
+    $('select[name="country_id"]').on('change', function () {
+    var countryId = $(this).val();
+    if (countryId) {
+        $.ajax({
+            url: "{{ url('/get-states') }}/" + countryId,
+            type: "GET",
+            dataType: "json",
+            success: function (data) {
+                var stateDropdown = $('select[name="state"]');
+                stateDropdown.empty();
+                stateDropdown.append('<option value="">Select State</option>');
+
+                // Loop through states and append them
+                $.each(data.states, function (key, value) {
+                    stateDropdown.append('<option value="' + value.id + '">' + value.state_name + '</option>');
+                });
+
+                // Reinitialize Select2 after updating the dropdown (if using Select2)
+                stateDropdown.trigger('change');
+            },
+            error: function (xhr, status, error) {
+                console.error("Error fetching states:", error);
+            }
+        });
+    } else {
+        $('select[name="state"]').empty().trigger('change');
+    }
+});
+        
     });
 
 
