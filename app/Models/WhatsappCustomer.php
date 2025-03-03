@@ -21,7 +21,7 @@ class WhatsappCustomer extends Model
 
     public function countries()
     {
-        return $this->belongsTo(countries::class, 'country_id');
+        return $this->belongsTo(Countries::class, 'country_id');
     }
 
     // Relationship for State
