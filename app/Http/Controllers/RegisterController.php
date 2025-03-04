@@ -265,7 +265,7 @@ class RegisterController extends Controller
         try {
         $id=Auth::id();
         DB::transaction(function () use ($request, $id) {
-            CustomerAddress::where('user_id', '!=', $id)
+            CustomerAddress::where('user_id', $id)
             ->update(['deafult' => 0]);
             $customer=new CustomerAddress;
             $customer->user_id=$id;

@@ -175,7 +175,7 @@
                                  </p>
                               </span>
                               <input type="radio" name="address" id="address{{$address->id}}" value="{{$address->id}}" 
-                              {{$address->default == 1 ? 'checked' : ''}}>
+                              {{$address->deafult == 1 ? 'checked' : ''}}>
                            </label>
                            @endforeach
                            @endif

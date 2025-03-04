@@ -51,7 +51,6 @@ class CheckoutController extends Controller
     if (Auth::user()) {
         $customerAddress=CustomerAddress::with('countrys','states')->where('user_id',Auth::user()->id)->get();
     }
-
     $totalShippingCharge = 0;
     $originalPrice=0;
     $offerPrice=0;

@@ -96,7 +96,7 @@
                         @if($language=='ar')
                         <a href="{{url('lang/change/en')}}"  class="lang-btn" >ENG</a>
                         @else
-                        <a href="{{url('lang/change/ar')}}" class="lang-btn">{{ __('main.AR') }}</a>
+                        <a href="{{url('lang/change/ar')}}" class="lang-btn">{{ __('main.Arabic') }}</a>
                         @endif
                      </div>
                      <div class="dropdown">
