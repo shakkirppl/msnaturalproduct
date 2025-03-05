@@ -12,7 +12,7 @@
                              <h4 class="card-title">Orders List</h4>
                     </div>
                     <div class="col-6 col-md-6 col-sm-6 col-xs-12  heading" style="text-align:end;">
-                    {{-- <a href="#" class="btn btn-primary">Add New Price</a> --}}
+                  
                     </div>
                        
                    
@@ -47,7 +47,7 @@
       
             @foreach ($orders as $order)
                 <tr>
-                    <td>{{ $order->delivery_status}}</td>
+                    <td><label class="badge badge-info">{{ $order->delivery_status}}</label></td>
                     <td>{{ \Carbon\Carbon::parse($order->date)->format('d-m-Y') }}</td>
                     <td>{{ $order->order_no}}</td>
                     <td>{{ $order->first_name }} {{$order->last_name}}</td>
@@ -57,18 +57,7 @@
                      
 
 
-                    {{-- <td>{{ $price->size->size ?? 'N/A' }}</td>
-                    <td>{{ $price->country->country_name }}</td>
-                    <td>{{ $price->store->store_name }}</td>
-                    <td>{{ $price->original_price }}</td>
-                    <td>{{ $price->offer_price ?? 'N/A' }}</td>
-                    <td>{{ $price->currency }}</td>
-                    <td>{{ $price->is_available ? 'Yes' : 'No' }}</td>
-                     <td>{{ $price->state }}</td>
-                      <td>{{ $price->shipping_charge }}</td>
-                    <!-- <td>{{ $price->in_stock ? 'Yes' : 'No' }}</td>
-                    <td>{{ $price->availability_date ?? 'N/A' }}</td> -->  --}}
-
+                   
 
 
                     <td> 

@@ -138,7 +138,7 @@ class ReportController extends Controller
             $product_id = $request->product_id;
     
             // Query for filtered data
-            $query =  OrderDetails::with(['country','customer','order']);
+            $query =  OrderDetails::with(['store','customer','order']);
     
             if ($from_date && $to_date) {
                 $query->whereBetween('created_at', [$from_date, $to_date]);

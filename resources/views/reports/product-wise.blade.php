@@ -76,7 +76,7 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td> @foreach ($res->order as $key => $ord) {{ $ord->order_no }}  @endforeach</td>
                                         <td> @foreach ($res->customer as $key => $cust) {{ $cust->first_name }}  @endforeach</td>
-                                        <td>{{ $res->country->country_name }}</td>
+                                        <td>{{ $res->store->store_name }}</td>
                                       <td>{{ $res->created_at->format('Y-m-d') }}</td>
                                         <td>{{ $res->quantity }}</td>
                                     </tr>
