@@ -15,7 +15,11 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
-            $table->string('email')->nullable()->unique()->change();
+               // First, drop the existing unique constraint if it exists
+               $table->dropUnique('users_email_unique');
+
+               // Now, modify the column and re-add the unique constraint
+               $table->string('email')->nullable()->unique()->change();
         });
     }
 
