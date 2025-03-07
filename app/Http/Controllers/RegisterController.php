@@ -449,7 +449,8 @@ class RegisterController extends Controller
         'orderdetails.product', // Load product details for each order detail
         'orderdetails.productSize' // Load product size for each order detail
     ])->where('customer_id', Auth::user()->id)->orderBy('id','DESC')->get();
-       $storeId = $store->id ?? 1;
+    //    $storeId = $store->id ?? 1;
+       $storeId = $store && $store->country_id ? $store->country_id : 1;
        $currency=$store->currency?? 'INR';
        $countries=Countries::get();
       $billingStates= StatesModel::where('country_id', $storeId)->get();

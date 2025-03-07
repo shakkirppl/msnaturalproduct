@@ -46,8 +46,8 @@ class YourOrdersController extends Controller
                 'orderdetails.productSize' // Load product size for each order detail
             ])->where('customer_id', Auth::user()->id)->orderBy('id','DESC')->get();
             
-            $states= StatesModel::where('country_id', $store->country_id)->get();
-            $billingStates= StatesModel::where('country_id', $store->country_id)->get();
+            $states= StatesModel::where('country_id', $store && $store->country_id ? $store->country_id : 1)->get();
+            $billingStates= StatesModel::where('country_id', $store && $store->country_id ? $store->country_id : 1)->get();
              $cartItems = Cart::getContent();
              $customer=Customer::where('user_id',Auth::user()->id)->first();
              $customerAddress=CustomerAddress::with('countrys','states')->where('user_id',Auth::user()->id)->get();
