@@ -353,9 +353,9 @@
                                     <div class="row">
                                        <div class="col-md-12">
                                           <div class="mb-3">
-                                             <label for="" class="form-ms-label">{{ __('main.Pincode') }}</label> 
-                                             <input type="number" name="billing_postcode" class="form-control  form-control-ms"
-                                                id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Pincode" >
+                                          <label for="" class="form-ms-label">{{ __('main.Mobile_number') }}</label>
+                                             <input type="number" name="billing_phone" class="form-control  form-control-ms"
+                                                id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Mobile Number" >
                                           </div>
                                        </div>
                                     </div>

@@ -64,6 +64,7 @@ Route::get('/logout', function () {
 
     return redirect('/');
 })->name('logout');
+Route::post('/validate-user', [AuthController::class, 'validate_user'])->name('validate_user');
 Route::post('/admin-login-post', [RegisterController::class, 'admin_login_post'])->name('admin-login-post');
 
 Route::post('/sign-out', [AuthController::class, 'signOut'])->name('sign-out');

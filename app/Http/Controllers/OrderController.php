@@ -94,7 +94,8 @@ class OrderController extends Controller
     public function order_view(Request $request , $id)
     {
         try {
-        $orders = Order::with('orderdetails','store','orderdetails.product','country')->find( $id);
+        // return $orders = Order::with('orderdetails','store','orderdetails.product','country','deliverystate','billingstate','billingcountry','detail')->find( $id);
+         $orders = Order::with('store','country','deliverystate','billingstate','billingcountry','detail')->find( $id);
         $d_status = DeliveryStatus::all();
        
         return view('orders.order-view',compact('orders'));

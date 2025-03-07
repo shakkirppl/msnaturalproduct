@@ -142,29 +142,46 @@ class CheckoutController extends Controller
     {
        
 
-    //    return $request->all();
+    // return $request->all();
     $cartItems = Cart::getContent();
     $quantity = $cartItems->count();
    
     if ($quantity > 0) {
          // Validate based on billing option
     $commonValidation = [
-        'address' => 'required|numeric',
+        'address' => 'required|numeric|exists:customer_address,id',
         'billing_option' => 'required',
     ];
-
+    $customMessages = [
+        'address.required' => 'Please select or add a shipping address',
+        'address.numeric' => 'Please select or add a valid shipping address',
+        'address.exists' => 'The selected shipping address does not exist',
+        'billing_option.required' => 'Please select a billing type',
+        'billing_first_name.required' => 'Billing first name is required',
+        'billing_last_name.required' => 'Billing last name is required',
+        'billing_address.required' => 'Billing address is required',
+        'billing_city.required' => 'Billing city is required',
+        'billing_state.required' => 'Billing state is required',
+        'billing_post_code.required' => 'Billing postal code is required',
+        'billing_phone.required' => 'Billing phone number is required',
+        'billing_country_id.required' => 'Please select a billing country',
+    ];
+    $request->validate($commonValidation, $customMessages);
     $billingValidation = $request->billing_option === 'different' ? [
         'billing_first_name' => 'required|string|max:255',
         'billing_last_name' => 'required|string|max:255',
         'billing_address' => 'required|string',
         'billing_city' => 'required|string',
         'billing_state' => 'required',
-        'billing_postcode' => 'required|numeric',
-        'billing_phone' => 'required|numeric',
+        'billing_post_code' => 'required|string',
+        'billing_phone' => 'required|string',
         'billing_country_id' => 'required',
     ] : [];
+    $validationRules = array_merge($commonValidation, $billingValidation);
 
-    // DB::transaction(function () use ($request,$billingValidation, $commonValidation,$cartItems,&$order) {
+    $request->validate($validationRules, $customMessages);
+    
+    DB::transaction(function () use ($request,$billingValidation, $commonValidation,$cartItems,&$order) {
         $countryCode = session('activecountry');
    
         // Get the store based on the country code, with a fallback if no store is found
@@ -235,7 +252,7 @@ class CheckoutController extends Controller
     'billing_address' => $validatedData['billing_option'] === 'different' ? $validatedData['billing_address'] : $selectedAddress->address,
     'billing_city' => $validatedData['billing_option'] === 'different' ? $validatedData['billing_city'] : $selectedAddress->city,
     'billing_state' => $validatedData['billing_option'] === 'different' ? $validatedData['billing_state'] : $selectedAddress->state,
-    'billing_post_code' => $validatedData['billing_option'] === 'different' ? $validatedData['billing_postcode'] :$selectedAddress->pincode,
+    'billing_post_code' => $validatedData['billing_option'] === 'different' ? $validatedData['billing_post_code'] :$selectedAddress->pincode,
     'billing_phone' => $validatedData['billing_option'] === 'different' ? $validatedData['billing_phone'] : $selectedAddress->phone_number,
     'billing_country_id' => $validatedData['billing_option'] === 'different' ? $validatedData['billing_country_id'] : $selectedAddress->country_id,
     'store_id' => $storeId,
@@ -266,10 +283,13 @@ foreach ($cartItems as $item) {
 InvoiceNumber::updateinvoiceNumber('orders',$storeId);
 // Clear the cart after order
         Cart::clear();
-    // }); 
+    }); 
         return redirect('order-confirmation/'.$order->id)->with('success', 'Address saved successfully!');
     }
-     
+    else {
+        // If quantity is 0 or less, add an error and return to the form
+        return back()->withErrors(['cart' => 'Please add an item to the cart']);
+    }
     }
     
 
@@ -302,8 +322,9 @@ InvoiceNumber::updateinvoiceNumber('orders',$storeId);
         'billing_address' => 'required|string',
         'billing_city' => 'required|string',
         'billing_state' => 'required',
-        'billing_postcode' => 'required',
+        'billing_post_code' => 'required',
         'billing_country_id' => 'required',
+        'billing_phone'=> 'required',
     ] : [];
 
     DB::transaction(function () use ($request,$billingValidation, $commonValidation,$cartItems,&$order) {
@@ -375,7 +396,7 @@ InvoiceNumber::updateinvoiceNumber('orders',$storeId);
     'billing_address' => $validatedData['billing_option'] === 'different' ? $validatedData['billing_address'] : $validatedData['address'],
     'billing_city' => $validatedData['billing_option'] === 'different' ? $validatedData['billing_city'] : $validatedData['city'],
     'billing_state' => $validatedData['billing_option'] === 'different' ? $validatedData['billing_state'] : $validatedData['state_id'],
-    'billing_post_code' => $validatedData['billing_option'] === 'different' ? $validatedData['billing_postcode'] : $validatedData['pincode'],
+    'billing_post_code' => $validatedData['billing_option'] === 'different' ? $validatedData['billing_post_code'] : $validatedData['pincode'],
     'billing_phone' => $validatedData['billing_option'] === 'different' ? $validatedData['billing_phone'] : $validatedData['phone'],
     'billing_country_id' => $validatedData['billing_option'] === 'different' ? $validatedData['billing_country_id'] : $countryID,
     'store_id' => $storeId,

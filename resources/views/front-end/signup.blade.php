@@ -39,32 +39,62 @@
                            <!-- <hr class="hr-tag-form"> -->
                         </div>
                      </div>
+                     
                      <div class="row">
                         <div class="col-md-12">
-                           <form method="POST" action="{{ route('register-user') }}" style="max-width: 400px;">
-                              @csrf
-                              <!-- Email Field -->
-                              <div class="mb-2">
-                                 <input type="text" class="form-control login-input" id="name" name="name" placeholder="Enter Name" required>
-                              </div>
-                              <div class="mb-2">
-                                 <input type="email" class="form-control login-input" id="email" name="email" placeholder="Enter E-Mail id" required>
-                              </div>
-                              <!-- Password Field -->
-                              <div class="mb-2">
-                                 <input type="password" class="form-control login-input" id="password" name="password" placeholder="password" required>
-                              </div>
-                              <!-- Retype Password Field -->
-                              <div class="mb-2">
-                                 <input type="password" class="form-control login-input" id="retypePassword" name="retypePassword" placeholder="Retype-password" required>
-                              </div>
-                              <!-- Phone Number Field -->
-                              <div class="mb-2">
-                                 <input type="tel" class="form-control login-input" id="phone" name="phone" placeholder="Phone Number" required>
-                              </div>
-                              <!-- Submit Button -->
-                              <button type="submit" class="w-100 login-submit">{{ __('main.Submit') }}</button>
-                           </form>
+                        @if(session('success'))
+    <div class="alert alert-success">{{ session('success') }}</div>
+@endif
+
+@if(session('error'))
+    <div class="alert alert-danger">{{ session('error') }}</div>
+@endif
+<form method="POST" action="{{ route('register-user') }}" style="max-width: 400px;">
+    @csrf
+
+    <div class="mb-2">
+        <input type="text" class="form-control login-input" id="name" name="name" 
+               placeholder="Enter Name" value="{{ old('name') }}" required>
+        @error('name')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
+    </div>
+
+    <div class="mb-2">
+        <input type="email" class="form-control login-input" id="email" name="email" 
+               placeholder="Enter Email" value="{{ old('email') }}" >
+        @error('email')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
+    </div>
+
+    <div class="mb-2">
+        <input type="tel" class="form-control login-input" id="phone" name="phone" 
+               placeholder="Enter Phone Number" value="{{ old('phone') }}" >
+        @error('phone')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
+    </div>
+
+    <div class="mb-2">
+        <input type="password" class="form-control login-input" id="password" name="password" 
+               placeholder="Password" required>
+        @error('password')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
+    </div>
+
+    <div class="mb-2">
+        <input type="password" class="form-control login-input" id="password_confirmation" 
+               name="password_confirmation" placeholder="Confirm Password" required>
+        @error('password_confirmation')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="w-100 login-submit">{{ __('main.Submit') }}</button>
+</form>
                         </div>
                      </div>
                   </div>
@@ -77,6 +107,7 @@
       <!--  -->
       <!-- end footer -->
       <script src="https://cdn.jsdelivr.net/npm/aos@next/dist/aos.js"></script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
       <script>
          AOS.init();
       </script>
@@ -88,5 +119,6 @@
       <script src="{{URL::to('/')}}/front-end/js/owl.carousel.min.js"></script>
       <script src="{{URL::to('/')}}/front-end/js/scriptfont.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
    </body>
 </html>

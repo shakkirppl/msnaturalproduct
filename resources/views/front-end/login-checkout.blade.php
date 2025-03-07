@@ -131,6 +131,12 @@
       <section>
          <div class="product-main-div">
          <form action="{{ route('save.details') }}" method="POST">
+            <!-- Display custom cart validation error -->
+    @if ($errors->has('cart'))
+        <div class="text-danger">
+            {{ $errors->first('cart') }}
+        </div>
+    @endif
             @csrf
             <div class="row">
             <div class="col-md-12">
@@ -193,6 +199,9 @@
                               </button>
                               </a>
                            </div>
+                           @error('address')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
                         </div>
                         <div class="row">
                            <div class="col-md-12">
@@ -212,6 +221,18 @@
                                     </label>
                                  </div>
                               </div>
+                              @error('billing_option')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
+        @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
                               <!-- Hidden billing address form -->
                               <div class="sub-form">
                                  <div class="row " id="billingForm" style="display: none; margin-top: 20px;">
@@ -268,9 +289,9 @@
                                     <div class="row">
                                        <div class="col-md-12">
                                           <div class="mb-3">
-                                             <label for="" class="form-ms-label">{{ __('main.Pincode') }}</label> 
-                                             <input type="number" name="billing_postcode" class="form-control  form-control-ms"
-                                                id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Pincode" >
+                                          <label for="" class="form-ms-label">{{ __('main.Mobile_number') }}</label>
+                                             <input type="number" name="billing_phone" class="form-control  form-control-ms"
+                                                id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Mobile Number" >
                                           </div>
                                        </div>
                                     </div>

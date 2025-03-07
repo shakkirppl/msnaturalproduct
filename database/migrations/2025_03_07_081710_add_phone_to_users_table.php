@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('invoice_numbers', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            //
+            $table->string('phone')->nullable()->unique();
         });
     }
 
@@ -26,6 +26,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('invoice_numbers');
+        Schema::table('users', function (Blueprint $table) {
+            //
+            $table->dropColumn('phone');
+        });
     }
 };

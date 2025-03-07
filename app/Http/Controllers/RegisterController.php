@@ -17,6 +17,8 @@ use App\Http\Requests\Auth\LoginRequest;
 use Stevebauman\Location\Facades\Location;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 use Darryldecode\Cart\Facades\CartFacade as Cart;
@@ -153,61 +155,139 @@ class RegisterController extends Controller
       }
     }
     public function register_user(Request $request)
-    {
-        //  return $request->all();
-        // $request->validate([
-        //     'name' => ['required', 'string', 'max:255'],
-        //     'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
-        //     'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        // ]);
-        try {
+{
 
-        if(session('activecountry')){
-            $countryCode=session('activecountry');
-        }
-        else{
-            $position = Location::get();
-            $countryCode = $position->countryCode; // For example, 'IN' for India, 'OM' for Oman, etc.
-            $request->session()->put('activecountry',$countryCode);
-        }
+    $validator = Validator::make($request->all(), [
+        'name' => ['required', 'string', 'max:255'],
+        'email' => ['required_without:phone', 'nullable', 'email', 'max:255', Rule::unique('users', 'email')],
+        'phone' => [
+            'required_without:email', 
+            'nullable', 
+            'regex:/^\+?(?:[0-9] ?){6,15}[0-9]$/',  // Accepts international numbers
+            Rule::unique('users', 'phone')
+        ],
+        'password' => ['required', 'confirmed', 'min:6'],
+    ]);
+
+    if ($validator->fails()) {
+        return redirect()->back()
+            ->withErrors($validator) // Pass validation errors to Blade
+            ->withInput(); // Retain form input
+    }
+
+    try {
+        $countryCode = session('activecountry', 'IN'); // Default to 'IN' if session not found
         $store = Stores::where('countryCode', $countryCode)->first();
         $storeId = $store->id ?? 1;
+
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'phone' => $request->phone,
             'password' => Hash::make($request->password),
-            'role_id'=>3,
-            'store_id'=>$storeId
+            'role_id' => 3,
+            'store_id' => $storeId
         ]);
 
         event(new Registered($user));
-        $customer=new Customer;
-        $customer->first_name=$request->name;
-        $customer->email=$request->email;
-        $customer->user_id=$user->id;
-        $customer->store_id=$storeId;
-        $customer->country_id=$storeId;
+
+        $customer = new Customer;
+        $customer->first_name = $request->name;
+        $customer->email = $request->email;
+        $customer->user_id = $user->id;
+        $customer->store_id = $storeId;
+        $customer->country_id = $storeId;
         $customer->save();
+
         Auth::login($user);
 
         return redirect('/');
     } catch (\Exception $e) {
-        return $e->getMessage();
-      }
+        return response()->json(['errors' => ['server' => [$e->getMessage()]]], 500);
     }
-    public function login_user(LoginRequest $request): RedirectResponse
-    {
-        try {
+}
+    // public function register_user(Request $request)
+    // {
+       
+    //     try {
 
-        $request->authenticate();
+    //     if(session('activecountry')){
+    //         $countryCode=session('activecountry');
+    //     }
+    //     else{
+    //         $position = Location::get();
+    //         $countryCode = $position->countryCode; // For example, 'IN' for India, 'OM' for Oman, etc.
+    //         $request->session()->put('activecountry',$countryCode);
+    //     }
+    //     $store = Stores::where('countryCode', $countryCode)->first();
+    //     $storeId = $store->id ?? 1;
+    //     $user = User::create([
+    //         'name' => $request->name,
+    //         'email' => $request->email,
+    //         'password' => Hash::make($request->password),
+    //         'role_id'=>3,
+    //         'store_id'=>$storeId
+    //     ]);
 
+    //     event(new Registered($user));
+    //     $customer=new Customer;
+    //     $customer->first_name=$request->name;
+    //     $customer->email=$request->email;
+    //     $customer->user_id=$user->id;
+    //     $customer->store_id=$storeId;
+    //     $customer->country_id=$storeId;
+    //     $customer->save();
+    //     Auth::login($user);
+
+    //     return redirect('/');
+    // } catch (\Exception $e) {
+    //     return $e->getMessage();
+    //   }
+    // }
+    // public function login_user(LoginRequest $request): RedirectResponse
+    // {
+    //     try {
+
+    //     $request->authenticate();
+
+    //     $request->session()->regenerate();
+
+    //     return redirect()->intended(RouteServiceProvider::HOME);
+    // } catch (\Exception $e) {
+    //     return $e->getMessage();
+    //   }
+    // }
+    public function login_user(Request $request)
+{
+    // Validate the incoming request
+    $request->validate([
+        'email' => 'required|string',  // you can add specific validation for email/phone
+        'password' => 'required|string',
+    ]);
+
+    // Get the credentials (email or phone)
+    $credentials = $request->only('email', 'password');
+
+    // Check if the provided value is an email or phone number
+    if (filter_var($credentials['email'], FILTER_VALIDATE_EMAIL)) {
+        $loginField = 'email';
+    } else {
+        $loginField = 'phone';
+    }
+
+    // Try to authenticate using the email or phone and the provided password
+    if (Auth::attempt([$loginField => $credentials['email'], 'password' => $credentials['password']])) {
+        // Regenerate session to avoid session fixation attacks
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
-    } catch (\Exception $e) {
-        return $e->getMessage();
-      }
+        // Redirect user to the intended page or home page
+        return redirect()->intended('/');
     }
+
+     // If login fails, redirect back with error message
+     return back()->withErrors(['login' => 'Invalid email/phone or password']);
+}
+
     public function admin_login_post(LoginRequest $request)
     {
         try {
@@ -386,6 +466,7 @@ class RegisterController extends Controller
         try {
             $customerAddress=CustomerAddress::find($id);
             $customerAddress->delete();
+            return back();
         } catch (\Exception $e) {
             return $e->getMessage();
           }

@@ -59,6 +59,8 @@
           <li><strong>Landmark:</strong> {{$orders->landmark}}</li>
           <li><strong>City:</strong> {{$orders->city}}</li>
           <li><strong>Postcode:</strong> {{$orders->pincode}}</li>
+          <li><strong>state:</strong>  @foreach( $orders->deliverystate as $st)
+          {{$st->state_name }} @endforeach</li>
           <li><strong>Country:</strong> {{$orders->country->country_name}}</li>
           <!-- <li><strong>Payment Type:</strong>
             @if($orders->payment_type == 0)
@@ -88,14 +90,19 @@
           <li><strong>Address:</strong> {{$orders->billing_address}}</li>
           <li><strong>Phone:</strong> {{$orders->billing_phone}}</li>
           <li><strong>City:</strong> {{$orders->billing_city}}</li>
-          <li><strong>State:</strong> {{$orders->billing_state}}</li>
+          <li><strong>Post Code:</strong> {{$orders->billing_post_code}}</li>
+        
         </ul>
         <hr>
         <!-- Additional Billing Details -->
         <h5><i class="mdi mdi-map-marker-outline"></i> Additional Billing Information</h5>
         <ul class="list-unstyled">
-          <li><strong>Post Code:</strong> {{$orders->billing_post_code}}</li>
-          <li><strong>Country:</strong> {{$orders->billing_country_id}}</li>
+         
+          <li><strong>State:</strong>  @foreach( $orders->billingstate as $bs)
+          {{$bs->state_name }} @endforeach</li>
+          
+          <li><strong>Country:</strong> @foreach( $orders->billingcountry as $bc)
+          {{$bc->country_name }} @endforeach</li>
         </ul>
       </div>
     </div>
@@ -118,9 +125,9 @@
                         </tr>
                       </thead>
                       <tbody>
-                        @foreach($orders->orderdetails as $details)
+                        @foreach($orders->detail as $details)
                   <tr>
-                    <td>{{$details->product->product_name}}</td>
+                    <td>{{$details->product_name}} - {{$details->size}}</td>
                     <td>{{$details->quantity}}<td>
                 </tr>
                @endforeach

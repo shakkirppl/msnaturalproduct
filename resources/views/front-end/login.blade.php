@@ -43,13 +43,26 @@
                      <div class="row">
                         <div class="col-md-12">
                            <form method="POST" action="{{ route('login-user') }}" >
+
                               @csrf
                               <div class="mb-2">
-                                 <input type="email" class="form-control login-input" id="email" name="email" placeholder="Enter E-Mail id" required>
+                                 <input type="text" class="form-control login-input" id="email" name="email" placeholder="Enter Email or Mobile" required>
+                                 @error('email')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
                               </div>
                               <div class="mb-2">
                                  <input type="password" class="form-control login-input" id="password" name="password" placeholder="password" required>
+                                 @error('password')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
                               </div>
+                                  <!-- Display login error message -->
+    @if ($errors->has('login'))
+        <div class="text-danger">
+            {{ $errors->first('login') }}
+        </div>
+    @endif
                               <button type="submit" class=" w-100 login-submit">{{ __('main.Proceed') }}</button>
                            </form>
                         </div>

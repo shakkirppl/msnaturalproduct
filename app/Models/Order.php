@@ -56,7 +56,7 @@ class Order extends Model
 
     public function detail(){
         return $this->hasMany('App\Models\OrderDetails','order_id')
-          ->join('products','products.id','=','order_details.product_size_id')
+          ->join('products','products.id','=','order_details.product_id')
           ->join('product_sizes','product_sizes.id','=','order_details.product_size_id')
            ->select('order_details.*','products.*','product_sizes.*');
          
@@ -77,8 +77,18 @@ class Order extends Model
     {
         return $this->belongsTo(Countries::class); // Assuming this model belongs to a Store model
     }
-    
-    
+    public function deliverystate()
+    {
+        return $this->hasMany(StatesModel::class,'id','state'); // Assuming you have an OrderItem model
+    }
+    public function billingstate()
+    {
+        return $this->hasMany(StatesModel::class,'id','billing_state'); // Assuming you have an OrderItem model
+    }
+    public function billingcountry()
+    {
+        return $this->hasMany(Countries::class,'id','billing_country_id'); // Assuming you have an OrderItem model
+    }
 
     // You can also define other relationships like the user who placed the order:
     public function user()
