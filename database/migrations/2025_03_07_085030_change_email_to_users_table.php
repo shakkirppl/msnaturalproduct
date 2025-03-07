@@ -18,6 +18,7 @@ return new class extends Migration
                // First, drop the existing unique constraint if it exists
                $table->dropUnique('users_email_unique');
 
+            //    hange email 
                // Now, modify the column and re-add the unique constraint
                $table->string('email')->nullable()->unique()->change();
         });
