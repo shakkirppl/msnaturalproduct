@@ -70,7 +70,7 @@ Route::post('/admin-login-post', [RegisterController::class, 'admin_login_post']
 Route::post('/sign-out', [AuthController::class, 'signOut'])->name('sign-out');
 
 Route::middleware(['setCountryStore'])->group(function () {
-    Route::get('/', [HomeController::class, 'index']);
+    Route::get('/test-ms', [HomeController::class, 'index']);
 Route::get('/get-product-price', [HomeController::class, 'getProductPrice']);
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
 Route::get('/guest-checkout', [CheckoutController::class, 'guest_checkout'])->name('guest-checkout');
@@ -81,7 +81,7 @@ Route::post('/cart/add/home', [CartController::class, 'homeAddToCart'])->name('c
 Route::get('lang/change/{id}',[HomeController::class, 'lang_change']);
 Route::post('/set-country', [HomeController::class, 'setCountry'])->name('set.country');
 
-Route::get('/product-view/{id}', [ProductDetailController::class, 'view'])->name('product.view');
+Route::get('/test-ms/product-view/{id}', [ProductDetailController::class, 'view'])->name('product.view');
 Route::get('/product.reviews/{id}', [ProductDetailController::class, 'reviews'])->name('product.reviews');
 
 Route::get('/view-cart', [CartController::class, 'view_cart']);
