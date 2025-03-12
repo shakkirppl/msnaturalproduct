@@ -70,7 +70,7 @@ Route::post('/admin-login-post', [RegisterController::class, 'admin_login_post']
 Route::post('/sign-out', [AuthController::class, 'signOut'])->name('sign-out');
 
 Route::middleware(['setCountryStore'])->group(function () {
-    Route::get('/test-ms', [HomeController::class, 'index']);
+    Route::get('/', [HomeController::class, 'index']);
 Route::get('/get-product-price', [HomeController::class, 'getProductPrice']);
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
 Route::get('/guest-checkout', [CheckoutController::class, 'guest_checkout'])->name('guest-checkout');
@@ -81,7 +81,7 @@ Route::post('/cart/add/home', [CartController::class, 'homeAddToCart'])->name('c
 Route::get('lang/change/{id}',[HomeController::class, 'lang_change']);
 Route::post('/set-country', [HomeController::class, 'setCountry'])->name('set.country');
 
-Route::get('/test-ms/product-view/{id}', [ProductDetailController::class, 'view'])->name('product.view');
+Route::get('/product-view/{id}', [ProductDetailController::class, 'view'])->name('product.view');
 Route::get('/product.reviews/{id}', [ProductDetailController::class, 'reviews'])->name('product.reviews');
 
 Route::get('/view-cart', [CartController::class, 'view_cart']);
@@ -154,13 +154,17 @@ Route::middleware('auth')->group(function () {
     Route::delete('product-sku/{id}', [ProductController::class, 'destroySku'])->name('product-sku.destroy');
     Route::post('products.update', [ProductController::class, 'updateProduct'])->name('products.update.pro');
     Route::post('products-image.store', [ProductController::class, 'updateImages'])->name('products-image.store');
+    Route::post('products-main-image.store', [ProductController::class, 'products_main_image_store'])->name('products-main-image.store');
+    Route::post('products-detail-image.store', [ProductController::class, 'products_detail_image_store'])->name('products-detail-image.store');
     Route::get('delete.image/{id}', [ProductController::class, 'deleteImage'])->name('delete.image');
    
     Route::get('products.addon/{id}', [ProductController::class, 'addon']);
     Route::get('products.edit/{id}', [ProductController::class, 'edit']);
     Route::get('products.show/{id}', [ProductController::class, 'show']);
-    Route::get('products.image/{id}', [ProductController::class, 'image']);
+    // Route::get('products.image/{id}', [ProductController::class, 'image']);
 
+    Route::get('products.main.image.change/{id}', [ProductController::class, 'mainImage']);
+    Route::get('products.detail.image.change/{id}', [ProductController::class, 'detailImage']);
 
 
     
@@ -263,7 +267,7 @@ Route::get('/most-repurchased-products', [ReportController::class, 'mostRepurcha
 Route::get('reports/most-moving', [ReportController::class, 'mostMovingItems'])->name('reports.most-moving');
 Route::get('reports/least-moving', [ReportController::class, 'leastMovingItems'])->name('reports.least-moving');
 Route::get('reports/sales/{id}', [ReportController::class, 'viewSalesDetail'])->name('reports.sales.detail');
-
+Route::get('/order/invoice/{id}', [OrderController::class, 'printInvoice'])->name('order.invoice');
 }); 
 
 require __DIR__.'/auth.php';

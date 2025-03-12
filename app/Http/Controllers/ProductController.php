@@ -77,7 +77,7 @@ public function store(Request $request)
        if ($request->hasFile('single_image')) {
         $file = $request->file('single_image');
         $path = 'uploads/products';
-        $singleImageName = $this->file($file,$path,150,150);
+        $singleImageName = $this->file($file,$path,456,572);
     }
    $product = Product::create([
        'product_name' => $request->product_name,
@@ -106,7 +106,7 @@ if ($request->hasFile('multiple_images')) {
    foreach ($request->file('multiple_images') as $image) {
        $file =  $image;
        $path = 'uploads/products';
-       $imageName = $this->file($file,$path,150,150);
+       $imageName = $this->file($file,$path,591,550);
        $multipleImages[] = $imageName;
    }
 }
@@ -148,6 +148,96 @@ public function addon($id)
     return $e->getMessage();
   }
 }
+public function mainImage($id)
+{
+    try {
+
+    $products=Product::find($id);
+    return view('products.main-image-update', compact('products'));
+} catch (\Exception $e) {
+    return $e->getMessage();
+  }
+}
+public function detailImage($id)
+{
+    try {
+
+    $products=ProductImages::find($id);
+    return view('products.detail-image-update', compact('products'));
+} catch (\Exception $e) {
+    return $e->getMessage();
+  }
+}
+
+public function products_main_image_store(Request $request)
+{
+    // Validate request
+    $validator = Validator::make($request->all(), [
+        'product_id' => 'required|exists:products,id',
+        'single_image' => 'required|image', // Ensure the uploaded file is an image
+    ]);
+
+    if ($validator->fails()) {
+        return redirect()->back()->withErrors($validator)->withInput();
+    }
+
+    // Initialize image name variable
+    $singleImageName = null;
+
+    DB::transaction(function () use ($request, &$singleImageName) {
+        // Check if a file was uploaded
+        if ($request->hasFile('single_image')) {
+            $file = $request->file('single_image');
+            $path = 'uploads/products'; // Define the upload path
+            $singleImageName = $this->file($file, $path, 456, 572); // Assuming file() method processes the image
+        }
+
+        // Retrieve product and update image
+        $product = Product::find($request->product_id);
+        if ($product) {
+            $product->image = $singleImageName; // Update product image
+            $product->save(); // Save changes
+        }
+    });
+
+    // Redirect back with success message
+    return redirect()->route('products.show', $request->product_id)->with('success', 'Product image updated successfully');
+}
+public function products_detail_image_store(Request $request)
+{
+    // Validate request
+    $validator = Validator::make($request->all(), [
+        'product_image_id' => 'required|exists:product_images,id',
+        'single_image' => 'required|image', // Ensure the uploaded file is an image
+    ]);
+
+    if ($validator->fails()) {
+        return redirect()->back()->withErrors($validator)->withInput();
+    }
+
+    // Initialize image name variable
+    $singleImageName = null;
+
+    DB::transaction(function () use ($request, &$singleImageName,&$product) {
+        // Check if a file was uploaded
+        if ($request->hasFile('single_image')) {
+            $file = $request->file('single_image');
+            $path = 'uploads/products'; // Define the upload path
+            $singleImageName = $this->file($file, $path, 591, 550); // Assuming file() method processes the image
+        }
+
+        // Retrieve product and update image
+        $product = ProductImages::find($request->product_image_id);
+        if ($product) {
+            $product->image = $singleImageName; // Update product image
+            $product->save(); // Save changes
+        }
+    });
+
+    // Redirect back with success message
+    return redirect()->route('products.show', $product->product_id)->with('success', 'Product image updated successfully');
+}
+
 public function storeSku(Request $request)
 {
     // return $request->all();

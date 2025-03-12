@@ -395,6 +395,13 @@ class OrderController extends Controller
       }
     }
 
+    public function printInvoice($id)
+    {
+        $order = Order::with('orderdetails', 'store', 'billingstate', 'billingcountry')->findOrFail($id);
+        
+        $currency = $order->store->currency ; 
     
+        return view('orders.print-invoice', compact('order', 'currency'));
+    }
 
 }

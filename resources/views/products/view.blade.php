@@ -30,11 +30,11 @@
                   </p>
                   <div class="table-responsive">
               
-                    <table class="table table-hover"id="value-table">
+                    <table class="table table-hover">
         <thead>
             <tr>
                 <th>Size</th>
-                <th>Actions</th>
+                <!-- <th>Actions</th> -->
             </tr>
         </thead>
         <tbody>
@@ -42,7 +42,7 @@
             <tr>
             <td>{{ $product->size}}</td>
          
-        <td>
+        <!-- <td>
                 <form action="{{ route('product-sku.destroy', $product->id) }}" method="post">
                
                 @csrf
@@ -51,12 +51,47 @@
         <i class="fa fa-trash"></i>
     </button>
 </form>
-                </td>
+                </td> -->
             </tr>
             @endforeach
         </tbody>
     </table>
                   </div>
+                  <hr>
+                  <lable>Image</label>
+                  <div class="table-responsive">
+              
+              <table class="table table-hover">
+  <thead>
+      <tr>
+          <th>Image</th>
+          <th>Page</th>
+          <th>Action</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+      <td>  <img loading="lazy" src="{{ url('uploads/products/' . $products->image) }}" class="product-image"  /></td>
+   
+          <td>
+            Main Page
+          </td>
+          <td> <a href="{{ url('products.main.image.change', $products->id) }}" class="btn btn-primary btn-sm">Change Image</a></td>
+      </tr>
+
+      @foreach($productImage as $image)
+      <tr>
+      <td>  <img loading="lazy" src="{{ url('uploads/products/' . $image->image) }}" class="product-image"  /></td>
+   
+          <td>
+            Detail Page
+          </td>
+          <td> <a href="{{ url('products.detail.image.change', $image->id) }}" class="btn btn-primary btn-sm">Change Image</a></td>
+      </tr>
+      @endforeach
+  </tbody>
+</table>
+            </div>
                 </div>
               </div>
             </div>

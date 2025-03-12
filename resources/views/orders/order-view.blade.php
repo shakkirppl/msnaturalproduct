@@ -20,7 +20,9 @@
                              <h4 class="card-title">Order Details</h4>
                     </div>
                     <div class="col-6 col-md-6 col-sm-6 col-xs-12  heading" style="text-align:end;">
-                  
+                    <a href="{{ route('order.invoice', $orders->id) }}" target="_blank" class="btn btn-primary">
+                    <i class="mdi mdi-printer"></i> Print 
+                   </a>
                     </div>
                        
                    
