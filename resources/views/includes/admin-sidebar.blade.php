@@ -37,9 +37,10 @@
             <div class="collapse" id="product_master">
               <ul class="nav flex-column sub-menu">
               <li class="nav-item"> <a class="nav-link" href="{{URL::to('products')}}">Products</a></li>
+              <li class="nav-item"> <a class="nav-link" href="{{URL::to('product-prices')}}">Product Price</a></li>
               <li class="nav-item"> <a class="nav-link" href="{{URL::to('stock_returns')}}">Stock Return</a></li>
               <li class="nav-item"> <a class="nav-link" href="{{URL::to('damages')}}">Damage</a></li>
-              <li class="nav-item"> <a class="nav-link" href="{{URL::to('product-prices')}}">Product Price</a></li>
+
               </ul>
             </div>
             
