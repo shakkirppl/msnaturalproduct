@@ -93,4 +93,8 @@ public function prices()
         'id'                               // Local key on ProductSizes table
     )->where('product_sizes.base_unit', 'YES'); // Condition within relationship
 }
+public function countries()
+    {
+        return $this->belongsToMany(Countries::class, 'product_countries')->withPivot('is_active');
+    }
 }

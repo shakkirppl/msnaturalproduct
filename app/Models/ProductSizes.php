@@ -44,4 +44,8 @@ public function prices()
 {
     return $this->hasMany(ProductPrices::class, 'product_size_id');
 }
+public function countries()
+{
+    return $this->belongsToMany(Countries::class, 'product_size_countries')->withPivot('is_active');
+}
 }

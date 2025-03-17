@@ -32,6 +32,8 @@ use App\Http\Controllers\AnalyticsController;
 use App\Http\Controllers\VisitReportController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\AboutUsImageController;
+use App\Http\Controllers\ProductCountryController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -119,6 +121,10 @@ Route::post('/save.review', [ReviewController::class, 'save_review'])->name('sav
 });
 
 // Route::post('/update.billing-address', [RegisterController::class, 'update_billing_address'])->name('update.billing-address');
+Route::get('/products-status', [ProductCountryController::class, 'index']);
+Route::get('/products-size-status', [ProductCountryController::class, 'size_index']);
+Route::post('/product/toggle-status', [ProductCountryController::class, 'toggleProductStatus']);
+Route::post('/product-size/toggle-status', [ProductCountryController::class, 'toggleProductSizeStatus']);
 
 Route::get('about-us', [HomeController::class, 'about_us']);
 Route::get('blog', [HomeController::class, 'blog']);

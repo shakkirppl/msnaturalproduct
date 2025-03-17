@@ -59,10 +59,10 @@
 
                       <div class="col-md-12">
                         <div class="form-group row">
-                          <label class="col-sm-2 col-form-label required"> Target Store</label>
+                          <label class="col-sm-2 col-form-label required"> Target Country</label>
                           <div class="col-sm-9">
                           <select name="store_id" id="store_id" class="form-control" required>
-                <option value="">Select Store</option>
+                <option value="">Select Country</option>
                 @foreach($stores as $store)
                     <option value="{{ $store->id }}">{{ $store->store_name }} </option>
                 @endforeach

@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Countries;
 use App\Models\ProductDetail;
 use App\Models\ProductAttribute;
 use App\Models\ProductPrices;
 use App\Models\ProductSizes;
 use App\Models\ProductImages;
+use App\Models\ProductCountry;
+use App\Models\ProductSizeCountry;
 use DB;
 use App\Helper\File;
 use Illuminate\Support\Facades\Auth;
@@ -88,14 +91,32 @@ public function store(Request $request)
        'description_ar' => $request->description_ar,
        'image' => $singleImageName,     
    ]);
-
-
+    $countries=Countries::get();
+    foreach($countries as $country)
+    {
+    $productCountry=new ProductCountry;
+    $productCountry->product_id=$product->id;
+    $productCountry->countries_id=$country->id;
+    $productCountry->is_active=1;
+    $productCountry->save();
+    }
+   
    $productSku = ProductSizes::create([
        'product_id' => $product->id,
        'size' => $request->size,
        'size_ar' => $request->size_ar,
        'base_unit' => 'Yes',
    ]);
+   if (!is_null($request->size) && trim($request->size) !== '') {
+   foreach($countries as $country)
+    {
+    $productSizeCountry=new ProductSizeCountry;
+    $productSizeCountry->product_sizes_id=$productSku->id;
+    $productSizeCountry->countries_id=$country->id;
+    $productSizeCountry->is_active=1;
+    $productSizeCountry->save();
+    }
+}
    ProductImages::create([
        'product_id' => $product->id,
        'image_path' => $singleImageName,
@@ -258,6 +279,15 @@ public function storeSku(Request $request)
             'size_ar' => $request->size_ar,
             'base_unit' => 'No',
         ]);
+        $countries=Countries::get();
+        foreach($countries as $country)
+        {
+        $productSizeCountry=new ProductSizeCountry;
+        $productSizeCountry->product_sizes_id=$productSku->id;
+        $productSizeCountry->countries_id=$country->id;
+        $productSizeCountry->is_active=1;
+        $productSizeCountry->save();
+        }
 }); 
     // Handle Images
     return back()->with('success', 'Product Created Successfully');
@@ -270,6 +300,7 @@ public function destroySku($id)
 
         // Wrap in a transaction to ensure atomicity
         DB::transaction(function () use ($tempProductSku) {
+            ProductSizeCountry::where('product_sizes_id', $tempProductSku->id)->delete();
             $tempProductSku->delete();
         }); 
 

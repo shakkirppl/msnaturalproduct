@@ -34,7 +34,7 @@
                         <tr>
                           <th>No</th>
                           <th>Product</th>
-                          <th>Store</th>
+                          <th>Country</th>
                           <th>Quantity</th>
                           <th>Date</th>
                          

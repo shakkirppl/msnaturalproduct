@@ -53,7 +53,7 @@
         </div>
 
         <div class="mb-3">
-            <label for="store_id" class="form-label">Store</label>
+            <label for="store_id" class="form-label">Country</label>
             <select name="store_id" id="store_id" class="form-control" required>
                 @foreach ($stores as $store)
                     <option value="{{ $store->id }}">{{ $store->store_name }}</option>

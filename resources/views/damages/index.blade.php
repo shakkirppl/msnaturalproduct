@@ -34,7 +34,7 @@
             <tr>
                 <th>Product</th>
                 <th>Size</th>
-                <th>Store</th>
+                <th>Country</th>
                 <th>Quantity</th>
                 <th>Reason</th>
                 <th>Damage Date</th>

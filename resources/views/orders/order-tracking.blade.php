@@ -45,11 +45,15 @@
                                 <input type="text" name="phone_number" class="form-control" value="{{ request('phone_number') }}">
                             </div>
                             <div class="col-md-3">
-                                <label>Date</label>
-                                <input type="date" name="date" class="form-control" value="{{ request('date') }}">
+                                <label>From Date</label>
+                                <input type="date" name="from_date" class="form-control" value="{{ request('date') }}">
+                            </div>
+                            <div class="col-md-3">
+                                <label>To Date</label>
+                                <input type="date" name="to_date" class="form-control" value="{{ request('date') }}">
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Filter</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
                         <a href="{{ route('orders.tracking') }}" class="btn btn-secondary">Reset</a>
                     </form>
                     <!-- End Filter Form -->
@@ -63,7 +67,7 @@
                                     <th>OrderID</th>
                                     <th>Name</th>
                                     <th>Phone</th>
-                                    <th>Store</th>
+                                    <th>Country</th>
                                     <th>Total amount</th>
                                     <th>Actions</th>
                                 </tr>

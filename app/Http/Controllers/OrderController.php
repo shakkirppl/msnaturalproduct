@@ -357,9 +357,9 @@ class OrderController extends Controller
         if ($request->filled('phone_number')) {
             $query->where('phone_number', 'LIKE', '%' . $request->phone_number . '%');
         }
-        if ($request->filled('date')) {
-            $query->whereDate('date', $request->date);
-        }
+        if ($request->filled('from_date') && $request->filled('to_date')) {
+          $query->whereBetween('date', [$request->from_date, $request->to_date]);
+      }
     
         $orders = $query->with('store')->paginate(10);
     

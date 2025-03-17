@@ -32,7 +32,7 @@
             <tr>
                 <th>Product</th>
                 <th>User</th>
-                <th>Store</th>
+                <th>Country</th>
                 <th>Comment</th>
                 <th>Rating</th>
                 

@@ -33,6 +33,7 @@
                     <table class="table table-hover"id="value-table">
         <thead>
             <tr>
+              <th></th>
                 <th>Name</th>
                 <th>Actions</th>
             </tr>
@@ -40,10 +41,12 @@
         <tbody>
             @foreach($products as $product)
             <tr>
+              <th><img loading="lazy" src="{{ url('uploads/products/' . $product->image) }}" width="100px" height="100px" class="product-image"
+              alt="Hair Care Oil Product Image" /></th>
                 <td>{{ $product->product_name }}</td>
               
                 <td>
-                    <a href="{{ url('products.addon', $product->id) }}" class="btn btn-primary btn-sm">Addon</a>
+                    <a href="{{ url('products.addon', $product->id) }}" class="btn btn-primary btn-sm">Addon Quantity</a>
                     <a href="{{ url('products.show', $product->id) }}" class="btn btn-info btn-sm">View</a>
                     <a href="{{ url('products.edit', $product->id) }}" class="btn btn-warning btn-sm">Edit</a>
                 </td>

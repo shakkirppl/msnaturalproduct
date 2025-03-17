@@ -88,27 +88,28 @@ class HomeController extends Controller
           $currency = $store->currency ?? 'INR';
 
        
-       
+        // return  $products = Product::WithLanguageName()->with(['baseprices'])->where('package_type','Single')->get();
+
          $products = Product::WithLanguageName()->with(['baseprices' => function ($query) use ($storeId) {
             $query->where('product_prices.store_id', $storeId);
-        }])->where('package_type','Single')->get();
+        }])->where('package_type','Single')
+        ->whereHas('countries', function ($query) use ($storeId) {
+            $query->where('countries_id', $storeId)->where('is_active', 1);
+        })
+        ->get();
 
         $productsCombo = Product::WithLanguageName()->with(['baseprices' => function ($query) use ($storeId) {
             $query->where('product_prices.store_id', $storeId);
-        }])->where('package_type','Combo')->get();
+        }])->where('package_type','Combo')
+        ->whereHas('countries', function ($query) use ($storeId) {
+            $query->where('countries_id', $storeId)->where('is_active', 1);
+        })
+        ->get();
       
         $countries=Countries::get();
         $cartItems = Cart::getContent();
-
-
-
-
-
-
-        
         $videoInstagram=VideoGallary::where('channel','Instagram')->get();
         $testimonial=Testimonial::get();
-
         $videoYoutube=VideoGallary::where('channel','Youtube')->get();
 
 

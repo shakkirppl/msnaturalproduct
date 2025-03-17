@@ -50,7 +50,7 @@
         <ul class="list-unstyled">
           <li><strong>Name:</strong> {{$orders->first_name}} {{$orders->last_name}}</li>
           <li><strong>Phone:</strong> {{$orders->phone_number}}</li>
-          <li><strong>Store:</strong> {{ $orders->store->store_name }}</li>
+          <li><strong>Country:</strong> {{ $orders->store->store_name }}</li>
           <li><strong>Date:</strong> {{ \Carbon\Carbon::parse($orders->date)->format('d-m-Y') }}</li>
           <li><strong>Total Amount:</strong> {{ $orders->total_amount }}</li>
         </ul>

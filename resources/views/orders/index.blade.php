@@ -38,7 +38,7 @@
                  <th>OrderID</th>
                 <th>Name</th>
                 <th>Phone</th>
-                <th>Store</th>
+                <th>Country</th>
                 <th>Total amount</th>
                 <th>Actions</th>
             </tr>
