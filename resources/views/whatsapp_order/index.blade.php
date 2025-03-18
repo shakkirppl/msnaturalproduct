@@ -42,6 +42,7 @@
                                     <button type="button" class="btn btn-sm" id="clearSearch">
                                         <i class="mdi mdi-close"></i>
                                     </button>
+                                    
                                 </div>
                             </div>
                         </form>
@@ -70,10 +71,10 @@
                                 @foreach ($whatsapporder as $index => $order)
                                 <tr>
                                     <td>{{ $index + 1 }}</td>
-                                    <td>{{ $order->in_date }}</td>
-                                    <td>{{ $order->invoice_no }}</td>
-                                    <td>{{ $order->customer->customer_name ?? 'N/A' }}</td>
-                                    <td>{{ $order->grand_total }}</td>
+                                    <td>{{ $order->date }}</td>
+                                    <td>{{ $order->order_no }}</td>
+                                    <td> @foreach ($order->customer as $cust) {{ $cust->first_name }} @endforeach</td>
+                                    <td>{{ $order->total_amount }}</td>
                                     <td>{{ $order->shipping_charge }}</td>
                                     <td>
                                         <a href="{{ route('whatsapp-order.view', $order->id) }}" class="btn btn-info btn-sm">View</a>

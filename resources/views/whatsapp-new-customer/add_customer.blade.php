@@ -8,7 +8,7 @@
                 <div class="card-body">
                     <h4 class="card-title">Add New Customer</h4>
                     <div class="col-6 col-md-12 col-sm-6 col-xs-12 heading" style="text-align:end;">
-                            <a href="{{ url('whatsapp-order/list') }}" class="backicon">
+                            <a href="{{ route('whatsapp-customers') }}" class="backicon">
                                 <i class="mdi mdi-backburger"></i>
                             </a>
                     </div>
@@ -28,12 +28,17 @@
                         @csrf
 
                         <!-- Customer Name -->
-                        <div class="form-group row">
-                            <label class="col-sm-2 col-form-label">Customer Name:</label>
-                            <div class="col-sm-10">
-                                <input type="text" name="customer_name" class="form-control" placeholder="Enter customer name" required>
-                            </div>
-                        </div>
+                        <div class="form-group row align-items-center">
+    <label class="col-sm-2 col-form-label text-end">First & Last Name:</label>
+    <div class="col-sm-5">
+        <input type="text" name="first_name" class="form-control" placeholder="Enter First Name" required>
+    </div>
+
+
+    <div class="col-sm-5">
+        <input type="text" name="last_name" class="form-control" placeholder="Enter Last Name" >
+    </div>
+</div>
                   <!-- Phone Number -->
                   <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Phone Number:</label>
@@ -72,24 +77,31 @@
                                 <input type="text" name="city" class="form-control" placeholder="Enter city">
                             </div>
                         </div>
-
+   <!-- land Mark -->
+   <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Landmark:</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="landmark" class="form-control" placeholder="Enter Landmark">
+                            </div>
+                        </div>
+                           <!-- Pin Code -->
+   <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Pincode:</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="pincode" class="form-control" placeholder="Enter Pincode" required>
+                            </div>
+                        </div>
                         <!-- Address -->
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Address:</label>
                             <div class="col-sm-10">
                                
-                            <textarea name="address" class="form-control"></textarea>
+                            <textarea name="address" class="form-control" required></textarea>
 
                             </div>
                         </div>
 
-                        <!-- Pincode -->
-                        <div class="form-group row">
-                            <label class="col-sm-2 col-form-label">Pincode:</label>
-                            <div class="col-sm-10">
-                                <input type="number" name="pincode" class="form-control" placeholder="Enter pincode">
-                            </div>
-                        </div>
+         
 
                         <!-- Submit Button -->
                         <button type="submit" class="btn btn-primary">submit</button>

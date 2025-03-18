@@ -46,7 +46,9 @@ class Order extends Model
         'shipping_charge',
         'state_code',
         'delivery_status',
-        'delivery_date'
+        'delivery_date',
+        'mode',
+        'source'
     ];
 
     public function products()
@@ -67,7 +69,7 @@ class Order extends Model
     }
     public function customer()
     {
-        return $this->hasMany(Customer::class,'user_id','customer_id')->select('id','first_name','last_name'); // Assuming you have an OrderItem model
+        return $this->hasMany(Customer::class,'user_id','customer_id')->select('id','first_name','last_name','user_id'); // Assuming you have an OrderItem model
     }
     public function store()
     {

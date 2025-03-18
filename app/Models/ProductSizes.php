@@ -28,7 +28,7 @@ class ProductSizes extends Model
     public function product()
 {
     
-    return $this->belongsTo(Product::class)->select('id','product_name');
+    return $this->belongsTo(Product::class)->select('id','product_name','image');
 }
 
 public function stock()

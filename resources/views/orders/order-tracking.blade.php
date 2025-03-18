@@ -57,7 +57,11 @@
                         <a href="{{ route('orders.tracking') }}" class="btn btn-secondary">Reset</a>
                     </form>
                     <!-- End Filter Form -->
-
+                    <div class="d-flex justify-content-end">
+    <button type="button" class="btn btn-primary mb-2" id="myexel" target="_blank" onclick="exportTableToExcel('value-table', 'Order Report')">
+        <i class="fa fa-file-excel-o"></i> Export
+    </button>
+</div>
                     <div class="table-responsive mt-3">
                         <table class="table" id="value-table">
                             <thead>
@@ -107,4 +111,63 @@
         $('#value-table').DataTable();
     });
 </script>
+<script>
+    // function exportTableToExcel(tableID, filename = 'invoice-report.xlsx') {
+    //     let table = document.getElementById(tableID);
+    //     let workbook = XLSX.utils.table_to_book(table, { sheet: "Sheet 1" });
+    //     XLSX.writeFile(workbook, filename);
+    // }
+    function exportTableToExcel(tableID, reportName) {
+    // Get the table element by ID
+    let table = document.getElementById(tableID);
+
+    // Clone the table to avoid altering the original table in the DOM
+    let clonedTable = table.cloneNode(true);
+
+    // Find the "Action" column index by matching the header text
+    let actionColIndex = -1;
+    const headerCells = clonedTable.rows[0].cells;
+
+    for (let i = 0; i < headerCells.length; i++) {
+        if (headerCells[i].innerText.trim().toLowerCase() === 'action') {
+            actionColIndex = i;
+            break;
+        }
+    }
+
+    // Remove the "Action" column if it exists
+    if (actionColIndex !== -1) {
+        for (let row of clonedTable.rows) {
+            if (actionColIndex < row.cells.length) {
+                row.deleteCell(actionColIndex);
+            }
+        }
+    } else {
+        console.warn("Action column not found. No column removed.");
+    }
+
+    // Style headers and right-align "Total" and "Grand Total" columns
+    for (let header of clonedTable.rows[0].cells) {
+        header.style.fontWeight = 'bold'; // Make headers bold
+    }
+
+    // Iterate over rows to style the "Total" and "Grand Total" cells
+    for (let row of clonedTable.rows) {
+        for (let cell of row.cells) {
+            // Align "Total" and "Grand Total" cells to the right and bold them
+            if (cell.innerText.toLowerCase().includes('total') || cell.innerText.toLowerCase().includes('grand total')) {
+                cell.style.textAlign = 'right'; // Align text to the right
+                cell.style.fontWeight = 'bold'; // Make bold
+            }
+        }
+    }
+
+    // Convert the styled cloned table to a workbook
+    let workbook = XLSX.utils.table_to_book(clonedTable, { sheet: "Sheet 1" });
+
+    // Use the report name as the filename for the Excel file
+    XLSX.writeFile(workbook, `${reportName}.xlsx`);
+}
+
+    </script>
 @endsection

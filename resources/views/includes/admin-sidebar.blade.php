@@ -37,7 +37,8 @@
             <div class="collapse" id="product_master">
               <ul class="nav flex-column sub-menu">
               <li class="nav-item"> <a class="nav-link" href="{{URL::to('products')}}">Products</a></li>
-              <li class="nav-item"> <a class="nav-link" href="{{URL::to('product-prices')}}">Price Manage</a></li>
+              <li class="nav-item"> <a class="nav-link" href="{{URL::to('product-price-manage')}}">Price Manage</a></li>
+              <!-- <li class="nav-item"> <a class="nav-link" href="{{URL::to('product-prices')}}">Price Manage</a></li> -->
               <li class="nav-item"> <a class="nav-link" href="{{URL::to('products-status')}}">Product Manage </a></li>
               <li class="nav-item"> <a class="nav-link" href="{{URL::to('products-size-status')}}">Product Size Manage </a></li>
 
@@ -105,15 +106,33 @@
           </li>
                  
 @endif
-    <li class="nav-item">
+<li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#website_other" aria-expanded="false" aria-controls="charts">
+              <i class="icon-bar-graph menu-icon"></i>
+              <span class="menu-title">All Orders</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="website_other">
+              <ul class="nav flex-column sub-menu">
+              <li class="nav-item"> <a class="nav-link" href="{{URL::to('orders/tracking')}}">Order Tracking</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{URL::to('all-pending-orders')}}">Pending Orders</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{URL::to('all-accepted-orders')}}">Accepted Orders</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{URL::to('all-packed-orders')}}">Packed Orders</a></li>
+                 <li class="nav-item"> <a class="nav-link" href="{{URL::to('all-delivered-orders')}}">Delivered Orders</a></li>
+                 </ul>
+            </div>
+     
+          </li>
+
+<li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#orders" aria-expanded="false" aria-controls="charts">
               <i class="icon-bar-graph menu-icon"></i>
-              <span class="menu-title">Orders</span>
+              <span class="menu-title">Website Orders</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="orders">
               <ul class="nav flex-column sub-menu">
-              <li class="nav-item"> <a class="nav-link" href="{{URL::to('orders/tracking')}}">Order Tracking</a></li>
+              <!-- <li class="nav-item"> <a class="nav-link" href="{{URL::to('orders/tracking')}}">Order Tracking</a></li> -->
                 <li class="nav-item"> <a class="nav-link" href="{{URL::to('pending-orders')}}">Pending Orders</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{URL::to('accepted-orders')}}">Accepted Orders</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{URL::to('packed-orders')}}">Packed Orders</a></li>
@@ -122,6 +141,26 @@
             </div>
      
           </li>
+
+    <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#socialmedia_orders" aria-expanded="false" aria-controls="charts">
+              <i class="icon-bar-graph menu-icon"></i>
+              <span class="menu-title">WhatsApp Orders</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="socialmedia_orders">
+              <ul class="nav flex-column sub-menu">
+              <!-- <li class="nav-item"> <a class="nav-link" href="{{URL::to('whatsapp-orders/tracking')}}">Order Tracking</a></li> -->
+                <li class="nav-item"> <a class="nav-link" href="{{URL::to('whatsapp-pending-orders')}}">Pending Orders</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{URL::to('whatsapp-accepted-orders')}}">Accepted Orders</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{URL::to('whatsapp-packed-orders')}}">Packed Orders</a></li>
+                 <li class="nav-item"> <a class="nav-link" href="{{URL::to('whatsapp-delivered-orders')}}">Delivered Orders</a></li>
+                 </ul>
+            </div>
+     
+          </li>
+
+
 
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#transaction" aria-expanded="false" aria-controls="charts">

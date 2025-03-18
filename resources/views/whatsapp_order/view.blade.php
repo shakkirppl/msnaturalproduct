@@ -29,9 +29,8 @@
                         <table class="table table-hover">
                             <thead>
                                 <tr>
-                                    <th>No</th>
+                                  
                                     <th>Product Name</th>
-                                    <th>Unit</th>
                                     <th>Quantity</th>
                                     <th>Price</th>
                                    
@@ -39,15 +38,13 @@
                             </thead>
                             <tbody>
                            
-                            @foreach ($whatsapporder->orderDetails as $index => $detail)
-                      <tr>
-                         <td>{{ $index + 1 }}</td>
-                        <td>{{ $detail->product->product_name }}</td>
-                        <td>{{ $detail->productSize ? $detail->productSize->size : 'N/A' }}</td>
-                        <td>{{ $detail->quantity }}</td>
-                       <td>{{ number_format($detail->price, 2) }}</td>
-                    </tr>
-                      @endforeach
+                            @foreach($orders->detail as $details)
+                  <tr>
+                    <td>{{$details->product_name}} - {{$details->size}}</td>
+                    <td>{{$details->quantity}}</td>
+                    <td>{{$details->price}}</td>
+                </tr>
+               @endforeach
                               
                             </tbody>
                         </table>

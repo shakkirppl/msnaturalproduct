@@ -33,6 +33,8 @@ use App\Http\Controllers\VisitReportController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\AboutUsImageController;
 use App\Http\Controllers\ProductCountryController;
+use App\Http\Controllers\WhatsappOrderController;
+use App\Http\Controllers\AllOrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -110,6 +112,8 @@ Route::get('/your-profile', [YourOrdersController::class, 'yourprofile']);
 Route::post('/return.item', [YourOrdersController::class, 'return_item_store'])->name('return.item');
 Route::post('/calculate-shipping-charge', [CheckoutController::class, 'calculateShippingCharge'])->name('calculate.shipping.charge');
 Route::get('/get-states/{countryId}', [HomeController::class, 'getStates'])->name('get-states');
+
+
 Route::get('/order-confirmation/{id}', [CheckoutController::class, 'order_confirmation'])->name('order-confirmation');
 
 Route::get('/product-review/{id}', [ProductDetailController::class, 'product_review'])->name('product-review');
@@ -167,6 +171,7 @@ Route::middleware('auth')->group(function () {
     Route::get('products.addon/{id}', [ProductController::class, 'addon']);
     Route::get('products.edit/{id}', [ProductController::class, 'edit']);
     Route::get('products.show/{id}', [ProductController::class, 'show']);
+
     // Route::get('products.image/{id}', [ProductController::class, 'image']);
 
     Route::get('products.main.image.change/{id}', [ProductController::class, 'mainImage']);
@@ -197,11 +202,17 @@ Route::middleware('auth')->group(function () {
 
 
     // product price
+
+    
+    Route::get('/product-price-manage', [ProductPriceController::class, 'product_price_manage'])->name('product-price-manage');
+    Route::get('products.add-update-price/{id}', [ProductPriceController::class, 'update_price']);
+    Route::post('products/save-price', [ProductPriceController::class, 'save_price'])->name('products.save-price');
+
     Route::get('/product-prices', [ProductPriceController::class, 'index'])->name('product-prices.index');
-Route::get('/product-prices/create', [ProductPriceController::class, 'create'])->name('product-prices.create');
-Route::post('/product-prices', [ProductPriceController::class, 'store'])->name('product-prices.store');
-Route::get('/product-prices/{id}/edit', [ProductPriceController::class, 'edit'])->name('product-prices.edit');
-Route::put('/product-prices/{id}', [ProductPriceController::class, 'update'])->name('product-prices.update');
+    Route::get('/product-prices/create', [ProductPriceController::class, 'create'])->name('product-prices.create');
+    Route::post('/product-prices', [ProductPriceController::class, 'store'])->name('product-prices.store');
+    Route::get('/product-prices/{id}/edit', [ProductPriceController::class, 'edit'])->name('product-prices.edit');
+    Route::put('/product-prices/{id}', [ProductPriceController::class, 'update'])->name('product-prices.update');
 
 
 
@@ -220,7 +231,21 @@ Route::get('pending-orders', [OrderController::class, 'show_pending_orders']);
 Route::get('accepted-orders', [OrderController::class, 'show_accepted_orders']);
 Route::get('packed-orders', [OrderController::class, 'show_packed_orders']);
 Route::get('delivered-orders', [OrderController::class, 'show_delivered_orders']);
-Route::get('orders/tracking', [OrderController::class, 'orders_tracking'])->name('orders.tracking');
+// Route::get('orders/tracking', [OrderController::class, 'orders_tracking'])->name('orders.tracking');
+
+// whatsapp orders
+Route::get('whatsapp-pending-orders', [WhatsappOrderController::class, 'show_pending_orders']);
+Route::get('whatsapp-accepted-orders', [WhatsappOrderController::class, 'show_accepted_orders']);
+Route::get('whatsapp-packed-orders', [WhatsappOrderController::class, 'show_packed_orders']);
+Route::get('whatsapp-delivered-orders', [WhatsappOrderController::class, 'show_delivered_orders']);
+// Route::get('whatsapp-orders/tracking', [WhatsappOrderController::class, 'orders_tracking'])->name('orders.tracking.whatsapp');
+
+// all orders  
+Route::get('all-pending-orders', [AllOrderController::class, 'show_pending_orders']);
+Route::get('all-accepted-orders', [AllOrderController::class, 'show_accepted_orders']);
+Route::get('all-packed-orders', [AllOrderController::class, 'show_packed_orders']);
+Route::get('all-delivered-orders', [AllOrderController::class, 'show_delivered_orders']);
+Route::get('orders/tracking', [AllOrderController::class, 'orders_tracking'])->name('orders.tracking');
 
 
 Route::get('canceled-order', [OrderController::class, 'canceled_order']);
@@ -252,6 +277,10 @@ Route::get('whatsapp-order/report', [WhatsappOrderReportController::class, 'repo
 Route::get('whatsapp-order/report/{id}', [WhatsappOrderReportController::class, 'reportView'])->name('whatsapp-order.reportView');
 Route::get('/whatsapp-customer/add_customer', [WhatsappController::class, 'createCustomerPage'])->name('whatsapp-customer.add_customer');
 Route::post('/whatsapp-customer/store', [WhatsappController::class, 'storeCustomer'])->name('whatsapp-customer.store');
+Route::post('/whatsapp-customer-popup', [WhatsappController::class, 'storePopupCustomer'])->name('whatsapp-customer-popup.store');
+
+Route::get('/get-customer-whatsapp', [WhatsappController::class, 'get_customer_whatsapp'])->name('get-customer-whatsapp');
+
 Route::get('/whatsapp-order/{id}/delete', [WhatsappController::class, 'destroy'])->name('whatsapp-order.destroy');
 Route::get('whatsapp-customers', [WhatsappController::class, 'customer'])->name('whatsapp-customers');
 

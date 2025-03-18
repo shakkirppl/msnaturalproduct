@@ -29,65 +29,31 @@
                     <form class="form-sample" action="{{ route('whatsapp.store') }}" method="post">
                         {{ csrf_field() }}
 
-                        <div class="row">
-                        <div class="col-lg-12 grid-margin stretch-card">
-                        <div class="col-4 col-md-4 col-sm-6 col-xs-12" >
-                                 <label>Customer</label>
-                            <select class="form-control" name="customer_id" id="customer_id" style="border: none;">
-                                                    <option value="0">Select Customer</option>
-                                                      @foreach($whatsapp_customers as $customer)
-                                                       <option value="{{ $customer->id }}">{{ $customer->customer_name }}</option>
-                                                      @endforeach
-                                               </select>
-                                               <!-- <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#addCustomerModal" style="text-decoration: none; color: blue; margin-left: 10px; align-self:center;">
-                                                  <i class="fas fa-plus" style="cursor: pointer;"></i>
-                                               </a> -->
-                        </div>
-                        <div class="col-4 col-md-4 col-sm-6 col-xs-12" >
-                        <label>Customer</label>
-                        <input type="date" name="in_date" class="form-control">
-                        </div>
+                        <div class="row align-items-center">
+    <!-- Customer Selection -->
+    <div class="col-md-8">
+        <label>Customer</label>
+        <div class="d-flex align-items-center">
+        <select class="form-control me-2" name="customer_id" id="customer_id" style="border: none;">
+    <option value="0">Select Customer</option>
+    @foreach($whatsapp_customers as $customer)
+        <option value="{{ $customer->user_id }}">
+            {{ $customer->first_name }} {{ $customer->last_name }} {{ $customer->phone_number }}
+        </option>
+    @endforeach
+</select>
+<a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#addCustomerModal" class="text-primary ms-2">
+    <i class="fas fa-plus" style="cursor: pointer;"></i>
+</a>
+        </div>
+    </div>
 
-                        <div class="col-4 col-md-4 col-sm-6 col-xs-12" >
-                        <label>Phone No</label>
-                        <input type="number" class="form-control" placeholder="Phone Number" name="whatsapp_no"  />
-                        </div>
-
-                        </div>
-<!-- second row -->
-<div class="col-lg-12 grid-margin stretch-card">
-<div class="col-4 col-md-3 col-sm-6 col-xs-12" >
-<label>Total Amount</label>
-<input type="text" class="form-control" name="total" required="true" value="0.00" readonly />
+    <!-- Date Input -->
+    <div class="col-md-4">
+        <label>Date</label>
+        <input type="date" name="in_date" class="form-control">
+    </div>
 </div>
-
-<div class="col-4 col-md-3 col-sm-6 col-xs-12" >
-<label>Shipping Charge</label>
-<input type="text" class="form-control" name="shipping_charge" required="true" value="0.00" />
-</div>
-
-<div class="col-4 col-md-3 col-sm-6 col-xs-12" >
-<label>Grand Total</label>
-<input type="text" class="form-control" name="grand_total" value="" readonly />
-</div>
-
-<div class="col-4 col-md-3 col-sm-6 col-xs-12" >
-<label>Order No</label>
-<input type="text" class="form-control" name="invoice_no" value="{{ $invoice_no }}" readonly />
-</div>
-
-</div>
-
-
-                        </div>
-
-                        
-                      
-
-               
-
-                
-
                         <div class="row">
                             <div class="col-md-12">
                                 <table class="table table-striped mt-3" id="productTable">
@@ -134,7 +100,29 @@
                                 <button type="button" class="btn btn-primary mt-3 mb-3" id="addproductRowBtn">Add New Row</button>
     </div>
 </div>
+<!-- second row -->
+<div class="col-lg-12 grid-margin stretch-card">
+<div class="col-4 col-md-3 col-sm-6 col-xs-12" >
+<label>Total Amount</label>
+<input type="text" class="form-control" name="total" required="true" value="0.00" readonly />
+</div>
 
+<div class="col-4 col-md-3 col-sm-6 col-xs-12" >
+<label>Shipping Charge</label>
+<input type="text" class="form-control" name="shipping_charge" required="true" value="0.00" />
+</div>
+
+<div class="col-4 col-md-3 col-sm-6 col-xs-12" >
+<label>Grand Total</label>
+<input type="text" class="form-control" name="grand_total" value="" readonly />
+</div>
+
+<div class="col-4 col-md-3 col-sm-6 col-xs-12" >
+<!-- <label>Order No</label> -->
+<input type="hidden" class="form-control" name="invoice_no" value="{{ $invoice_no }}" readonly />
+</div>
+
+</div>
 <div class="submitbutton">
     <button type="submit" class="btn btn-primary mb-2 submit">Submit <i class="fas fa-save"></i></button>
 </div>
@@ -150,42 +138,44 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="addCustomerModalLabel">Add New Customer</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form id="addCustomerForm">
                     @csrf
                     <div class="mb-3">
-                        <label for="customerName" class="form-label">Customer Name</label>
-                        <input type="text" class="form-control" id="customerName" name="customer_name" required>
+                        <input type="text" class="form-control" placeholder="First Name" name="first_name" required>
                     </div>
                     <div class="mb-3">
-                        <label for="country" class="form-label">Country</label>
+                        <input type="text" class="form-control" placeholder="Last Name" name="last_name">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Phone Number" name="phone_number" required>
+                    </div>
+                    <div class="mb-3">
                         <select name="country_id" class="form-control" required>
-            <option value="">Select Country</option>
-            @foreach($countries as $country)
-                <option value="{{ $country->id }}">{{ $country->country_name }}</option>
-            @endforeach
-        </select>
+                            <option value="">Select Country</option>
+                            @foreach($countries as $country)
+                                <option value="{{ $country->id }}">{{ $country->country_name }}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="mb-3">
-                            <label for="state" class="form-label" >State</label>
-                            <select name="state" class="form-control" id="state">
-                                    <option value="">Select State</option>
-                                   
-                                </select>
-                        </div>
-                    <div class="mb-3">
-                        <label for="city" class="form-label">City</label>
-                        <input type="text" class="form-control" id="city" name="city">
+                        <select name="state" class="form-control" id="state" required>
+                            <option value="">Select State</option>
+                        </select>
                     </div>
                     <div class="mb-3">
-                        <label for="address" class="form-label">Address</label>
-                        <textarea id="address" name="address" class="form-control"></textarea>
+                        <input type="text" class="form-control" placeholder="City" name="city">
                     </div>
                     <div class="mb-3">
-                        <label for="pincode" class="form-label">Pincode</label>
-                        <input type="number" class="form-control" id="pincode" name="pincode">
+                        <input type="text" class="form-control" placeholder="Landmark" name="landmark">
+                    </div>
+                    <div class="mb-3">
+                        <textarea name="address" placeholder="Enter Address" class="form-control" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Pincode" name="pincode" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Save</button>
                 </form>
@@ -193,6 +183,7 @@
         </div>
     </div>
 </div>
+
 
 @push('styles')
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
@@ -210,20 +201,20 @@
 <script>
     $(document).ready(function() {
 
-        $('select[name="country_id"]').select2({
-        placeholder: 'Select Country',
-        allowClear: true,
-        dropdownParent: $('#addCustomerModal'),
-        width: '100%'
-    });
+    //     $('select[name="country_id"]').select2({
+    //     placeholder: 'Select Country',
+    //     allowClear: true,
+    //     dropdownParent: $('#addCustomerModal'),
+    //     width: '100%'
+    // });
 
     // Initialize Select2 for the state dropdown
-    $('select[name="state"]').select2({
-        placeholder: 'Select State',
-        allowClear: true,
-        dropdownParent: $('#addCustomerModal'),
-        width: '100%'
-    });
+    // $('select[name="state"]').select2({
+    //     placeholder: 'Select State',
+    //     allowClear: true,
+    //     dropdownParent: $('#addCustomerModal'),
+    //     width: '100%'
+    // });
 
     $('select[name="customer_id"]').select2({
         placeholder: 'Select a Customer',
@@ -461,12 +452,13 @@ function fetchPrice(productId, sizeId, row) {
 
 
 
-    document.getElementById('addCustomerForm').addEventListener('submit', function (e) {
-    e.preventDefault(); // Prevent the default form submission
+// popoup customer form
+document.getElementById('addCustomerForm').addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent default form submission
 
     let formData = new FormData(this);
 
-    fetch('{{ route("whatsapp-customer.store") }}', {
+    fetch("{{ route('whatsapp-customer-popup.store') }}", { // ✅ FIXED
         method: 'POST',
         headers: {
             'X-CSRF-TOKEN': '{{ csrf_token() }}'
@@ -476,18 +468,44 @@ function fetchPrice(productId, sizeId, row) {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            // Close the modal without refreshing the page
             let modal = bootstrap.Modal.getInstance(document.getElementById('addCustomerModal'));
-            modal.hide(); // Close the modal
+            modal.hide();
 
-            // Optionally, reset the form here if you want it cleared
+            // Reset the form
             document.getElementById('addCustomerForm').reset();
+             // Add the newly added customer to the select dropdown without page reload
+             $.ajax({
+            url: "{{ url('/get-customer-whatsapp') }}/",
+            type: "GET",
+            dataType: "json",
+            success: function (data) {
+                var customerDropdown = $('select[name="customer_id"]');
+                customerDropdown.empty();
+                customerDropdown.append('<option value="">Select Customer</option>');
 
-            // You can also trigger any additional success behavior, like updating the UI with the new customer data
+                // Loop through states and append them
+                $.each(data.customers, function (key, value) {
+                 customerDropdown.append('<option value="' + value.user_id + '">' + value.first_name + ' ' + value.last_name + ' ' + value.phone_number + '</option>');
+                });
+
+                // Reinitialize Select2 after updating the dropdown (if using Select2)
+            customerDropdown.trigger('change');
+            },
+            error: function (xhr, status, error) {
+                console.error("Error fetching states:", error);
+            }
+        });
             alert('Customer created successfully!');
-        } 
+        
+        } else {
+            console.error('Server Response:', data);
+            alert('Error: ' + data.message);
+        }
     })
-   
+    .catch(error => {
+        console.error('Fetch Error:', error);
+        alert('Something went wrong. Please try again.');
+    });
 });
 
 

@@ -23,6 +23,7 @@ class OrderController extends Controller
 
         $store=Auth::user()->store_id;
         $orders = Order::with('orderdetails', 'store')->where('delivery_status', 'Pending')->where('store_id', $store)
+        ->where('mode','website')
         ->orderBy('id', 'desc') 
         ->get();
         
@@ -39,6 +40,7 @@ class OrderController extends Controller
         $store=Auth::user()->store_id;
         $orders = Order::with('orderdetails', 'store')
         ->where('delivery_status', 'Accepted')->where('store_id', $store)
+        ->where('mode','website')
         ->orderBy('id', 'desc') 
         ->get();
         return view('orders.index',compact('orders'));
@@ -53,6 +55,7 @@ class OrderController extends Controller
         $store=Auth::user()->store_id;
         $orders = Order::with('orderdetails', 'store')
         ->where('delivery_status', 'Packed')->where('store_id', $store)
+        ->where('mode','website')
         ->orderBy('id', 'desc') 
         ->get();
         return view('orders.index',compact('orders'));
@@ -68,6 +71,7 @@ class OrderController extends Controller
         $store=Auth::user()->store_id;
         $orders = Order::with('orderdetails', 'store')
         ->where('delivery_status', 'Delivered')->where('store_id', $store)
+        ->where('mode','website')
         ->orderBy('id', 'desc') 
         ->get();
         return view('orders.index',compact('orders'));
@@ -236,6 +240,7 @@ class OrderController extends Controller
         try {
         $orders = Order::with('orderdetails', 'store')
         ->where('delivery_status', 'Pending')->where('store_id', 2)
+        ->where('mode','website')
         ->orderBy('id', 'desc') 
         ->get();
         
@@ -250,6 +255,7 @@ class OrderController extends Controller
         try {
         $orders = Order::with('orderdetails', 'store')
         ->where('delivery_status', 'Accepted')->where('store_id', 2)
+        ->where('mode','website')
         ->orderBy('id', 'desc') 
         ->get();
         return view('orders.index',compact('orders'));
@@ -263,6 +269,7 @@ class OrderController extends Controller
         try {
         $orders = Order::with('orderdetails', 'store')
         ->where('delivery_status', 'Packed')->where('store_id', 2)
+        ->where('mode','website')
         ->orderBy('id', 'desc') 
         ->get();
         return view('orders.index',compact('orders'));
@@ -276,6 +283,7 @@ class OrderController extends Controller
         try {
         $orders = Order::with('orderdetails', 'store')
         ->where('delivery_status', 'Delivered')->where('store_id', 2)
+        ->where('mode','website')
         ->orderBy('id', 'desc') 
         ->get();
         return view('orders.index',compact('orders'));
@@ -294,6 +302,7 @@ class OrderController extends Controller
         $store=Auth::user()->store_id;
         $orders = Order::with('orderdetails', 'store')
         ->where('delivery_status', 'Pending')->where('store_id', 5)
+        ->where('mode','website')
         ->orderBy('id', 'desc') 
         ->get();
         
@@ -308,6 +317,7 @@ class OrderController extends Controller
         try {
         $orders = Order::with('orderdetails', 'store')
         ->where('delivery_status', 'Accepted')->where('store_id', 5)
+        ->where('mode','website')
         ->orderBy('id', 'desc') 
         ->get();
         return view('orders.index',compact('orders'));
@@ -320,6 +330,7 @@ class OrderController extends Controller
         try {
         $orders = Order::with('orderdetails', 'store')
         ->where('delivery_status', 'Packed')->where('store_id', 5)
+        ->where('mode','website')
         ->orderBy('id', 'desc') 
         ->get();
         return view('orders.index',compact('orders'));
@@ -333,6 +344,7 @@ class OrderController extends Controller
         try {
         $orders = Order::with('orderdetails', 'store')
         ->where('delivery_status', 'Delivered')->where('store_id', 5)
+        ->where('mode','website')
         ->orderBy('id', 'desc') 
         ->get();
         return view('orders.index',compact('orders'));

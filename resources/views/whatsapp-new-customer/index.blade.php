@@ -65,7 +65,7 @@
                                 @foreach ($customers as $customer)
                                 <tr>
                                     <td>{{ $customer->id }}</td>
-                                    <td>{{ $customer->customer_name }}</td>
+                                    <td>{{ $customer->first_name }} {{ $customer->last_name }}</td>
                                     <td>{{ $customer->countries->country_name }}</td>
                                     <td>{{ $customer->StatesModel->state_name }}</td>
                                     <td>{{ $customer->city }}</td>

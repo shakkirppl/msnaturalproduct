@@ -8,7 +8,8 @@ use App\Models\ProductSizes;
 use App\Models\Countries;
 use App\Models\Stores;
 use Illuminate\Http\Request;
-
+use DB;
+use Illuminate\Support\Facades\Validator;
 class ProductPriceController extends Controller
 {
     public function index()
@@ -21,7 +22,75 @@ class ProductPriceController extends Controller
         return $e->getMessage();
       }
     }
+    
+    public function product_price_manage()
+    {
+        try {
 
+        $productSizes = ProductSizes::with('product')->get();
+        return view('product-prices.manage', compact('productSizes'));
+    } catch (\Exception $e) {
+        return $e->getMessage();
+      }
+    }
+    public function update_price($id)
+{
+    try {
+        $countries = Countries::all();
+        $productSize = ProductSizes::findOrFail($id);
+        $product = Product::find($productSize->product_id);
+
+        $productPrices = ProductPrices::where('product_size_id', $id)
+            ->get()
+            ->keyBy('country_id'); // Organize by country_id for easy lookup
+
+        return view('product-prices.update-price', compact('product', 'productSize', 'countries', 'productPrices'));
+} catch (\Exception $e) {
+    return $e->getMessage();
+  }
+}
+public function save_price(Request $request)
+    {
+       
+        $validator = Validator::make($request->all(), [
+            'product_size_id' => 'required|exists:product_sizes,id',
+            'prices' => 'required|array',
+            'prices.*.country_id' => 'required|exists:countries,id',
+            'prices.*.original_price' => 'required|numeric|min:0',
+            'prices.*.offer_price' => 'nullable|numeric|min:0',
+            'prices.*.currency' => 'required|string|max:10',
+            'prices.*.in_stock' => 'required|boolean',
+        ]);
+        if ($validator->fails()) {
+    
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+        try {
+            DB::transaction(function () use ($request) {
+                foreach ($request->prices as $country_id => $priceData) {
+                    ProductPrices::updateOrCreate(
+                        [
+                            'product_size_id' => $request->product_size_id,
+                            'country_id' => $country_id,
+                        ],
+                        [
+                            'product_id' => ProductSizes::find($request->product_size_id)->product_id,
+                            'store_id' => $country_id,
+                            'original_price' => $priceData['original_price'],
+                            'offer_price' => $priceData['offer_price'],
+                            'currency' => $priceData['currency'],
+                            'in_stock' => $priceData['in_stock'],
+                        ]
+                    );
+                }
+            });
+
+            return redirect()->route('product-price-manage', $request->product_size_id)
+                ->with('success', 'Prices updated successfully.');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Something went wrong: ' . $e->getMessage());
+        }
+    }
     public function create()
     {
         try {
