@@ -35,6 +35,7 @@ use App\Http\Controllers\AboutUsImageController;
 use App\Http\Controllers\ProductCountryController;
 use App\Http\Controllers\WhatsappOrderController;
 use App\Http\Controllers\AllOrderController;
+use App\Http\Controllers\OrderDashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -303,6 +304,7 @@ Route::get('reports/most-moving', [ReportController::class, 'mostMovingItems'])-
 Route::get('reports/least-moving', [ReportController::class, 'leastMovingItems'])->name('reports.least-moving');
 Route::get('reports/sales/{id}', [ReportController::class, 'viewSalesDetail'])->name('reports.sales.detail');
 Route::get('/order/invoice/{id}', [OrderController::class, 'printInvoice'])->name('order.invoice');
+Route::get('/order-dashboard', [OrderDashboardController::class, 'index'])->name('order.dashboard');
 }); 
 
 require __DIR__.'/auth.php';

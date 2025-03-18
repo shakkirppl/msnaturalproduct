@@ -11,6 +11,7 @@ use App\Models\ShippmentDetailsUae;
 use App\Models\DeliveryStatus;
 use App\Models\OrderDetails;
 use App\Models\ProductSizes;
+use App\Models\Product;
 use App\Models\ShippmentDetailsInternational;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -111,10 +112,15 @@ class AllOrderController extends Controller
         if ($request->filled('from_date') && $request->filled('to_date')) {
           $query->whereBetween('date', [$request->from_date, $request->to_date]);
       }
-    
-        $orders = $query->where('mode','SocialMedia')->with('store')->paginate(10);
-    
-        return view('orders.order-tracking', compact('orders'));
+      if ($request->filled('product_id')) {
+        $query->whereHas('detail', function ($q) use ($request) {
+            $q->where('order_details.product_id', $request->product_id);
+        });
+    }
+        $orders = $query->with('store')->paginate(10);
+     // Fetch products for the dropdown
+     $products = Product::all();
+        return view('orders.order-tracking', compact('orders','products'));
     }
    
     public function printInvoice($id)

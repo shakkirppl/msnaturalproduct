@@ -114,6 +114,7 @@
             </a>
             <div class="collapse" id="website_other">
               <ul class="nav flex-column sub-menu">
+              <li class="nav-item"> <a class="nav-link" href="{{URL::to('order-dashboard')}}">Dashboard</a></li>
               <li class="nav-item"> <a class="nav-link" href="{{URL::to('orders/tracking')}}">Order Tracking</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{URL::to('all-pending-orders')}}">Pending Orders</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{URL::to('all-accepted-orders')}}">Accepted Orders</a></li>

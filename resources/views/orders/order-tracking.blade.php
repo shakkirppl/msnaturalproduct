@@ -52,6 +52,17 @@
                                 <label>To Date</label>
                                 <input type="date" name="to_date" class="form-control" value="{{ request('date') }}">
                             </div>
+                            <div class="col-md-3">
+            <label>Product</label>
+            <select name="product_id" class="form-control">
+                <option value="">All</option>
+                @foreach($products as $product)
+                    <option value="{{ $product->id }}" {{ request('product_id') == $product->id ? 'selected' : '' }}>
+                        {{ $product->product_name }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                         <a href="{{ route('orders.tracking') }}" class="btn btn-secondary">Reset</a>

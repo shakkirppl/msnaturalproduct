@@ -47,9 +47,17 @@ class ProductDetailController extends Controller
             }
     
             // Get product sizes
+            // $unitsdetail = ProductSizes::where('product_id', $product->id)
+            //     ->select('id', 'size')->orderBy('id','ASC')
+            //     ->get();
             $unitsdetail = ProductSizes::where('product_id', $product->id)
-                ->select('id', 'size')->orderBy('id','ASC')
-                ->get();
+            ->whereHas('countries', function ($query) use ($storeId) {
+                $query->where('countries.id', $storeId)
+                      ->whereRaw("product_size_countries.is_active = 1");
+            })
+            ->select('id', 'size')
+            ->orderBy('id', 'ASC')
+            ->get();
                 foreach($unitsdetail as $unit){
                     $productPrice = ProductPrices::where('product_size_id', $unit->id)
                     ->where('store_id', $storeId)
