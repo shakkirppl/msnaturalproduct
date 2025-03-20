@@ -133,7 +133,7 @@
                         </ul>
                      </div>
                      @endif
-                     <form class="form-sub" action="{{ route('save.details.guest') }}" method="POST">
+                     <form class="form-sub" action="{{ route('save.details.guest') }}" id="myForm" method="POST" >
                         @csrf
                         <input type="hidden" name="store_id"  id="store_id" value="{{$storeId}}" required >
                         <div class="row">
@@ -155,12 +155,12 @@
                               <div class="mb-3">
                                  <label for="" class="form-ms-label">{{ __('main.First_name') }}</label>
                                  <input type="text" name="first_name" class="form-control form-control-ms" id=""
-                                    aria-describedby="emailHelp" value="{{ $customer->first_name ?? '' }}" required>
+                                    aria-describedby="emailHelp" value="{{old('first_name') }}" required>
                               </div>
                               <div class="mb-3">
                                  <label for="" class="form-ms-label">{{ __('main.Last_name') }}</label>
                                  <input type="text" name="last_name" class="form-control form-control-ms" id=""
-                                    aria-describedby="emailHelp" value="{{ $customer->last_name ?? '' }}" required>
+                                    aria-describedby="emailHelp" value="{{old('last_name') }}" >
                               </div>
                            </div>
                         </div>
@@ -169,7 +169,7 @@
                               <div class="mb-3">
                                  <label for="" class="form-ms-label"> {{ __('main.Address') }}</label>
                                  <input type="text" name="address" class="form-control  form-control-ms" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp" placeholder="Address" value="{{ $customer->address ?? '' }}" required>
+                                    aria-describedby="emailHelp" placeholder="Address" value="{{old('address') }}" >
                               </div>
                            </div>
                         </div>
@@ -178,7 +178,7 @@
                               <div class="mb-3">
                                  <label for="" class="form-ms-label">{{ __('main.Mobile_number') }}</label>
                                  <input type="number" name="phone" class="form-control form-control-ms" id=""
-                                    aria-describedby="emailHelp" value="{{ $customer->phone ?? '' }}" required>
+                                    aria-describedby="emailHelp" value="{{old('phone') }}" required>
                                  <label for="">May be used to assist delivery</label>
                               </div>
                            </div>
@@ -187,7 +187,7 @@
                            <div class="col-md-12">
                               <div class="mb-3">
                                  <label for="" class="form-ms-label">{{ __('main.Pincode') }}</label>
-                                 <input type="number" class="form-control form-control-ms" name="pincode" value="{{ $customer->pincode ?? '' }}" required>
+                                 <input type="number" class="form-control form-control-ms" name="pincode" value="{{old('pincode') }}" required>
                               </div>
                            </div>
                         </div>
@@ -196,7 +196,7 @@
                               <div class="mb-3">
                                  <label for="" class="form-ms-label">{{ __('main.Flat_House_no') }}</label>
                                  <input type="text" name="apartment" class="form-control form-control-ms" id=""
-                                    aria-describedby="emailHelp" value="{{ $customer->apartment ?? '' }}" required>
+                                    aria-describedby="emailHelp" value="{{old('apartment') }}" >
                               </div>
                            </div>
                         </div>
@@ -204,8 +204,8 @@
                            <div class="col-md-12">
                               <div class="mb-3">
                                  <label for="" class="form-ms-label">{{ __('main.Area_Street_Sector_Villaget') }}</label>
-                                 <input type="text" name="address" class="form-control  form-control-ms" id=""
-                                    aria-describedby="emailHelp" value="{{ $customer->address ?? '' }}" required>
+                                 <input type="text" name="area_address" class="form-control  form-control-ms" id=""
+                                    aria-describedby="emailHelp" value="{{old('area_address') }}" >
                               </div>
                            </div>
                         </div>
@@ -214,7 +214,7 @@
                               <div class="mb-3">
                                  <label for="" class="form-ms-label">{{ __('main.Landmark') }}</label>
                                  <input type="text" name="landmark" class="form-control form-control-ms" id=""
-                                    aria-describedby="emailHelp" value="{{ $customer->landmark ?? '' }}" required>
+                                    aria-describedby="emailHelp" value="{{old('landmark') }}" >
                               </div>
                            </div>
                         </div>
@@ -223,7 +223,7 @@
                               <div class="mb-3">
                                  <label for="" class="form-ms-label">{{ __('main.Town_City') }}</label>
                                  <input type="text" name="city" class="form-control form-control-ms" id=""
-                                    aria-describedby="emailHelp" value="{{ $customer->city ?? '' }}" required>
+                                    aria-describedby="emailHelp" value="{{old('city') }}" >
                               </div>
                            </div>
                            <div class="col-md-6">
@@ -596,8 +596,9 @@
                  });
              }
          });
+
          });
-         
+
       </script>
    </body>
 </html>

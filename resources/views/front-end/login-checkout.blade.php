@@ -291,7 +291,7 @@
                                           <div class="mb-3">
                                           <label for="" class="form-ms-label">{{ __('main.Mobile_number') }}</label>
                                              <input type="number" name="billing_phone" class="form-control  form-control-ms"
-                                                id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Mobile Number" >
+                                                id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Mobile Number"  >
                                           </div>
                                        </div>
                                     </div>

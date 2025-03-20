@@ -66,15 +66,15 @@
                         <td>{{ $country->country_name }}</td>
                         <td>
                            
-                        <input type="number" class="form-control" name="prices[{{ $country->id }}][original_price]" 
-                        value="{{ old("prices.{$country->id}.original_price", $priceData->original_price ?? 0) }}" required>
+                        <input type="number" class="form-control" step="any" name="prices[{{ $country->id }}][original_price]" 
+                        value="{{ old("prices.{$country->id}.original_price", $priceData->original_price ?? 0) }}"  required>
                         </td>
                         <td>
-                        <input type="number" class="form-control" name="prices[{{ $country->id }}][offer_price]" 
+                        <input type="number" class="form-control" step="any" name="prices[{{ $country->id }}][offer_price]" 
                         value="{{ old("prices.{$country->id}.offer_price", $priceData->offer_price ?? 0) }}" required>
                         </td>
                         <td>
-                        <input type="text" class="form-control" name="prices[{{ $country->id }}][currency]" 
+                        <input type="text" class="form-control"  name="prices[{{ $country->id }}][currency]" 
                         value="{{ old("prices.{$country->id}.currency", $priceData->currency ?? 'USD') }}" required>
                         </td>
                         <td>

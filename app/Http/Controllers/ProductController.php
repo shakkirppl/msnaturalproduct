@@ -195,7 +195,7 @@ public function products_unit_image_store(Request $request)
 {
     // Validate request
     $validator = Validator::make($request->all(), [
-        'product_id' => 'required|exists:products,id',
+        'product_id' => 'required|exists:product_sizes,id',
        'single_image' => 'required|image|mimes:jpeg,png,jpg,svg|max:250',
     ]);
 
