@@ -4,12 +4,10 @@
       <div class="showcase-wrapper">
          <div class="announcement-bar">
             <div class="announcement-content">
-               <!-- <div class="back-arrow" tabindex="0">&lt;</div> -->
                <div class="announcement-text">
-                  www.msnaturalproducts.com Now Changed to
-                  <span class="highlight">www.msnaturalproduct.com</span>
+                  <!-- www.msnaturalproducts.com Now Changed to
+                  <span class="highlight">www.msnaturalproduct.com</span> -->
                </div>
-               <!-- <div class="back-arrow" tabindex="0">&lt;</div> -->
             </div>
          </div>
          <header class="header">

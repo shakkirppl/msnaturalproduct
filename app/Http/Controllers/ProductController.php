@@ -58,7 +58,7 @@ public function store(Request $request)
    $validator = Validator::make($request->all(), [
        'product_name' => 'required|string|max:255',
        'product_name_ar' => 'required|string|max:255',
-       'single_image' => 'required|image|mimes:jpeg,png,jpg,gif,webp,jfif,svg|max:2048',
+       'single_image' => 'required|image|mimes:jpeg,png,jpg,gif,webp,jfif,svg|max:500',
     
    ]);
 
@@ -107,7 +107,7 @@ public function store(Request $request)
        'size_ar' => $request->size_ar,
        'base_unit' => 'Yes',
    ]);
-   if (!is_null($request->size) && trim($request->size) !== '') {
+
    foreach($countries as $country)
     {
     $productSizeCountry=new ProductSizeCountry;
@@ -116,7 +116,7 @@ public function store(Request $request)
     $productSizeCountry->is_active=1;
     $productSizeCountry->save();
     }
-}
+
    ProductImages::create([
        'product_id' => $product->id,
        'image_path' => $singleImageName,
@@ -170,6 +170,16 @@ public function addon($id)
   }
 }
 
+public function unitImage($id)
+{
+    try {
+
+    $products=ProductSizes::find($id);
+    return view('products.unit-image-update', compact('products'));
+} catch (\Exception $e) {
+    return $e->getMessage();
+  }
+}
 public function mainImage($id)
 {
     try {
@@ -179,6 +189,41 @@ public function mainImage($id)
 } catch (\Exception $e) {
     return $e->getMessage();
   }
+}
+
+public function products_unit_image_store(Request $request)
+{
+    // Validate request
+    $validator = Validator::make($request->all(), [
+        'product_id' => 'required|exists:products,id',
+       'single_image' => 'required|image|mimes:jpeg,png,jpg,svg|max:250',
+    ]);
+
+    if ($validator->fails()) {
+        return redirect()->back()->withErrors($validator)->withInput();
+    }
+
+    // Initialize image name variable
+    $singleImageName = null;
+
+    DB::transaction(function () use ($request, &$product) {
+        // Check if a file was uploaded
+        if ($request->hasFile('single_image')) {
+            $file = $request->file('single_image');
+            $path = 'uploads/products'; // Define the upload path
+            $singleImageName = $this->file($file, $path, 150, 150); // Assuming file() method processes the image
+        }
+
+        // Retrieve product and update image
+        $product = ProductSizes::find($request->product_id);
+        if ($product) {
+            $product->image = $singleImageName; // Update product image
+            $product->save(); // Save changes
+        }
+    });
+
+    // Redirect back with success message
+    return redirect()->route('products.show', $product->product_id)->with('success', 'Product image updated successfully');
 }
 public function detailImage($id)
 {
@@ -196,7 +241,7 @@ public function products_main_image_store(Request $request)
     // Validate request
     $validator = Validator::make($request->all(), [
         'product_id' => 'required|exists:products,id',
-        'single_image' => 'required|image', // Ensure the uploaded file is an image
+       'single_image' => 'required|image|mimes:jpeg,png,jpg,svg|max:500',
     ]);
 
     if ($validator->fails()) {
@@ -230,7 +275,7 @@ public function products_detail_image_store(Request $request)
     // Validate request
     $validator = Validator::make($request->all(), [
         'product_image_id' => 'required|exists:product_images,id',
-        'single_image' => 'required|image', // Ensure the uploaded file is an image
+        'single_image' => 'required|image|mimes:jpeg,png,jpg,svg|max:500',
     ]);
 
     if ($validator->fails()) {

@@ -108,7 +108,7 @@
                                              data-store-id="{{ $storeId }}">
                                              <div class="option-column">
                                                 <div class="option-card">
-                                                   <img loading="lazy" src="{{URL::to('/')}}/front-end/images/product-detail/Rectangle 110.png" class="option-image"
+                                                   <img loading="lazy" src="{{ url('uploads/products/' . $unit['unitImage']) }}" class="option-image"
                                                       alt="250ml bottle" />
                                                    <div class="option-text">{{$unit['size']}}</div>
                                                    <div class="option-price-original">{{$unit['currency']}}{{$unit['original_price']}}</div>

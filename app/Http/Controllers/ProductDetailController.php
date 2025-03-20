@@ -40,7 +40,7 @@ class ProductDetailController extends Controller
 
             
             // Get the product details, ensuring the product is available in the selected store
-            $product = Product::WithLanguageDescrption()->Availability($storeId)->where('product_slug', $id)->first();
+             $product = Product::WithLanguageDescrption()->Availability($storeId)->where('product_slug', $id)->first();
 
             if (!$product) {
                 return redirect()->back()->with('error', 'Product not found');
@@ -50,30 +50,35 @@ class ProductDetailController extends Controller
             // $unitsdetail = ProductSizes::where('product_id', $product->id)
             //     ->select('id', 'size')->orderBy('id','ASC')
             //     ->get();
-            $unitsdetail = ProductSizes::where('product_id', $product->id)
+              $unitsdetail = ProductSizes::where('product_id', $product->id)
             ->whereHas('countries', function ($query) use ($storeId) {
                 $query->where('countries.id', $storeId)
                       ->whereRaw("product_size_countries.is_active = 1");
             })
-            ->select('id', 'size')
+            ->select('id', 'size','image')
             ->orderBy('id', 'ASC')
             ->get();
                 foreach($unitsdetail as $unit){
-                    $productPrice = ProductPrices::where('product_size_id', $unit->id)
+                     $productPrice = ProductPrices::where('product_size_id', $unit->id)
                     ->where('store_id', $storeId)
                     ->first();
+                    if($productPrice){
+                    
                     $units[]=[
                         'id'=>$unit->id,
                         'size'=>$unit->size,
-                        'original_price'=>$productPrice->original_price,
-                        'offer_price'=>$productPrice->offer_price,
-                        'product_prices_id'=>$productPrice->id,
-                        'currency'=>$productPrice->currency
+                        'unitImage'=>$unit->image,
+                        'original_price'=>$productPrice->original_price ?? 0,
+                        'offer_price'=>$productPrice->offer_price ?? 0,
+                        'product_prices_id'=>$productPrice->id ?? 0,
+                        'currency'=>$productPrice->currency ?? 'INR'
                     ];
+              
                 }
+            }
       
             // Get base unit for the product size
-            $product_size_id = ProductSizes::where('product_id', $product->id)
+              $product_size_id = ProductSizes::where('product_id', $product->id)
                 ->where('base_unit', 'Yes')
                 ->value('id');
             

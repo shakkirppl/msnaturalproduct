@@ -167,6 +167,8 @@ Route::middleware('auth')->group(function () {
     Route::post('products-image.store', [ProductController::class, 'updateImages'])->name('products-image.store');
     Route::post('products-main-image.store', [ProductController::class, 'products_main_image_store'])->name('products-main-image.store');
     Route::post('products-detail-image.store', [ProductController::class, 'products_detail_image_store'])->name('products-detail-image.store');
+    Route::post('products-unit-image.store', [ProductController::class, 'products_unit_image_store'])->name('products-unit-image.store');
+    
     Route::get('delete.image/{id}', [ProductController::class, 'deleteImage'])->name('delete.image');
    
     Route::get('products.addon/{id}', [ProductController::class, 'addon']);
@@ -177,7 +179,8 @@ Route::middleware('auth')->group(function () {
 
     Route::get('products.main.image.change/{id}', [ProductController::class, 'mainImage']);
     Route::get('products.detail.image.change/{id}', [ProductController::class, 'detailImage']);
-
+    Route::get('products-unit.image.change/{id}', [ProductController::class, 'unitImage']);
+    
 
     
     Route::get('bom/create', [BOMController::class,'create'])->name('bom/create');

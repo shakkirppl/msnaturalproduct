@@ -34,14 +34,17 @@
         <thead>
             <tr>
                 <th>Size</th>
-                <!-- <th>Actions</th> -->
+                <th>Image</th>
+                <th>Add/Change Image</th>
             </tr>
         </thead>
         <tbody>
             @foreach($productSku as $product)
             <tr>
             <td>{{ $product->size}}</td>
-         
+            <td>
+            <img loading="lazy" src="{{ url('uploads/products/' . $product->image) }}" class="product-image"  /></td>
+            <td> <a href="{{ url('products-unit.image.change', $product->id) }}" class="btn btn-primary btn-sm">Change Image</a></td>
         <!-- <td>
                 <form action="{{ route('product-sku.destroy', $product->id) }}" method="post">
                
