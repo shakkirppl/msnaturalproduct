@@ -76,6 +76,7 @@ Route::post('/sign-out', [AuthController::class, 'signOut'])->name('sign-out');
 
 Route::middleware(['setCountryStore'])->group(function () {
     Route::get('/', [HomeController::class, 'index']);
+    Route::get('/combo', [HomeController::class, 'combo']);
 Route::get('/get-product-price', [HomeController::class, 'getProductPrice']);
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
 Route::get('/guest-checkout', [CheckoutController::class, 'guest_checkout'])->name('guest-checkout');

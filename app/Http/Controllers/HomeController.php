@@ -121,6 +121,59 @@ class HomeController extends Controller
     return $e->getMessage();
   }     
 }
+public function combo(Request $request)
+{ 
+    try {
+
+    
+        //  Cart::clear();
+   
+//  return Session::has('activecountry');
+        if (Session::has('activecountry')) {
+               $countryCod = Session::get('activecountry');
+          } else {
+              $position = Location::get();
+              $countryCod = $position->countryCode ?? 'IN'; // Default to 'IN'
+              Session::put('activecountry', $countryCod);
+          }
+         
+        //   $ip = request()->ip(); // Get client IP
+        //   $response = Http::get("https://api.ipgeolocation.io/ipgeo?apiKey=ea8f35c12b044f46986291b87aa347a6&ip={$ip}");
+        //   $data = $response->json();
+          
+        //    $countryCode = $data['country_code2']; // Example: 'IN'
+        //   $countryName = $data['country_name']; // Example: 'India'
+          
+          $position=Location::get(); 
+          Visitors::create_visitors($position);
+          $language = app()->getLocale() == 'ar' ? 'ar' : 'en';
+          $store = Stores::where('countryCode', $countryCod)->first();
+          $storeId = $store->id ?? 1;
+          $currency = $store->currency ?? 'INR';
+
+       
+        // return  $products = Product::WithLanguageName()->with(['baseprices'])->where('package_type','Single')->get();
+
+        
+
+        $productsCombo = Product::WithLanguageName()->with(['baseprices' => function ($query) use ($storeId) {
+            $query->where('product_prices.store_id', $storeId);
+        }])->where('package_type','Combo')
+        ->whereHas('countries', function ($query) use ($storeId) {
+            $query->where('countries_id', $storeId)->where('is_active', 1);
+        })
+        ->orderby('products.sort_order','ASC')
+        ->get();
+      
+        $countries=Countries::get();
+        $cartItems = Cart::getContent();
+      return view('front-end.combo-index',compact('storeId','currency','countries','language','cartItems','productsCombo'));
+     
+} catch (\Exception $e) {
+    return $e->getMessage();
+  }     
+}
+
 public function getStates($countryId)
 {
     try {
