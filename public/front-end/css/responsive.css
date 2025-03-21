@@ -161,8 +161,10 @@
         margin: 30px auto;
     }
 
-    .buy-now-button button {
-        font-size: 10px;
+   .buy-now-button button {
+       font-size: 10px;
+        margin-bottom: 6px;
+        padding: 4px 10px;
     }
 
     /* popup-cart */
@@ -301,8 +303,10 @@
         margin: 30px auto;
     }
 
-    .buy-now-button-combo button {
-        font-size: 10px;
+  .buy-now-button-combo button {
+         font-size: 10px;
+        margin-bottom: 6px;
+        padding: 4px 10px;
     }
 
     .discounted-price-combo {
@@ -814,7 +818,9 @@
     }
 
     .buy-now-button button {
-        font-size: 10px;
+       font-size: 10px;
+        margin-bottom: 6px;
+        padding: 4px 10px;
     }
 
     /* popup-cart */
@@ -954,7 +960,9 @@
     }
 
     .buy-now-button-combo button {
-        font-size: 10px;
+         font-size: 10px;
+        margin-bottom: 6px;
+        padding: 4px 10px;
     }
 
     .discounted-price-combo {
@@ -3404,6 +3412,18 @@
     .sticky-header .nav-menu .language-selector .sticky-nav .sticky-lang-btn .lang-btn {
         padding: 8px 14px;
         font: 400 14px 'Myriad Pro', sans-serif;
+    }
+    .buy-now-button-combo button {
+         font-size: 12px;
+       
+        padding: 8px 14px;
+    }
+
+
+.buy-now-button button {
+     font-size: 12px;
+       
+        padding: 8px 14px;
     }
 }
 
