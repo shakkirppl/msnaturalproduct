@@ -29,14 +29,14 @@
             <div class="swiper-wrapper">
                <div class="swiper-slide">
                   <div class="swiper-slide">
-                     <img src="{{URL::to('/')}}/uploads/banner/banner-hair.png" class="hero-image w-100 desktop-view" alt="">
-                     <img src="{{URL::to('/')}}/front-end/images/banner/mobile-banner.png" class="hero-image w-100 mobile-view" alt="">
+                     <img src="{{URL::to('/')}}/uploads/banner/banner-hair.jpeg" class="hero-image w-100 desktop-view" alt="">
+                     <img src="{{URL::to('/')}}/uploads/banner/mobile-banner.jpeg" class="hero-image w-100 mobile-view" alt="">
                   </div>
                </div>
                <div class="swiper-slide">
                   <div class="swiper-slide">
-                     <img src="{{URL::to('/')}}/uploads/banner/banner-skin.png" class="hero-image w-100  desktop-view" alt="">
-                     <img src="{{URL::to('/')}}/front-end/images/banner/mobile-banner2.png" class="hero-image w-100 mobile-view" alt="">
+                     <img src="{{URL::to('/')}}/uploads/banner/banner-skin.jpeg" class="hero-image w-100  desktop-view" alt="">
+                     <img src="{{URL::to('/')}}/uploads/banner/mobile-banner2.jpeg" class="hero-image w-100 mobile-view" alt="">
                   </div>
                </div>
              

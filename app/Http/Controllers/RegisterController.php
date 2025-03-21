@@ -159,12 +159,16 @@ class RegisterController extends Controller
 
     $validator = Validator::make($request->all(), [
         'name' => ['required', 'string', 'max:255'],
-        'email' => ['required_without:phone', 'nullable', 'email', 'max:255', Rule::unique('users', 'email')],
+        'email' => [
+            'required',  // Now mandatory
+            'email',
+            'max:255',
+            Rule::unique('users', 'email'),
+        ],
         'phone' => [
-            'required_without:email', 
-            'nullable', 
+            'required',  // Now mandatory
             'regex:/^\+?(?:[0-9] ?){6,15}[0-9]$/',  // Accepts international numbers
-            Rule::unique('users', 'phone')
+            Rule::unique('users', 'phone'),
         ],
         'password' => ['required', 'confirmed', 'min:6'],
     ]);
