@@ -13,6 +13,7 @@
     'Shopping_Cart'=>'عرية التسوق',
     'Return_Policy'=>'بوليصة الإعادة',
     'About_Us'=>'تعريف عنا',
+    'Combo'=>'كومبو',
     'Country'=>'الدولة',
     'View_All'=>'معاينة جميعا',
     'ms_natural_products'=>'منتجات أم أس الطبيع',

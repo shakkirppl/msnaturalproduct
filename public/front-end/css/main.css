@@ -2019,3 +2019,12 @@ ul.follow-us li a{
 h1.gallery-head{
   margin-top:40px;
 }
+.purchase-with-combo{
+  background-color: #E5A021 !important;
+  color: white !important;
+  border:1px solid #E5A021 !important;
+        }
+.purchase-with-combo:hover{
+   background-color: #fff !important;
+   color:  #E5A021 !important;
+        }

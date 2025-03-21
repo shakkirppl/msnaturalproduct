@@ -96,14 +96,13 @@
                                </a>
                                  <div class="buy-now-button">
                                  <button data-product-size-id="{{$product->id}}" data-store-id="{{$storeId}}" class="add-to-cart">Add To Cart </button>
+                                 @if($product->combo_size_slug!=null)
+                                 <a href="{{ route('product.view', $product->combo_size_slug) }}"><button class="purchase-with-combo ">{{$product->link_name}} </button>
+                                 </a>
+                                 @endif
                                  </div>
                                 
-                                 <!-- @if($product->combo_size_slug!=null)
-                                 <a href="{{ route('product.view', $product->combo_size_slug) }}">
-                                 <button  class="add-to-cart">{{$product->link_name}} </button>
-                                
-                                 </a>
-                                 @endif -->
+                              
                                  <div class="popup-cart" id="popup-cart" style="display: none;">
                                     <div class="popup-content-cart">
                                        <p id="popup-message">Item added to cart!</p>
@@ -128,7 +127,7 @@
       <!-- product section close -->
       <!-- combo pack start -->
       <section>
-         <div class="product-main-div">
+         <div class="product-main-div" id="combo">
             <div class="row">
                <div class="col-md-12">
                   <div class="ms-product-head" data-aos="fade-down" data-aos-anchor-placement="top-bottom"
