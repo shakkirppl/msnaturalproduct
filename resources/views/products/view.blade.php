@@ -44,7 +44,8 @@
             <td>{{ $product->size}}</td>
             <td>
             <img loading="lazy" src="{{ url('uploads/products/' . $product->image) }}" class="product-image"  /></td>
-            <td> <a href="{{ url('products-unit.image.change', $product->id) }}" class="btn btn-primary btn-sm">Change Image</a></td>
+            <td> <a href="{{ url('products-unit.image.change', $product->id) }}" class="btn btn-primary btn-sm">Change Image</a>
+            <a href="{{ url('products-unit.shipping.charge', $product->id) }}" class="btn btn-primary btn-sm">India Shipping Charge</a></td>
         <!-- <td>
                 <form action="{{ route('product-sku.destroy', $product->id) }}" method="post">
                

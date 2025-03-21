@@ -168,6 +168,8 @@ Route::middleware('auth')->group(function () {
     Route::post('products-main-image.store', [ProductController::class, 'products_main_image_store'])->name('products-main-image.store');
     Route::post('products-detail-image.store', [ProductController::class, 'products_detail_image_store'])->name('products-detail-image.store');
     Route::post('products-unit-image.store', [ProductController::class, 'products_unit_image_store'])->name('products-unit-image.store');
+    Route::post('products-shipping-charge-india.store', [ProductController::class, 'products_shipping_charge_india_store'])->name('products-shipping-charge-india.store');
+    
     
     Route::get('delete.image/{id}', [ProductController::class, 'deleteImage'])->name('delete.image');
    
@@ -180,6 +182,7 @@ Route::middleware('auth')->group(function () {
     Route::get('products.main.image.change/{id}', [ProductController::class, 'mainImage']);
     Route::get('products.detail.image.change/{id}', [ProductController::class, 'detailImage']);
     Route::get('products-unit.image.change/{id}', [ProductController::class, 'unitImage']);
+    Route::get('products-unit.shipping.charge/{id}', [ProductController::class, 'shippingCharge']);
     
 
     

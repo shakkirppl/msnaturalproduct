@@ -12,7 +12,7 @@
                              <h4 class="card-title">Products</h4>
                     </div>
                     <div class="col-6 col-md-6 col-sm-6 col-xs-12  heading" style="text-align:end;">
-                    <a href="{{ route('products.create') }}" class="newicon"><i class="mdi mdi-new-box"></i></a>
+                    <a href="{{ route('products.create') }}"  class="newicon large-button"><i class="mdi mdi-new-box"></i></a>
                     </div>
                        
                    

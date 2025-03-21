@@ -12,6 +12,7 @@ use App\Models\ProductSizes;
 use App\Models\ProductImages;
 use App\Models\ProductCountry;
 use App\Models\ProductSizeCountry;
+use App\Models\ShippingCharge;
 use DB;
 use App\Helper\File;
 use Illuminate\Support\Facades\Auth;
@@ -180,6 +181,18 @@ public function unitImage($id)
     return $e->getMessage();
   }
 }
+public function shippingCharge($id)
+{
+    try {
+    $keralaShippingCharge=ShippingCharge::where('state_id',1)->where('product_size_id',$id)->first();
+    $outOfkeralaShippingCharge=ShippingCharge::where('state_id',2)->where('product_size_id',$id)->first();
+    $products=ProductSizes::find($id);
+    return view('products.shipping-charge-update', compact('products','keralaShippingCharge','outOfkeralaShippingCharge'));
+} catch (\Exception $e) {
+    return $e->getMessage();
+  }
+}
+
 public function mainImage($id)
 {
     try {
@@ -191,6 +204,68 @@ public function mainImage($id)
   }
 }
 
+public function products_shipping_charge_india_store(Request $request)
+{
+    // Validate request
+    $validator = Validator::make($request->all(), [
+        'product_id' => 'required|exists:product_sizes,id',
+        'kerala_shipping' => 'required',
+        'out_of_kerala_shipping' => 'required',
+    ]);
+
+    if ($validator->fails()) {
+        return redirect()->back()->withErrors($validator)->withInput();
+    }
+
+    // Initialize image name variable
+
+    DB::transaction(function () use ($request, &$product) {
+        // Check if a file was uploaded
+      
+
+        // Retrieve product and update image
+        $product = ProductSizes::find($request->product_id);
+        if ($product) {
+            $keralaShippingCharge=ShippingCharge::where('state_id',1)->where('product_size_id',$request->product_id)->first();
+            if($keralaShippingCharge)
+            {
+                $keralaShippingCharge->shipping_charge=$request->kerala_shipping;
+                $keralaShippingCharge->save();
+            }
+            else{
+                $keralaShippingCharge= new ShippingCharge;
+                $keralaShippingCharge->store_id=1;
+                $keralaShippingCharge->country_id=1;
+                $keralaShippingCharge->state_id=1;
+                $keralaShippingCharge->product_id=$product->product_id;
+                $keralaShippingCharge->product_size_id=$product->id;
+
+                $keralaShippingCharge->shipping_charge=$request->kerala_shipping;
+                $keralaShippingCharge->save();
+            }
+
+            $outOfkeralaShippingCharge=ShippingCharge::where('state_id',2)->where('product_size_id',$request->product_id)->first();
+            if($outOfkeralaShippingCharge)
+            {
+                $outOfkeralaShippingCharge->shipping_charge=$request->out_of_kerala_shipping;
+                $outOfkeralaShippingCharge->save();
+            }
+            else{
+                $outOfkeralaShippingCharge= new ShippingCharge;
+                $outOfkeralaShippingCharge->store_id=1;
+                $outOfkeralaShippingCharge->country_id=1;
+                $outOfkeralaShippingCharge->state_id=2;
+                $outOfkeralaShippingCharge->product_id=$product->product_id;
+                $outOfkeralaShippingCharge->product_size_id=$product->id;
+                $outOfkeralaShippingCharge->shipping_charge=$request->out_of_kerala_shipping;
+                $outOfkeralaShippingCharge->save();
+            }
+        }
+    });
+
+    // Redirect back with success message
+    return redirect()->route('products.show', $product->product_id)->with('success', 'Product image updated successfully');
+}
 public function products_unit_image_store(Request $request)
 {
     // Validate request

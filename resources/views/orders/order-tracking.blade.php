@@ -106,7 +106,7 @@
                         </table>
                     </div>
 
-                    {{ $orders->appends(request()->query())->links() }}
+                    <!-- {{ $orders->appends(request()->query())->links() }} -->
 
                 </div>
             </div>
