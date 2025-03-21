@@ -84,7 +84,21 @@
                                     <th>Phone</th>
                                     <th>Country</th>
                                     <th>Total amount</th>
+                                    
                                     <th>Actions</th>
+                                    <th>State</th>
+                                    <th>landmark</th>
+                                    <th>pincode</th>
+                                    <th>city</th>
+                                    <th>address</th>
+
+                                    <th>billing_first_name</th>
+                                    <th>billing_second_name</th>
+
+                                    <th>billing_address</th>
+                                    <th>billing_phone</th>
+                                    <th>billing_city</th>
+                                    <th>billing_post_code</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -97,9 +111,24 @@
                                         <td>{{ $order->phone_number }}</td>
                                         <td>{{ $order->store->store_name }}</td>
                                         <td>{{ $order->total_amount }}</td>
+                                       
                                         <td>
                                             <a href="{{ route('order_view', $order->id) }}" class="btn btn-warning">View</a>
                                         </td>
+                                        <td >{{ $order->state_code }}</td>
+                                        <td >{{ $order->State}}</td>
+                                            <td >{{ $order->landmark}}</td>
+                                                <td >{{ $order->pincode}}</td>
+                                                    <td >{{ $order->city}}</td>
+                                                        <td >{{ $order->address}}</td>
+
+                                                            <td >{{ $order->billing_first_name}}</td>
+                                                                <td >{{ $order->billing_second_name}}</td>
+
+                                                                    <td >{{ $order->billing_address}}</td>
+                                                                        <td >{{ $order->billing_phone}}</td>
+                                                                            <td >{{ $order->billing_city}}</td>
+                                                                                <td >{{ $order->billing_post_code}}</td>
                                     </tr>
                                 @endforeach
                             </tbody>
