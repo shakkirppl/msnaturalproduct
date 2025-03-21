@@ -13,11 +13,29 @@ use App\Models\OrderDetails;
 use App\Models\ProductSizes;
 use App\Models\Product;
 use App\Models\ShippmentDetailsInternational;
+use Illuminate\Support\Facades\Mail;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 class AllOrderController extends Controller
 {
     //
+    public function sendmail(Request $request)
+    {
+        try {
+
+            $message = "Hello, <b>this is a test email</b> with HTML content!";
+    
+            Mail::send([], [], function ($email) use ($message) {
+                $email->to('recipient@example.com')
+                      ->subject('HTML Email')
+                      ->setBody($message, 'text/html'); // Set the body as HTML
+            });
+        
+            return "Email Sent Successfully!";
+    } catch (\Exception $e) {
+        return $e->getMessage();
+      }
+    }
     public function show_pending_orders(Request $request)
     {
         try {

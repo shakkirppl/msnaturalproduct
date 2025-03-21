@@ -149,7 +149,7 @@
 'Add_Address'=>'إضافة العنوان', //
 'Your_shopping_cart_is_waiting'=>'عربة تسوقك في انتظار',
 'Thank_You_For_Your_Purchase'=>'شكرا لك لتسوقك',
-'We_have_Received'=>'استلمنا طلبك و نرسل شحنك خلال 5 إلى 7 أيام العمل',
+'We_have_Received'=>'استلمنا طلبك و نرسل شحنك خلال 3 إلى 7 أيام العمل',
 'Your_Order_Number_Is'=>'رقم طلبك ',
 'View_Order'=>'معاينة الطلب',
 'Made_to_solve'=>'بدأ إجراء الحل',

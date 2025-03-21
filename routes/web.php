@@ -312,6 +312,9 @@ Route::get('reports/least-moving', [ReportController::class, 'leastMovingItems']
 Route::get('reports/sales/{id}', [ReportController::class, 'viewSalesDetail'])->name('reports.sales.detail');
 Route::get('/order/invoice/{id}', [OrderController::class, 'printInvoice'])->name('order.invoice');
 Route::get('/order-dashboard', [OrderDashboardController::class, 'index'])->name('order.dashboard');
+
+Route::get('/send-mail', [AllOrderController::class, 'sendmail']);
+
 }); 
 
 require __DIR__.'/auth.php';

@@ -156,7 +156,7 @@ Dry skin , Dehydrated skin, Premature aging',
 'Add_Address'=>'Add Address', //
 'Your_shopping_cart_is_waiting'=>'Your Shopping Cart is Waiting',
 'Thank_You_For_Your_Purchase'=>'Thank You For Your Purchase',
-'We_have_Received'=>'We have Received Your Order Will Ship In 5-7 Business Days',
+'We_have_Received'=>'We have Received Your Order Will Ship In 3-7 Business Days',
 'Your_Order_Number_Is'=>'Your Order Number is',
 'View_Order'=>'View Order',
 'Made_to_solve'=>'Made to Solve',
