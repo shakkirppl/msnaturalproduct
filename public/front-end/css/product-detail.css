@@ -527,6 +527,15 @@
   padding: 10px 80px;
   border: none;
 }
+.combo-desgin {
+  border-radius: 40px;
+  background-color: #527E3E;
+  color: #fff;
+  flex-grow: 1;
+  width: fit-content;
+  padding: 10px 80px;
+  border: none;
+}
 .add-to-cart:hover{
   color: #527E3E;
   border: 1px solid #527E3E;

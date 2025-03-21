@@ -51,6 +51,7 @@
                     <th>Country</th>
                     <th>Original Price</th>
                     <th>Offer Price</th>
+                    <th>Shipping Charge</th>
                     <th>Currency</th>
                     <th>In Stock</th>
                 </tr>
@@ -72,6 +73,10 @@
                         <td>
                         <input type="number" class="form-control" step="any" name="prices[{{ $country->id }}][offer_price]" 
                         value="{{ old("prices.{$country->id}.offer_price", $priceData->offer_price ?? 0) }}" required>
+                        </td>
+                        <td>
+                        <input type="number" class="form-control" step="any" name="prices[{{ $country->id }}][shipping_charge]" 
+                        value="{{ old("prices.{$country->id}.shipping_charge", $priceData->shipping_charge ?? 0) }}" required>
                         </td>
                         <td>
                         <input type="text" class="form-control"  name="prices[{{ $country->id }}][currency]" 

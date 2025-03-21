@@ -9,7 +9,7 @@ class ProductPrices extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'product_id', 'product_size_id', 'country_id', 'store_id','original_price','offer_price','currency','is_available','in_stock','availability_date'
+        'product_id', 'product_size_id', 'country_id', 'store_id','original_price','offer_price','currency','shipping_charge','is_available','in_stock','availability_date'
     ];
     protected static function booted()
     {

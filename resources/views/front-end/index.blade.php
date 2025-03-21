@@ -63,6 +63,7 @@
                <div class="col-md-6">
                   <div class="product-container">
                      <div class="product-card">
+                       
                         <div class="product-layout">
                            <div class="product-image-column">
                               <a href="{{ route('product.view', $product->product_slug) }}">
@@ -77,6 +78,7 @@
                                        alt="Rating Star Icon" />
                                     <div class="rating-text">4.7 (39 Reviews)</div>
                                     </div> -->
+                               <a href="{{ route('product.view', $product->product_slug) }}">
                                  <h1 class="product-title">{{$product->name}}</h1>
                                  <h2 class="product-subtitle">
                                     {{$product->short_description}}
@@ -91,9 +93,17 @@
                                     </div>
                                     @endforeach
                                  </div>
+                               </a>
                                  <div class="buy-now-button">
                                  <button data-product-size-id="{{$product->id}}" data-store-id="{{$storeId}}" class="add-to-cart">Add To Cart </button>
                                  </div>
+                                
+                                 <!-- @if($product->combo_size_slug!=null)
+                                 <a href="{{ route('product.view', $product->combo_size_slug) }}">
+                                 <button  class="add-to-cart">{{$product->link_name}} </button>
+                                
+                                 </a>
+                                 @endif -->
                                  <div class="popup-cart" id="popup-cart" style="display: none;">
                                     <div class="popup-content-cart">
                                        <p id="popup-message">Item added to cart!</p>
@@ -101,7 +111,9 @@
                                     </div>
                                  </div>
                               </div>
+                              
                            </div>
+                           
                         </div>
                      </div>
                   </div>

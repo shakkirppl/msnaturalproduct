@@ -22,9 +22,9 @@ class Product extends Model
         
         $language = app()->getLocale() == 'ar' ? 'ar' : 'en';
         if ($language === 'ar') {
-            return $query->select(['id', 'product_name_ar as name','product_slug','image','short_description_ar as short_description']);
+            return $query->select(['id', 'product_name_ar as name','product_slug','combo_size_slug','link_name','image','short_description_ar as short_description']);
         } else {
-            return $query->select(['id', 'product_name as name','product_slug','image','short_description as short_description']);
+            return $query->select(['id', 'product_name as name','product_slug','combo_size_slug','image','link_name','short_description as short_description']);
         }
     }
     public function scopeWithPrice($query)
@@ -36,9 +36,9 @@ class Product extends Model
     {
         $language = app()->getLocale() == 'ar' ? 'ar' : 'en';
         if ($language === 'ar') {
-            return $query->select(['id','product_name_ar as name','product_slug','image', 'description_ar as description','short_description as short_description']);
+            return $query->select(['id','product_name_ar as name','product_slug','combo_size_slug','image', 'description_ar as description','short_description as short_description']);
         } else {
-            return $query->select(['id','product_name as name','product_slug','image', 'description as description','short_description_ar as short_description']);
+            return $query->select(['id','product_name as name','product_slug','combo_size_slug','image', 'description as description','short_description_ar as short_description']);
         }
     }
     public function scopeAvailability($query, $store)

@@ -96,6 +96,7 @@ class HomeController extends Controller
         ->whereHas('countries', function ($query) use ($storeId) {
             $query->where('countries_id', $storeId)->where('is_active', 1);
         })
+        ->orderby('products.sort_order','ASC')
         ->get();
 
         $productsCombo = Product::WithLanguageName()->with(['baseprices' => function ($query) use ($storeId) {

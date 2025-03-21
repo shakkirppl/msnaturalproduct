@@ -80,6 +80,7 @@ public function save_price(Request $request)
                             'offer_price' => $priceData['offer_price'],
                             'currency' => $priceData['currency'],
                             'in_stock' => $priceData['in_stock'],
+                            'shipping_charge' => $priceData['shipping_charge'],
                         ]
                     );
                 }
