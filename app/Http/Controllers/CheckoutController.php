@@ -16,7 +16,7 @@ use App\Models\Customer;
 use App\Models\CustomerAddress;
 use Illuminate\Support\Facades\Auth;
 use DB;
-
+use Illuminate\Support\Facades\Http;
 use App\Models\Countries;
 class CheckoutController extends Controller
 {
@@ -31,8 +31,11 @@ class CheckoutController extends Controller
       if (session('activecountry')) {
           $countryCode = session('activecountry');
     } else {
-        $position = Location::get();
-        $countryCode = $position->countryCode ?? 'IN'; 
+        $ip = request()->ip(); // Get client IP
+            $response = Http::get("https://api.ipgeolocation.io/ipgeo?apiKey=b26ee61aa3ee4de5ab87ae1e4c83bee9&ip={$ip}");
+            $data = $response->json();
+            
+            $countryCode = $data['country_code2'] ?? 'IN'; // Example: 'IN'
         $request->session()->put('activecountry', $countryCode);
     }
 
@@ -117,8 +120,11 @@ class CheckoutController extends Controller
       if (session('activecountry')) {
           $countryCode = session('activecountry');
     } else {
-        $position = Location::get();
-        $countryCode = $position->countryCode ?? 'IN'; 
+        $ip = request()->ip(); // Get client IP
+            $response = Http::get("https://api.ipgeolocation.io/ipgeo?apiKey=b26ee61aa3ee4de5ab87ae1e4c83bee9&ip={$ip}");
+            $data = $response->json();
+            
+            $countryCode = $data['country_code2'] ?? 'IN'; // Example: 'IN'
         $request->session()->put('activecountry', $countryCode);
         Cart::clear();
     }
@@ -594,8 +600,11 @@ return redirect('order-confirmation/'.$order->id)->with('success', 'Address save
       if (session('activecountry')) {
           $countryCode = session('activecountry');
     } else {
-        $position = Location::get();
-        $countryCode = $position->countryCode ?? 'IN'; 
+        $ip = request()->ip(); // Get client IP
+        $response = Http::get("https://api.ipgeolocation.io/ipgeo?apiKey=b26ee61aa3ee4de5ab87ae1e4c83bee9&ip={$ip}");
+        $data = $response->json();
+        
+        $countryCode = $data['country_code2'] ?? 'IN'; // Example: 'IN'
         $request->session()->put('activecountry', $countryCode);
     }
 

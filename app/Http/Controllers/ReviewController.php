@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Stevebauman\Location\Facades\Location;
 use App\Models\Stores;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Http;
 class ReviewController extends Controller
 {
     //
@@ -23,8 +24,12 @@ class ReviewController extends Controller
             if (session('activecountry')) {
                 $countryCode = session('activecountry');
           } else {
-              $position = Location::get();
-              $countryCode = $position->countryCode ?? 'IN'; 
+            $ip = request()->ip(); // Get client IP
+            $response = Http::get("https://api.ipgeolocation.io/ipgeo?apiKey=b26ee61aa3ee4de5ab87ae1e4c83bee9&ip={$ip}");
+            $data = $response->json();
+            
+            $countryCode = $data['country_code2'] ?? 'IN'; // Example: 'IN'
+
           }
       
           $store = Stores::where('countryCode', $countryCode)->first();

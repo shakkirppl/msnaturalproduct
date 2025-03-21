@@ -39,9 +39,12 @@ class AllOrderController extends Controller
     public function show_pending_orders(Request $request)
     {
         try {
-
+        $id=Auth::user()->id;
         $store=Auth::user()->store_id;
-        $orders = Order::with('orderdetails', 'store')->where('delivery_status', 'Pending')->where('store_id', $store)
+        $orders = Order::with('orderdetails', 'store')->where('delivery_status', 'Pending')
+        ->when($id != 5, function ($query) use ($store) {
+            return $query->where('store_id', $store);
+        })
         ->orderBy('id', 'desc') 
         ->get();
         
@@ -54,10 +57,13 @@ class AllOrderController extends Controller
     public function show_accepted_orders(Request $request)
     {
         try {
-
+            $id=Auth::user()->id;
         $store=Auth::user()->store_id;
         $orders = Order::with('orderdetails', 'store')
-        ->where('delivery_status', 'Accepted')->where('store_id', $store)
+        ->where('delivery_status', 'Accepted')
+        ->when($id != 5, function ($query) use ($store) {
+            return $query->where('store_id', $store);
+        })
         ->orderBy('id', 'desc') 
         ->get();
         return view('orders.index',compact('orders'));
@@ -68,10 +74,13 @@ class AllOrderController extends Controller
     public function show_packed_orders(Request $request)
     {
         try {
-
+            $id=Auth::user()->id;
         $store=Auth::user()->store_id;
         $orders = Order::with('orderdetails', 'store')
-        ->where('delivery_status', 'Packed')->where('store_id', $store)
+        ->where('delivery_status', 'Packed')
+        ->when($id != 5, function ($query) use ($store) {
+            return $query->where('store_id', $store);
+        })
         ->orderBy('id', 'desc') 
         ->get();
         return view('orders.index',compact('orders'));
@@ -83,10 +92,13 @@ class AllOrderController extends Controller
     public function show_delivered_orders(Request $request)
     {
         try {
-
+            $id=Auth::user()->id;
         $store=Auth::user()->store_id;
         $orders = Order::with('orderdetails', 'store')
-        ->where('delivery_status', 'Delivered')->where('store_id', $store)
+        ->where('delivery_status', 'Delivered')
+        ->when($id != 5, function ($query) use ($store) {
+            return $query->where('store_id', $store);
+        })
         ->orderBy('id', 'desc') 
         ->get();
         return view('orders.index',compact('orders'));
@@ -100,7 +112,10 @@ class AllOrderController extends Controller
 
         $store=Auth::user()->store_id;
         $orders = Order::with('orderdetails', 'store')
-        ->where('delivery_status', 'Cancel')->where('store_id', $store)
+        ->where('delivery_status', 'Cancel')
+        ->when($id != 5, function ($query) use ($store) {
+            return $query->where('store_id', $store);
+        })
         ->orderBy('id', 'desc') 
 
         ->get();

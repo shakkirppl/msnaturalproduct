@@ -15,6 +15,7 @@ use App\Models\StatesModel;
 use App\Models\Testimonial;
 use App\Models\Visitors;
 use Darryldecode\Cart\Facades\CartFacade as Cart;
+use Illuminate\Support\Facades\Http;
 class HomeController extends Controller
 {
     //
@@ -61,15 +62,23 @@ class HomeController extends Controller
 { 
     try {
 
-    
+        // $ip = request()->ip(); // Get client IP
+        // $response = Http::get("https://api.ipgeolocation.io/ipgeo?apiKey=b26ee61aa3ee4de5ab87ae1e4c83bee9&ip={$ip}");
+        // $data = $response->json();
+        
+        // return $countryCod = $data['country_code2']; // Example: 'IN'
         //  Cart::clear();
    
 //  return Session::has('activecountry');
         if (Session::has('activecountry')) {
                $countryCod = Session::get('activecountry');
           } else {
-              $position = Location::get();
-              $countryCod = $position->countryCode ?? 'IN'; // Default to 'IN'
+            $ip = request()->ip(); // Get client IP
+            $response = Http::get("https://api.ipgeolocation.io/ipgeo?apiKey=b26ee61aa3ee4de5ab87ae1e4c83bee9&ip={$ip}");
+            $data = $response->json();
+            
+            $countryCod = $data['country_code2'] ?? 'IN'; // Example: 'IN'
+          
               Session::put('activecountry', $countryCod);
           }
          
@@ -132,16 +141,17 @@ public function combo(Request $request)
         if (Session::has('activecountry')) {
                $countryCod = Session::get('activecountry');
           } else {
-              $position = Location::get();
-              $countryCod = $position->countryCode ?? 'IN'; // Default to 'IN'
+            //   $position = Location::get();
+            //   $countryCod = $position->countryCode ?? 'IN'; // Default to 'IN'
+            $ip = request()->ip(); // Get client IP
+            $response = Http::get("https://api.ipgeolocation.io/ipgeo?apiKey=b26ee61aa3ee4de5ab87ae1e4c83bee9&ip={$ip}");
+            $data = $response->json();
+            
+             $countryCod = $data['country_code2'] ?? 'IN'; // Example: 'IN'
               Session::put('activecountry', $countryCod);
           }
          
-        //   $ip = request()->ip(); // Get client IP
-        //   $response = Http::get("https://api.ipgeolocation.io/ipgeo?apiKey=ea8f35c12b044f46986291b87aa347a6&ip={$ip}");
-        //   $data = $response->json();
-          
-        //    $countryCode = $data['country_code2']; // Example: 'IN'
+         
         //   $countryName = $data['country_name']; // Example: 'India'
           
           $position=Location::get(); 
@@ -194,8 +204,11 @@ public function about_us(Request $request)
             if (Session::has('activecountry')) {
                 $countryCod = Session::get('activecountry');
             } else {
-                $position = Location::get();
-                $countryCod = $position->countryCode ?? 'IN'; // Default to 'IN'
+                $ip = request()->ip(); // Get client IP
+            $response = Http::get("https://api.ipgeolocation.io/ipgeo?apiKey=b26ee61aa3ee4de5ab87ae1e4c83bee9&ip={$ip}");
+            $data = $response->json();
+            
+            $countryCod = $data['country_code2'] ?? 'IN'; // Example: 'IN'
                 Session::put('activecountry', $countryCod);
             }
     
@@ -217,8 +230,11 @@ public function blog(Request $request)
             if (Session::has('activecountry')) {
                 $countryCod = Session::get('activecountry');
             } else {
-                $position = Location::get();
-                $countryCod = $position->countryCode ?? 'IN'; // Default to 'IN'
+                $ip = request()->ip(); // Get client IP
+            $response = Http::get("https://api.ipgeolocation.io/ipgeo?apiKey=b26ee61aa3ee4de5ab87ae1e4c83bee9&ip={$ip}");
+            $data = $response->json();
+            
+            $countryCod = $data['country_code2'] ?? 'IN'; // Example: 'IN'
                 Session::put('activecountry', $countryCod);
             }
     

@@ -22,6 +22,7 @@ use Illuminate\Validation\Rule;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 use Darryldecode\Cart\Facades\CartFacade as Cart;
+use Illuminate\Support\Facades\Http;
 use DB;
 class RegisterController extends Controller
 {
@@ -36,8 +37,12 @@ class RegisterController extends Controller
            $countryCode=session('activecountry');
        }
        else{
-           $position = Location::get();
-           $countryCode = $position->countryCode; // For example, 'IN' for India, 'OM' for Oman, etc.
+        $ip = request()->ip(); // Get client IP
+        $response = Http::get("https://api.ipgeolocation.io/ipgeo?apiKey=b26ee61aa3ee4de5ab87ae1e4c83bee9&ip={$ip}");
+        $data = $response->json();
+        
+        $countryCode = $data['country_code2'] ?? 'IN'; // Example: 'IN'
+
            $request->session()->put('activecountry',$countryCode);
        }
        $store = Stores::where('countryCode', $countryCode)->first();
@@ -67,8 +72,11 @@ class RegisterController extends Controller
            $countryCode=session('activecountry');
        }
        else{
-           $position = Location::get();
-           $countryCode = $position->countryCode; // For example, 'IN' for India, 'OM' for Oman, etc.
+        $ip = request()->ip(); // Get client IP
+        $response = Http::get("https://api.ipgeolocation.io/ipgeo?apiKey=b26ee61aa3ee4de5ab87ae1e4c83bee9&ip={$ip}");
+        $data = $response->json();
+        
+        $countryCode = $data['country_code2'] ?? 'IN'; // Example: 'IN'
            $request->session()->put('activecountry',$countryCode);
        }
       
@@ -92,8 +100,13 @@ class RegisterController extends Controller
            $countryCode=session('activecountry');
        }
        else{
-           $position = Location::get();
-           $countryCode = $position->countryCode; // For example, 'IN' for India, 'OM' for Oman, etc.
+        //    $position = Location::get();
+        //    $countryCode = $position->countryCode; // For example, 'IN' for India, 'OM' for Oman, etc.
+        $ip = request()->ip(); // Get client IP
+        $response = Http::get("https://api.ipgeolocation.io/ipgeo?apiKey=b26ee61aa3ee4de5ab87ae1e4c83bee9&ip={$ip}");
+        $data = $response->json();
+        
+        $countryCode = $data['country_code2'] ?? 'IN'; // Example: 'IN'
            $request->session()->put('activecountry',$countryCode);
        }
       
@@ -123,8 +136,11 @@ class RegisterController extends Controller
            $countryCode=session('activecountry');
        }
        else{
-           $position = Location::get();
-           $countryCode = $position->countryCode; // For example, 'IN' for India, 'OM' for Oman, etc.
+        $ip = request()->ip(); // Get client IP
+        $response = Http::get("https://api.ipgeolocation.io/ipgeo?apiKey=b26ee61aa3ee4de5ab87ae1e4c83bee9&ip={$ip}");
+        $data = $response->json();
+        
+        $countryCode = $data['country_code2'] ?? 'IN'; // Example: 'IN'
            $request->session()->put('activecountry',$countryCode);
        }
       
@@ -411,8 +427,11 @@ class RegisterController extends Controller
            $countryCode=session('activecountry');
        }
        else{
-           $position = Location::get();
-           $countryCode = $position->countryCode; // For example, 'IN' for India, 'OM' for Oman, etc.
+        $ip = request()->ip(); // Get client IP
+        $response = Http::get("https://api.ipgeolocation.io/ipgeo?apiKey=b26ee61aa3ee4de5ab87ae1e4c83bee9&ip={$ip}");
+        $data = $response->json();
+        
+        $countryCode = $data['country_code2'] ?? 'IN'; // Example: 'IN'
            $request->session()->put('activecountry',$countryCode);
        }
        $store = Stores::where('countryCode', $countryCode)->first();
@@ -441,8 +460,11 @@ class RegisterController extends Controller
            $countryCode=session('activecountry');
        }
        else{
-           $position = Location::get();
-           $countryCode = $position->countryCode; // For example, 'IN' for India, 'OM' for Oman, etc.
+        $ip = request()->ip(); // Get client IP
+        $response = Http::get("https://api.ipgeolocation.io/ipgeo?apiKey=b26ee61aa3ee4de5ab87ae1e4c83bee9&ip={$ip}");
+        $data = $response->json();
+        
+        $countryCode = $data['country_code2'] ?? 'IN'; // Example: 'IN'
            $request->session()->put('activecountry',$countryCode);
        }
        $store = Stores::where('countryCode', $countryCode)->first();

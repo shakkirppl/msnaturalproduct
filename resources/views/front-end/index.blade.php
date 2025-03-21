@@ -89,11 +89,13 @@
                                        {{$prices->currency}}<span class="price-bold">{{$prices->offer_price}}</span>
                                     </div>
                                     <div class="price-discounted">
-                                       {{$prices->currency}}<span class="price-bold">{{$prices->original_price}}</span>
+                                       <!-- {{$prices->currency}} -->
+                                       <span class="price-bold">{{$prices->original_price}}</span>
                                     </div>
                                     @endforeach
                                  </div>
                                </a>
+                               @if($prices->currency=='INR')
                                  <div class="buy-now-button">
                                  <button data-product-size-id="{{$product->id}}" data-store-id="{{$storeId}}" class="add-to-cart">Add To Cart </button>
                                  @if($product->combo_size_slug!=null)
@@ -101,6 +103,7 @@
                                  </a>
                                  @endif
                                  </div>
+                                 @endif
                                 
                               
                                  <div class="popup-cart" id="popup-cart" style="display: none;">
@@ -159,7 +162,8 @@
                                        {{$prices->currency}}<span class="price-bold-combo">{{$prices->offer_price}}</span>
                                     </div>
                                     <div class="discounted-price-combo">
-                                       {{$prices->currency}}<span class="price-bold-combo">{{$prices->original_price}}</span>
+                                       <!-- {{$prices->currency}} -->
+                                       <span class="price-bold-combo">{{$prices->original_price}}</span>
                                     </div>
                                  </div>
                                  @endforeach

@@ -84,7 +84,8 @@
                                        {{$prices->currency}}<span class="price-bold-combo">{{$prices->offer_price}}</span>
                                     </div>
                                     <div class="discounted-price-combo">
-                                       {{$prices->currency}}<span class="price-bold-combo">{{$prices->original_price}}</span>
+                                       <!-- {{$prices->currency}} -->
+                                       <span class="price-bold-combo">{{$prices->original_price}}</span>
                                     </div>
                                  </div>
                                  @endforeach

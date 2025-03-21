@@ -14,6 +14,7 @@ use Stevebauman\Location\Facades\Location;
 use Illuminate\Support\Facades\App;
 use Darryldecode\Cart\Facades\CartFacade as Cart;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Http;
 class ProductDetailController extends Controller
 {
     //
@@ -27,8 +28,12 @@ class ProductDetailController extends Controller
             if (Session::has('activecountry')) {
                 $countryCod = Session::get('activecountry');
             } else {
-                $position = Location::get();
-                $countryCod = $position->countryCode ?? 'IN'; // Default to 'IN'
+                $ip = request()->ip(); // Get client IP
+                $response = Http::get("https://api.ipgeolocation.io/ipgeo?apiKey=b26ee61aa3ee4de5ab87ae1e4c83bee9&ip={$ip}");
+                $data = $response->json();
+                
+                $countryCod = $data['country_code2'] ?? 'IN'; // Example: 'IN'
+    
                 Session::put('activecountry', $countryCod);
             }
     
@@ -130,8 +135,12 @@ class ProductDetailController extends Controller
             if (session('activecountry')) {
                 $countryCode = session('activecountry');
             } else {
-                $position = Location::get();
-                $countryCode = $position->countryCode ?? 'IN'; // Default to 'IN' if countryCode is null
+                $ip = request()->ip(); // Get client IP
+                $response = Http::get("https://api.ipgeolocation.io/ipgeo?apiKey=b26ee61aa3ee4de5ab87ae1e4c83bee9&ip={$ip}");
+                $data = $response->json();
+                
+                $countryCode = $data['country_code2'] ?? 'IN'; // Example: 'IN'
+    
                 $request->session()->put('activecountry', $countryCode);
             }
             $language = app()->getLocale() == 'ar' ? 'ar' : 'en';
@@ -159,8 +168,11 @@ class ProductDetailController extends Controller
             if (Session::has('activecountry')) {
                 $countryCod = Session::get('activecountry');
             } else {
-                $position = Location::get();
-                $countryCod = $position->countryCode ?? 'IN'; // Default to 'IN'
+                $ip = request()->ip(); // Get client IP
+                $response = Http::get("https://api.ipgeolocation.io/ipgeo?apiKey=b26ee61aa3ee4de5ab87ae1e4c83bee9&ip={$ip}");
+                $data = $response->json();
+                
+                $countryCod = $data['country_code2'] ?? 'IN'; // Example: 'IN'
                 Session::put('activecountry', $countryCod);
             }
     

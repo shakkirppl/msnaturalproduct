@@ -11,6 +11,7 @@ use App\Models\Product;
 use App\Models\Countries;
 use Stevebauman\Location\Facades\Location;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Http;
 class CartController extends Controller
 {
     //
@@ -122,8 +123,11 @@ return response()->json([
             if (Session::has('activecountry')) {
                 $countryCod = Session::get('activecountry');
             } else {
-                $position = Location::get();
-                $countryCod = $position->countryCode ?? 'IN'; // Default to 'IN'
+                $ip = request()->ip(); // Get client IP
+                $response = Http::get("https://api.ipgeolocation.io/ipgeo?apiKey=b26ee61aa3ee4de5ab87ae1e4c83bee9&ip={$ip}");
+                $data = $response->json();
+                
+                $countryCod = $data['country_code2'] ?? 'IN'; // Example: 'IN'
                 Session::put('activecountry', $countryCod);
                 Cart::clear();
             }
