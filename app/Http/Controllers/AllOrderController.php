@@ -150,7 +150,7 @@ class AllOrderController extends Controller
             $q->where('order_details.product_id', $request->product_id);
         });
     }
-        $orders = $query->with('store')->paginate(1000);
+    $orders = $query->with('store')->orderBy('column_name', 'DESC')->paginate(1000);
      // Fetch products for the dropdown
      $products = Product::all();
         return view('orders.order-tracking', compact('orders','products'));

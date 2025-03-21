@@ -74,7 +74,7 @@
     </button>
 </div>
                     <div class="table-responsive mt-3">
-                        <table class="table" id="value-table">
+                        <table class="table" >
                             <thead>
                                 <tr>
                                     <th>Status</th>
