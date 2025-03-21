@@ -69,12 +69,12 @@
                     </form>
                     <!-- End Filter Form -->
                     <div class="d-flex justify-content-end">
-    <button type="button" class="btn btn-primary mb-2" id="myexel" target="_blank" onclick="exportTableToExcel('value-table', 'Order Report')">
+    <button type="button" class="btn btn-primary mb-2" id="myexel" target="_blank" onclick="exportTableToExcel('value-table-old', 'Order Report')">
         <i class="fa fa-file-excel-o"></i> Export
     </button>
 </div>
                     <div class="table-responsive mt-3">
-                        <table class="table" >
+                        <table class="table" id="value-table-old">
                             <thead>
                                 <tr>
                                     <th>Status</th>

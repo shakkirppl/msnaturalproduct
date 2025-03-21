@@ -422,20 +422,20 @@
                         <div class="contact-container">
                            <div class="location-wrapper">
                               <img loading="lazy" src="{{URL::to('/')}}/front-end/images/visitus/v31_196.png" class="icon" alt="Location pin icon" />
-                              <div class="country-name">India</div>
+                              <div class="country-name">Oman</div>
                            </div>
                            <div class="address">
-                              <div> MO6-17, Unimoon Business
-                                 Center,Al Bahar Building,AL Khabeesi
+                              <div> SHS TOWER, OFFICE 41, 
+                              COMPLEX 250, GHALA HIGHT, Muscut,Oman
                               </div>
-                              <div>Dubai,P.O Box No.91929</div>
+                              <!-- <div>Dubai,P.O Box No.91929</div> -->
                            </div>
                            <div class="phone-wrapper">
                               <img loading="lazy" src="{{URL::to('/')}}/front-end/images/visitus/v31_195.png" class="icon" alt="Phone icon" />
                               <div class="phone-number">
                                  <span class="visually-hidden">Phone number:</span>
-                                 <div> +971 555 78 2543</div>
-                                 <div> +971 555 17 5846</div>
+                                 <div> +96894943046,</div>
+                                 <div> +96894943047</div>
                               </div>
                            </div>
                         </div>
@@ -454,18 +454,21 @@
                         <div class="contact-container">
                            <div class="location-wrapper">
                               <img loading="lazy" src="{{URL::to('/')}}/front-end/images/visitus/v31_196.png" class="icon" alt="Location pin icon" />
-                              <div class="country-name">India</div>
+                              <div class="country-name">UAE</div>
                            </div>
                            <div class="address">
-                              <div> MO6-17, Unimoon Business Center,Al Bahar Building, AL Khabeesi</div>
-                              <div>Dubai, P.O Box No.91929</div>
+                              <div> MS Natural Trading LLC</div>
+                              <div>Entrance 3,M Floor,Office no.17,Unimoon Business Centre </div>
+                              <div>Al Bahar Building
+Al Khabeesi,
+Dubai </div>
                            </div>
                            <div class="phone-wrapper">
                               <img loading="lazy" src="{{URL::to('/')}}/front-end/images/visitus/v31_195.png" class="icon" alt="Phone icon" />
                               <div class="phone-number">
                                  <span class="visually-hidden">Phone number:</span>
-                                 <div>+971 555 78 2543</div>
-                                 <div>+971 555 17 5846</div>
+                                 <div>+971555175846</div>
+                                 <div>+971555782543</div>
                               </div>
                            </div>
                         </div>
