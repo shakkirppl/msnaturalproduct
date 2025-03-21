@@ -74,7 +74,7 @@
                      <a href="{{url('product-view/hair-care-oil')}}" class="nav-link">{{ __('main.HAIR') }}</a>
                      <a href="{{url('product-view/skin-care-oil')}}" class="nav-link">{{ __('main.SKIN') }}</a>
                      <a href="{{url('product-view/face-pack-powder')}}" class="nav-link">{{ __('main.FACE') }}</a>
-                     <a href="{{url('product-view/hair-care-oil')}}" class="nav-link ">{{ __('main.NEW_LAUNCH') }}</a>
+                     <a href="{{url('product-view/papaya-kumkumadi-oil')}}" class="nav-link ">{{ __('main.NEW_LAUNCH') }}</a>
                      <a href="#combo" class="nav-link ">{{ __('main.Combo') }}</a>
                      <a href="{{url('about-us')}}" class="nav-link ">{{ __('main.About_Us') }}</a>
                      <a href="{{url('blog')}}" class="nav-link">{{ __('main.BLOG') }}</a>
