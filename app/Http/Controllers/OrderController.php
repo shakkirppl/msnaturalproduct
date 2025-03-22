@@ -11,6 +11,7 @@ use App\Models\ShippmentDetailsUae;
 use App\Models\DeliveryStatus;
 use App\Models\OrderDetails;
 use App\Models\ProductSizes;
+use App\Models\Product;
 use App\Models\ShippmentDetailsInternational;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -377,6 +378,34 @@ class OrderController extends Controller
     
         return view('orders.order-tracking', compact('orders'));
     }
+    public function website_orders_tracking(Request $request)
+    {
+      $store = Auth::user()->store_id;
+    $query = Order::where('store_id', $store); // No need for `query()`
+    
+    // Apply filters if present in the request
+    if ($request->filled('delivery_status')) {
+        $query->where('delivery_status', $request->delivery_status);
+    }
+    if ($request->filled('order_no')) {
+        $query->where('order_no', 'LIKE', '%' . $request->order_no . '%');
+    }
+    if ($request->filled('first_name')) {
+        $query->where('first_name', 'LIKE', '%' . $request->first_name . '%');
+    }
+    if ($request->filled('phone_number')) {
+        $query->where('phone_number', 'LIKE', '%' . $request->phone_number . '%');
+    }
+    if ($request->filled('from_date') && $request->filled('to_date')) {
+        $query->whereBetween('date', [$request->from_date, $request->to_date]);
+    }
+    $products = Product::all();
+    // Fetch orders with store relation and paginate
+    $orders = $query->with('store')->paginate(10);
+
+    return view('orders.website-order-tracking', compact('orders','products'));
+    }
+    
     public function return_items_pending(Request $request)
     {
         try {

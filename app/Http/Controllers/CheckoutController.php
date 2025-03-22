@@ -21,7 +21,7 @@ use App\Models\Countries;
 class CheckoutController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
         try {
 
@@ -37,7 +37,7 @@ class CheckoutController extends Controller
             
             $countryCode = $data['country_code2'] ?? 'IN'; // Example: 'IN'
         $request->session()->put('activecountry', $countryCode);
-    }
+     }
 
     $store = Stores::where('countryCode', $countryCode)->first();
     if (!$store) {

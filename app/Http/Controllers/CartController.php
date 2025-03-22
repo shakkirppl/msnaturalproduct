@@ -129,7 +129,7 @@ return response()->json([
                 
                 $countryCod = $data['country_code2'] ?? 'IN'; // Example: 'IN'
                 Session::put('activecountry', $countryCod);
-                Cart::clear();
+                // Cart::clear();
             }
     
             $language = app()->getLocale() == 'ar' ? 'ar' : 'en';

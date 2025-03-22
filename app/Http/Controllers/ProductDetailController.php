@@ -25,9 +25,9 @@ class ProductDetailController extends Controller
         try {
 
             $countries=Countries::get();
-            if (Session::has('activecountry')) {
-                $countryCod = Session::get('activecountry');
-            } else {
+            // if (Session::has('activecountry')) {
+            //     $countryCod = Session::get('activecountry');
+            // } else {
                 $ip = request()->ip(); // Get client IP
                 $response = Http::get("https://api.ipgeolocation.io/ipgeo?apiKey=b26ee61aa3ee4de5ab87ae1e4c83bee9&ip={$ip}");
                 $data = $response->json();
@@ -35,7 +35,7 @@ class ProductDetailController extends Controller
                 $countryCod = $data['country_code2'] ?? 'IN'; // Example: 'IN'
     
                 Session::put('activecountry', $countryCod);
-            }
+            // }
     
             $language = app()->getLocale() == 'ar' ? 'ar' : 'en';
             $store = Stores::where('countryCode', $countryCod)->first();
@@ -132,9 +132,9 @@ class ProductDetailController extends Controller
 
       
         try {
-            if (session('activecountry')) {
-                $countryCode = session('activecountry');
-            } else {
+            // if (session('activecountry')) {
+            //     $countryCode = session('activecountry');
+            // } else {
                 $ip = request()->ip(); // Get client IP
                 $response = Http::get("https://api.ipgeolocation.io/ipgeo?apiKey=b26ee61aa3ee4de5ab87ae1e4c83bee9&ip={$ip}");
                 $data = $response->json();
@@ -142,7 +142,7 @@ class ProductDetailController extends Controller
                 $countryCode = $data['country_code2'] ?? 'IN'; // Example: 'IN'
     
                 $request->session()->put('activecountry', $countryCode);
-            }
+            // }
             $language = app()->getLocale() == 'ar' ? 'ar' : 'en';
             $countries=Countries::get();
             // Get the store based on the country code, with a fallback if no store is found

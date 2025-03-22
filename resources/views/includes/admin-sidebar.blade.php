@@ -133,7 +133,7 @@
             </a>
             <div class="collapse" id="orders">
               <ul class="nav flex-column sub-menu">
-              <!-- <li class="nav-item"> <a class="nav-link" href="{{URL::to('orders/tracking')}}">Order Tracking</a></li> -->
+              <li class="nav-item"> <a class="nav-link" href="{{URL::to('website/orders/tracking')}}">Order Tracking</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{URL::to('pending-orders')}}">Pending Orders</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{URL::to('accepted-orders')}}">Accepted Orders</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{URL::to('packed-orders')}}">Packed Orders</a></li>

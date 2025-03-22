@@ -239,7 +239,7 @@ Route::get('pending-orders', [OrderController::class, 'show_pending_orders']);
 Route::get('accepted-orders', [OrderController::class, 'show_accepted_orders']);
 Route::get('packed-orders', [OrderController::class, 'show_packed_orders']);
 Route::get('delivered-orders', [OrderController::class, 'show_delivered_orders']);
-// Route::get('orders/tracking', [OrderController::class, 'orders_tracking'])->name('orders.tracking');
+Route::get('website/orders/tracking', [OrderController::class, 'website_orders_tracking'])->name('website.orders.tracking');
 
 // whatsapp orders
 Route::get('whatsapp-pending-orders', [WhatsappOrderController::class, 'show_pending_orders']);
