@@ -223,8 +223,8 @@
             <div class="collapse" id="couriar">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="{{URL::to('courier-template-uae')}}">UAE</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{URL::to('courier-template-oman')}}">Oman</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{URL::to('courier-template-bahrain')}}">Bahrain</a></li>
+                <!-- <li class="nav-item"> <a class="nav-link" href="{{URL::to('courier-template-oman')}}">Oman</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{URL::to('courier-template-bahrain')}}">Bahrain</a></li> -->
                  </ul>
             </div>
      
