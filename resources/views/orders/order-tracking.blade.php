@@ -77,6 +77,7 @@
                         <table class="table" id="value-table-old">
                             <thead>
                                 <tr>
+                                <th><input type="checkbox" id="select-all"></th> <!-- Select All Checkbox -->
                                     <th>Status</th>
                                     <th>Date</th>
                                     <th>OrderID</th>
@@ -106,6 +107,7 @@
                             <tbody>
                                 @foreach ($orders as $order)
                                     <tr>
+                                    <td><input type="checkbox" class="order-checkbox" value="{{ $order->id }}"></td>
                                         <td>{{ $order->delivery_status }}</td>
                                         <td>{{ \Carbon\Carbon::parse($order->date)->format('d-m-Y') }}</td>
                                         <td>{{ $order->order_no }}</td>
@@ -139,7 +141,8 @@
                             </tbody>
                         </table>
                     </div>
-
+<!-- Button to trigger bulk printing -->
+<button id="print-selected" class="btn btn-primary mt-2">Print Selected Invoices</button>
                     <!-- {{ $orders->appends(request()->query())->links() }} -->
 
                 </div>
@@ -215,4 +218,49 @@
 }
 
     </script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Select All functionality
+    document.getElementById("select-all").addEventListener("change", function() {
+        let checkboxes = document.querySelectorAll(".order-checkbox");
+        checkboxes.forEach(checkbox => checkbox.checked = this.checked);
+    });
+
+    // Bulk Print Function
+    document.getElementById("print-selected").addEventListener("click", function() {
+        let selectedOrders = [];
+        document.querySelectorAll(".order-checkbox:checked").forEach(checkbox => {
+            selectedOrders.push(checkbox.value);
+        });
+
+        if (selectedOrders.length === 0) {
+            alert("Please select at least one order.");
+            return;
+        }
+
+        // Function to print invoices one by one
+        function printNext(index) {
+            if (index >= selectedOrders.length) {
+                return; // Stop when all are printed
+            }
+
+            let orderId = selectedOrders[index];
+            let url = "{{ route('order.invoice', ':id') }}".replace(':id', orderId);
+            let printWindow = window.open(url, "_blank");
+
+            // Wait for window to load, then print
+            printWindow.onload = function() {
+                printWindow.print();
+                setTimeout(function() {
+                    printWindow.close();
+                    printNext(index + 1); // Move to next order
+                }, 2000); // Wait before printing the next one
+            };
+        }
+
+        // Start the print process
+        printNext(0);
+    });
+});
+</script>
 @endsection
