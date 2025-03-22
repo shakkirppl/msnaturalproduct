@@ -105,7 +105,7 @@
      
           </li>
                  
-@endif
+
 <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#website_other" aria-expanded="false" aria-controls="charts">
               <i class="icon-bar-graph menu-icon"></i>
@@ -124,7 +124,7 @@
             </div>
      
           </li>
-
+          @endif
 <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#orders" aria-expanded="false" aria-controls="charts">
               <i class="icon-bar-graph menu-icon"></i>
@@ -142,7 +142,7 @@
             </div>
      
           </li>
-
+          @if(Auth::user()->role_id==1)
     <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#socialmedia_orders" aria-expanded="false" aria-controls="charts">
               <i class="icon-bar-graph menu-icon"></i>
@@ -160,6 +160,8 @@
             </div>
      
           </li>
+
+      @endif
 
 
 
@@ -180,7 +182,7 @@
           </li>
 
           @if(Auth::user()->store_id==3)
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#oman_orders" aria-expanded="false" aria-controls="charts">
               <i class="icon-bar-graph menu-icon"></i>
               <span class="menu-title">Oman Orders</span>
@@ -195,7 +197,7 @@
                  </ul>
             </div>
      
-          </li>
+          </li> -->
 
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#baharian_orders" aria-expanded="false" aria-controls="charts">
@@ -232,7 +234,8 @@
 
           
 @endif
-                 <li class="nav-item">
+@if(Auth::user()->role_id==1)
+        <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#transaction" aria-expanded="false" aria-controls="charts">
             <i class="mdi mdi-group menu-icon"></i> 
               <span class="menu-title">WhatsApp Order </span>
@@ -249,6 +252,8 @@
             
      
           </li>
+
+
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#visit_report" aria-expanded="false" aria-controls="charts">
             <i class="icon-bar-graph menu-icon"></i>
@@ -268,6 +273,7 @@
             
      
           </li>
+
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#product_master" aria-expanded="false" aria-controls="charts">
             <i class="icon-bar-graph menu-icon"></i>
@@ -288,7 +294,7 @@
             
      
           </li>
-
+      @endif
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#re_purchase_report" aria-expanded="false" aria-controls="charts">
             <i class="icon-bar-graph menu-icon"></i>

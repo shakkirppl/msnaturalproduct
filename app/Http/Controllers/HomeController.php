@@ -70,25 +70,29 @@ class HomeController extends Controller
         //  Cart::clear();
    
 //  return Session::has('activecountry');
-        if (Session::has('activecountry')) {
-               $countryCod = Session::get('activecountry');
-          } else {
-            $ip = request()->ip(); // Get client IP
-            $response = Http::get("https://api.ipgeolocation.io/ipgeo?apiKey=b26ee61aa3ee4de5ab87ae1e4c83bee9&ip={$ip}");
-            $data = $response->json();
+        // if (Session::has('activecountry')) {
+        //        $countryCod = Session::get('activecountry');
+        //   } else {
+        //     $ip = request()->ip(); // Get client IP
+        //     $response = Http::get("https://api.ipgeolocation.io/ipgeo?apiKey=b26ee61aa3ee4de5ab87ae1e4c83bee9&ip={$ip}");
+        //     $data = $response->json();
             
-            $countryCod = $data['country_code2'] ?? 'IN'; // Example: 'IN'
+        //     $countryCod = $data['country_code2'] ?? 'IN'; // Example: 'IN'
           
-              Session::put('activecountry', $countryCod);
-          }
-         
+        //       Session::put('activecountry', $countryCod);
+        //   }
+          $ip = request()->ip(); // Get client IP
+          $response = Http::get("https://api.ipgeolocation.io/ipgeo?apiKey=b26ee61aa3ee4de5ab87ae1e4c83bee9&ip={$ip}");
+          $data = $response->json();
+          $countryCod = $data['country_code2'] ?? 'IN'; // Example: 'IN'
+          Session::put('activecountry', $countryCod);
         //   $ip = request()->ip(); // Get client IP
         //   $response = Http::get("https://api.ipgeolocation.io/ipgeo?apiKey=ea8f35c12b044f46986291b87aa347a6&ip={$ip}");
         //   $data = $response->json();
           
         //    $countryCode = $data['country_code2']; // Example: 'IN'
         //   $countryName = $data['country_name']; // Example: 'India'
-          
+     
           $position=Location::get(); 
           Visitors::create_visitors($position);
           $language = app()->getLocale() == 'ar' ? 'ar' : 'en';
