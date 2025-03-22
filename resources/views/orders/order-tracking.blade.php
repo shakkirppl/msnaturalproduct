@@ -86,6 +86,7 @@
                                     <th>Total amount</th>
                                     
                                     <th>Actions</th>
+                                    <th>State Code</th>
                                     <th>State</th>
                                     <th>landmark</th>
                                     <th>pincode</th>
@@ -117,7 +118,9 @@
                                             <a href="{{ route('order_view', $order->id) }}" class="btn btn-warning">View</a>
                                         </td>
                                         <td >{{ $order->state_code }}</td>
-                                        <td >{{ $order->State}}</td>
+                                      <td>  @foreach ($order->deliverystate as $state)  {{ $state->state_name }} @endforeach </td>
+                                        
+                                        
                                             <td >{{ $order->landmark}}</td>
                                                 <td >{{ $order->pincode}}</td>
                                                     <td >{{ $order->city}}</td>
