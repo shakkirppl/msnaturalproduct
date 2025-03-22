@@ -451,4 +451,19 @@ class OrderController extends Controller
     
         return view('orders.print-invoice', compact('order', 'currency'));
     }
+    public function printSelected(Request $request)
+    {
+        // Get selected order IDs
+        $orderIds = $request->input('order_ids');
+
+        if (!$orderIds) {
+            return back()->with('error', 'No orders selected!');
+        }
+
+        // Fetch orders
+        $orders = Order::with('orderdetails', 'store', 'billingstate', 'billingcountry')->whereIn('id', $orderIds)->get();
+        $currency='INR';
+        // Process invoices (e.g., generate PDFs or return a view)
+        return view('orders.multi-print', compact('orders','currency'));
+    }
 }

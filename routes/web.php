@@ -315,6 +315,7 @@ Route::get('/order-dashboard', [OrderDashboardController::class, 'index'])->name
 
 Route::get('/send-mail', [AllOrderController::class, 'sendmail']);
 Route::get('/order/invoice/{id}', [OrderController::class, 'printInvoice'])->name('order.invoice');
+Route::post('/orders/print', [OrderController::class, 'printSelected'])->name('orders.print');
 }); 
 
 require __DIR__.'/auth.php';

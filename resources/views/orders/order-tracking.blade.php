@@ -73,6 +73,8 @@
         <i class="fa fa-file-excel-o"></i> Export
     </button>
 </div>
+<form id="printForm" action="{{ route('orders.print') }}" method="POST">
+    @csrf
                     <div class="table-responsive mt-3">
                         <table class="table" id="value-table-old">
                             <thead>
@@ -107,7 +109,7 @@
                             <tbody>
                                 @foreach ($orders as $order)
                                     <tr>
-                                    <td><input type="checkbox" class="order-checkbox" value="{{ $order->id }}"></td>
+                                    <td><input type="checkbox" class="order-checkbox" name="order_ids[]" value="{{ $order->id }}"></td>
                                         <td>{{ $order->delivery_status }}</td>
                                         <td>{{ \Carbon\Carbon::parse($order->date)->format('d-m-Y') }}</td>
                                         <td>{{ $order->order_no }}</td>
@@ -142,7 +144,8 @@
                         </table>
                     </div>
 <!-- Button to trigger bulk printing -->
-<button id="print-selected" class="btn btn-primary mt-2">Print Selected Invoices</button>
+<button type="submit" id="print-selected" class="btn btn-primary mt-2">Print Selected Invoices</button>
+</form>
                     <!-- {{ $orders->appends(request()->query())->links() }} -->
 
                 </div>
@@ -239,27 +242,27 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         // Function to print invoices one by one
-        function printNext(index) {
-            if (index >= selectedOrders.length) {
-                return; // Stop when all are printed
-            }
+        // function printNext(index) {
+        //     if (index >= selectedOrders.length) {
+        //         return; // Stop when all are printed
+        //     }
 
-            let orderId = selectedOrders[index];
-            let url = "{{ route('order.invoice', ':id') }}".replace(':id', orderId);
-            let printWindow = window.open(url, "_blank");
+        //     let orderId = selectedOrders[index];
+        //     let url = "{{ route('order.invoice', ':id') }}".replace(':id', orderId);
+        //     let printWindow = window.open(url, "_blank");
 
-            // Wait for window to load, then print
-            printWindow.onload = function() {
-                printWindow.print();
-                setTimeout(function() {
-                    printWindow.close();
-                    printNext(index + 1); // Move to next order
-                }, 2000); // Wait before printing the next one
-            };
-        }
+        //     // Wait for window to load, then print
+        //     printWindow.onload = function() {
+        //         printWindow.print();
+        //         setTimeout(function() {
+        //             printWindow.close();
+        //             printNext(index + 1); // Move to next order
+        //         }, 2000); // Wait before printing the next one
+        //     };
+        // }
 
         // Start the print process
-        printNext(0);
+        // printNext(0);
     });
 });
 </script>
