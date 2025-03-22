@@ -99,6 +99,7 @@
                                     <th>billing_phone</th>
                                     <th>billing_city</th>
                                     <th>billing_post_code</th>
+                                    <th>Product</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -129,6 +130,7 @@
                                                                         <td >{{ $order->billing_phone}}</td>
                                                                             <td >{{ $order->billing_city}}</td>
                                                                                 <td >{{ $order->billing_post_code}}</td>
+                                                    <td> @foreach ($order->detail as $detai) {{$detai->product_name}} {{$detai->size}} ---   {{$detai->quantity}} , @endforeach</td>
                                     </tr>
                                 @endforeach
                             </tbody>
