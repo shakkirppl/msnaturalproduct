@@ -388,10 +388,10 @@
                                     </h2>
                                     <div class="price-container">
                                        <div class="price-original">
-                                          {{$currency}}<span class="price-bold">{{$products['original_price']}}</span>
+                                          {{$currency}}<span class="price-bold">{{$products['price']}}</span>
                                        </div>
                                        <div class="price-discounted">
-                                          {{$currency}}<span class="price-bold">{{$products['price']}}</span>
+                                          {{$currency}}<span class="price-bold">{{$products['original_price']}}</span>
                                        </div>
                                     </div>
                                     <div class="buy-now-button">
