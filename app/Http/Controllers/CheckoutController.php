@@ -57,6 +57,7 @@ class CheckoutController extends Controller
     $totalShippingCharge = 0;
     $originalPrice=0;
     $offerPrice=0;
+   
     if ($storeId == 1) {
     // Fetch the default address for the customer
     $defaultAddress = CustomerAddress::where('user_id', Auth::id())
@@ -92,6 +93,10 @@ class CheckoutController extends Controller
         $totalShippingCharge += $shippingCharge * $item->quantity;
     }
 } else {
+    foreach ($cartItems as $item) {
+        $originalPrice+=$item->attributes->original_price;
+        $offerPrice+=$item->price;
+     }
     // Calculate shipping charge based on item attributes for stores other than storeId=1
     $totalShippingCharge = $cartItems->reduce(function ($total, $item) {
         return $total + (($item->attributes->shipping_charge ?? 0) * $item->quantity);

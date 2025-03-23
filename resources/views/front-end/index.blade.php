@@ -95,15 +95,17 @@
                                     @endforeach
                                  </div>
                                </a>
-                               @if($prices->currency=='INR')
+                              
                                  <div class="buy-now-button">
                                  <button data-product-size-id="{{$product->id}}" data-store-id="{{$storeId}}" class="add-to-cart">Add To Cart </button>
+                                 @if($prices->currency=='INR')
                                  @if($product->combo_size_slug!=null)
                                  <a href="{{ route('product.view', $product->combo_size_slug) }}"><button class="purchase-with-combo ">{{$product->link_name}} </button>
                                  </a>
                                  @endif
-                                 </div>
                                  @endif
+                                 </div>
+                               
                                 
                               
                                  <div class="popup-cart" id="popup-cart" style="display: none;">
