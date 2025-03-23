@@ -369,7 +369,7 @@
                      <div class="product-card">
                         <div class="product-layout">
                            <div class="product-image-column">
-                              <a href="product-detail.html">
+                           <a href="{{ route('product.view', $products['product_slug']) }}">
                               <img loading="lazy" src="{{ url('uploads/products/' . $products['image']) }}" class="product-image"
                                  alt="Hair Care Oil Product Image" />
                               </a>
@@ -382,6 +382,7 @@
                                           alt="Rating Star Icon" />
                                        <div class="rating-text">4.7 (39 Reviews)</div>
                                     </div> -->
+                                    <a href="{{ route('product.view', $products['product_slug']) }}">
                                     <h1 class="product-title">{{$products['name']}}</h1>
                                     <h2 class="product-subtitle">
                                        {{$products['short_description']}}
@@ -394,6 +395,7 @@
                                           {{$currency}}<span class="price-bold">{{$products['original_price']}}</span>
                                        </div>
                                     </div>
+                                    </a>
                                     <div class="buy-now-button">
                                     <button data-product-id="{{$products['id']}}" data-store-id="{{$storeId}}" class="add-to-cart-related">Add To Cart </button>
                               <!-- <a href=""><button>Add To Cart</button></a> -->
