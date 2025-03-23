@@ -12,6 +12,7 @@ use App\Models\DeliveryStatus;
 use App\Models\OrderDetails;
 use App\Models\ProductSizes;
 use App\Models\Product;
+use App\Models\Stores;
 use App\Models\ShippmentDetailsInternational;
 use Illuminate\Support\Facades\Mail;
 use Carbon\Carbon;
@@ -145,6 +146,9 @@ class AllOrderController extends Controller
         if ($request->filled('from_date') && $request->filled('to_date')) {
           $query->whereBetween('date', [$request->from_date, $request->to_date]);
       }
+      if ($request->filled('store_id')) {
+        $query->where('store_id', $request->store_id);
+    }
       if ($request->filled('product_id')) {
         $query->whereHas('detail', function ($q) use ($request) {
             $q->where('order_details.product_id', $request->product_id);
@@ -153,7 +157,8 @@ class AllOrderController extends Controller
     $orders = $query->with('store','deliverystate','detail')->orderBy('orders.id', 'DESC')->paginate(5000);
      // Fetch products for the dropdown
      $products = Product::all();
-        return view('orders.order-tracking', compact('orders','products'));
+     $stores=Stores::get();
+        return view('orders.order-tracking', compact('orders','products','stores'));
     }
    
     public function printInvoice($id)

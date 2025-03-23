@@ -116,7 +116,7 @@
         @csrf
               <button type="submit" class="dropdown-item">Logout</button>
                               </form>
-             
+              <a class="dropdown-item" href="{{ url('update-password') }}">Update Password</a>
             </div>
           </li>
           <!--<li class="nav-item nav-settings d-none d-lg-flex">-->

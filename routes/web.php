@@ -153,6 +153,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('dashboard', [DashboardController::class,'dashboard']);
 
+    Route::get('/update-password', [ProfileController::class, 'update_password'])->name('update-password');
+    Route::post('password-update.store', [ProfileController::class, 'password_update_store'])->name('password-update.store');
+    
+
     Route::resource('work-center', WorkCenterController::class);
     Route::resource('shift', ShiftController::class);
     Route::resource('products', ProductController::class);

@@ -21,7 +21,7 @@
 
                     <!-- Filter Form -->
                     <form method="GET" action="{{ route('orders.tracking') }}">
-                        <div class="row mb-3">
+                        <div class="row mb-12">
                             <div class="col-md-3">
                                 <label>Delivery Status</label>
                                 <select name="delivery_status" class="form-control">
@@ -32,11 +32,11 @@
                                     <option value="Delivered" {{ request('delivery_status') == 'Delivered' ? 'selected' : '' }}>Delivered</option>
                                 </select>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-2">
                                 <label>Order No</label>
                                 <input type="text" name="order_no" class="form-control" value="{{ request('order_no') }}">
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <label>First Name</label>
                                 <input type="text" name="first_name" class="form-control" value="{{ request('first_name') }}">
                             </div>
@@ -63,6 +63,19 @@
                 @endforeach
             </select>
         </div>
+
+        <div class="col-md-3">
+            <label>Country</label>
+            <select name="store_id" class="form-control">
+                <option value="">All</option>
+                @foreach($stores as $stor)
+                    <option value="{{ $stor->id }}" {{ request('store_id') == $stor->id ? 'selected' : '' }}>
+                        {{ $stor->store_name }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+    
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                         <a href="{{ route('orders.tracking') }}" class="btn btn-secondary">Reset</a>
