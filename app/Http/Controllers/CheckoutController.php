@@ -333,10 +333,23 @@ InvoiceNumber::updateinvoiceNumber('orders',$storeId);
         'city' => 'nullable|string',
         'address' => 'nullable|string',
         'state_id' => 'required|integer|exists:states,id',
-        'pincode' => 'required|numeric',
+        // 'pincode' => 'required|numeric',
         'phone' => 'required|numeric',
         'billing_option' => 'required',
     ];
+    $storesection = session('activecountry');
+    $currentstore = Stores::where('countryCode', $storesection)->first();
+    
+    // Check if store exists before accessing its ID
+    $currentStoreId = $currentstore ? $currentstore->id : 1;
+    
+    // Check if the current store ID is 1
+    if ($currentStoreId == 1) {
+        $commonValidation['pincode'] = 'required|numeric';
+    }
+    else{
+        $commonValidation['pincode'] = 'sometimes|nullable';
+    }
     $customMessages = [
         'state_id.required' => 'Please select a State.',
         'state_id.integer' => 'Please  select a State.',
@@ -414,7 +427,7 @@ InvoiceNumber::updateinvoiceNumber('orders',$storeId);
     'address' => $validatedData['address'] ?? null,
     'state' => $validatedData['state_id'],
     'state_code'=> $states->code,
-    'pincode' => $validatedData['pincode'] ,
+    'pincode' => $validatedData['pincode'] ?? null ,
     'phone_number' => $validatedData['phone'],
     'billing_option' => $validatedData['billing_option'],
     'shipping'=>$request->special_instructions,

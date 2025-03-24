@@ -187,7 +187,7 @@
                            <div class="col-md-12">
                               <div class="mb-3">
                                  <label for="" class="form-ms-label">{{ __('main.Pincode') }}</label>
-                                 <input type="number" class="form-control form-control-ms" name="pincode" value="{{old('pincode') }}" required>
+                                 <input type="number" class="form-control form-control-ms" name="pincode" value="{{old('pincode') }}" >
                               </div>
                            </div>
                         </div>

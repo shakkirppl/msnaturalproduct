@@ -97,8 +97,17 @@ class ProductDetailController extends Controller
 
                 $cartItems = Cart::getContent();
 
-              $relatedProducts = Product::where('id', '!=', $product->id)->WithLanguageName()
-                ->availability($storeId)->get();
+            //   $relatedProducts = Product::where('id', '!=', $product->id)->WithLanguageName()
+            //     ->availability($storeId)->get();
+                $relatedProducts = Product::where('id', '!=', $product->id)->WithLanguageName()->with(['baseprices' => function ($query) use ($storeId) {
+                    $query->where('product_prices.store_id', $storeId);
+                }])
+                ->whereHas('countries', function ($query) use ($storeId) {
+                    $query->where('countries_id', $storeId)->where('is_active', 1);
+                })
+                ->orderby('products.sort_order','ASC')
+                ->get();
+
                 $reProducts=[];
                 foreach($relatedProducts as $related){
                     $product_size_id = ProductSizes::where('product_id', $related->id)
